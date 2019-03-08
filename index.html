@@ -1,0 +1,896 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge" charset="utf-8">
+	<title>宜昌市环保大数据中心</title>
+	<link rel="stylesheet" href="css/index.css" />
+	<link rel="stylesheet" href="css/indexPlus.css" />
+</head>
+
+<body>
+	<div class="header">
+		<p class="logo">
+			<img src="images/logo.png" />宜昌市环保大数据中心
+		</p>
+		<div class="nav">
+			<ul>
+				<li class="navLi active">
+					<img src="./images/index_icon1.png" />
+					<p class="navTheme">首页</p>
+				</li>
+				<li class="navLi">
+					<img src="./images/index_icon3.png" />
+					<p class="navTheme">环境检测图</p>
+				</li>
+				<li class="navLi">
+					<img src="./images/index_icon7.png" />
+					<p class="navTheme">环境质量</p>
+				</li>
+				<li class="navLi">
+					<img src="./images/index_icon4.png" />
+					<p class="navTheme">污染源档案</p>
+				</li>
+				<li class="navLi">
+					<img src="./images/index_icon2.png" />
+					<p class="navTheme">资源目录</p>
+				</li>
+				<li class="navLi">
+					<img src="./images/index_icon8.png" />
+					<p class="navTheme">大屏展示</p>
+				</li>
+				<li class="navLi">
+					<img src="./images/index_icon9.png" />
+					<p class="navTheme">集成交换</p>
+				</li>
+				<li class="navLi">
+					<img src="./images/index_icon10.png" />
+					<p class="navTheme">服务管理</p>
+				</li>
+				<li class="navLi">
+					<img src="./images/index_icon5.png" />
+					<p class="navTheme">数据管理</p>
+				</li>
+
+			</ul>
+			<div class="people-info">
+				<i class="line"></i>
+				<p>欢迎您Admin</p>
+				<a href="#" title="注销"></a>
+			</div>
+		</div>
+	</div>
+	<div class="index-main">
+		<div class="index-main-tab">
+			<dl >
+				<dt class="icon1"></dt>
+				<dd>数据概览</dd>
+			</dl>
+			<dl class="active">
+				<dt class="icon2"></dt>
+				<dd>空气环境质量</dd>
+			</dl>
+			<dl>
+				<dt class="icon3"></dt>
+				<dd>水环境质量</dd>
+			</dl>
+			<dl>
+				<dt class="icon4"></dt>
+				<dd>声环境质量</dd>
+			</dl>
+			<dl>
+				<dt class="icon5"></dt>
+				<dd>污染源</dd>
+			</dl>
+		</div>
+		<div class="index-main-info">
+			<div class="main-info" style="display: none;">
+				<div class="clear">
+					<div class="situation-left">
+						<div class="main-info-module">
+							<div class="mim-title">
+								<p class="title">数据资源</p>
+							</div>
+							<div class="situation-info1">
+								<p class="title">数据记录总量：</p>
+								<p class="num">
+									<span>0</span>
+									<span>6</span>
+									<span>5</span>
+									<span>5</span>
+									<span>6</span>
+									<span>7</span>
+									<span>5</span>
+									<span>8</span>
+									<span>7</span>
+								</p>
+								<ul class="data">
+									<li>
+										<p>
+											<i class="yellow"></i>43个</p>
+										<span>数据集</span>
+									</li>
+									<li>
+										<p>
+											<i class="blue"></i>143个</p>
+										<span>数据服务</span>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<!-- <div class="situation-center">
+							<div class="main-info-module">
+								<div class="mim-title">
+									<p class="title">监管对象</p>
+								</div>
+								<div class="situation-info2">
+									<dl>
+										<dt>
+											<img src="images/index/jgdx_icon1.png" >
+										</dt>
+										<dd>
+											<p>1523个</p>
+											<span>污染源</span>
+										</dd>
+									</dl>
+									<dl>
+										<dt>
+											<img src="images/index/jgdx_icon2.png" >
+										</dt>
+										<dd>
+											<p>210000辆</p>
+											<span>机动车</span>
+										</dd>
+									</dl>
+								</div>
+							</div>
+						</div> -->
+					<div class="situation-right">
+						<div class="main-info-module">
+							<div class="mim-title">
+								<p class="title">数据集成情况</p>
+								<!-- <ul class="tab">
+									<li class="active">按系统</li>
+									<li>按部门</li>
+								</ul> -->
+							</div>
+							<div class="situation-info-tab">
+								<div class="situation-info4">
+									<!-- <ul class="situation-echarts-tab">
+										<li class="active">数据集</li>
+										<li>数据量</li>
+									</ul> -->
+									<div class="situation-echarts-tab-main">
+										<div class="situation-echarts1" id="situation-echarts1">
+
+										</div>
+									</div>
+									<div class="situation-echarts-tab-main" style="display: none;">
+										<div class="situation-echarts1" id="situation-echarts2">
+
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="situation-info-tab" style="display: none;">
+								<div class="situation-info4">
+									<ul class="situation-echarts-tab">
+										<li class="active">数据集</li>
+										<li>数据量</li>
+									</ul>
+									<div class="situation-echarts-tab-main">
+										<div class="situation-echarts1" id="situation-echarts3">
+
+										</div>
+									</div>
+									<div class="situation-echarts-tab-main" style="display: none;">
+										<div class="situation-echarts1" id="situation-echarts4">
+
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+
+					</div>
+				</div>
+				<div class="clear">
+					<div class="situation-left-bottom">
+						<div class="main-info-module">
+							<div class="mim-title">
+								<p class="title">监测网</p>
+							</div>
+							<div class="situation-info3">
+								<ul class="data">
+									<li>
+										<p>
+											<img src="images/index/jcw_icon1.png">43个</p>
+										<span>空气自动站</span>
+									</li>
+									<li>
+										<p>
+											<img src="images/index/jcw_icon2.png">143个</p>
+										<span>水质监测断面</span>
+									</li>
+									<li>
+										<p>
+											<img src="images/index/jcw_icon3.png">143个</p>
+										<span>水质自动监测站</span>
+									</li>
+								</ul>
+								<ul class="data">
+									<li>
+										<p>
+											<img src="images/index/jcw_icon4.png">43个</p>
+										<span>噪声测点</span>
+									</li>
+									<li>
+										<p>
+											<img src="images/index/jcw_icon5.png">143个</p>
+										<span>土壤国控点</span>
+									</li>
+									<li>
+										<p>
+											<img src="images/index/jcw_icon6.png">143个</p>
+										<span>辐射自动站</span>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<div class="situation-right-bottom">
+						<div class="main-info-module">
+							<div class="mim-title">
+								<p class="title">近五年数据总量统计</p>
+								<!-- <ul class="tab">
+									<li class="active">按系统</li>
+									<li>按部门</li>
+								</ul> -->
+							</div>
+							<div class="situation-info-tab">
+								<div class="situation-info5">
+									<div class="situation-echarts2" id="situation-echarts5">
+
+									</div>
+								</div>
+							</div>
+							<div class="situation-info-tab" style="display: none;">
+								<div class="situation-info5">
+									<div class="situation-echarts2" id="situation-echarts6">
+
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="main-info">
+				<div class="clear">
+					<div class="air-left">
+						<div class="main-info-module">
+							<div class="air-info1">
+								<div class="left">
+									<div class="air-info">
+										
+										<div class="num rank2 " id='air-radio-canvas'>
+										
+											
+										</div>
+										<span class="canvasFont">AQI</span>
+										<div class="word">
+											<p>轻度污染</p>
+											<p>首要污染物：PM<sub>2.5</sub>
+											</p>
+											<p class="time">2018年5月25日 14:00</p>
+										</div>
+									</div>
+									<p class="air-forecast-title">
+										未来三天空气质量预报
+									</p>
+									<ul class="air-forecast-list">
+										<li>
+											<p class="time">5月28日</p>
+											<p class="num">105~111</p>
+											<p class="poll">首要污染物:
+												<span>O
+													<sub>3</sub>
+												</span>
+											</p>
+										</li>
+										<li>
+											<p class="time">5月29日</p>
+											<p class="num">105~111</p>
+											<p class="poll">首要污染物:
+												<span>O
+													<sub>3</sub>
+												</span>
+											</p>
+										</li>
+										<li>
+											<p class="time">5月30日</p>
+											<p class="num">105~111</p>
+											<p class="poll">首要污染物:
+												<span>O
+													<sub>3</sub>
+												</span>
+											</p>
+										</li>
+									</ul>
+								</div>
+								<div class="map">
+									<div class="map-legend">
+										<p class="title">图例</p>
+										<ul>
+											<li class="one">
+												<div></div>
+												<p>优</p>
+											</li>
+											<li class="two">
+												<div></div>
+												<p>良</p>
+											</li>
+											<li class="three">
+												<div></div>
+												<p>轻度</p>
+											</li>
+											<li class="four">
+												<div></div>
+												<p>中度</p>
+											</li>
+											<li class="five">
+												<div></div>
+												<p>重度</p>
+											</li>
+											<li class="six">
+												<div></div>
+												<p>严重</p>
+											</li>
+										</ul>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="air-right">
+						<div class="main-info-module">
+							<div class="mim-title">
+								<p class="title">空气质量考核</p>
+								<p class="time">今年截至2018年5月31日</p>
+							</div>
+							<div class="air-info air-info2">
+								<!-- <ul class="air-info-tab">
+									<li class="active">国考区域</li>
+									<li>其他区域</li>
+								</ul> -->
+								<div class="air-info-tab-main">
+									<p class="title">
+										<span>
+											<img src="images/index/tuli1.png" />去年同期值</span>
+										<span>
+											<img src="images/index/tuli2.png" />考核目标</span>
+									</p>
+									<div class="left-info">
+										<div class="bar">
+											<div class="bar-list">
+												<div class="left">优良天数
+													<span>(154天)</span>
+												</div>
+												<div class="center">
+													<p class="bar" style="background: #5ec95e;"></p>
+													<div class="assess" style="left: 80.1%;">
+														<p class="red"></p>
+														<div class="assess-num">267天</div>
+													</div>
+													<div class="assess" style="left: 89.1%;">
+														<p class="yellow"></p>
+														<div class="assess-num">367天</div>
+													</div>
+												</div>
+											</div>
+											<div class="bar-list">
+												<div class="left">PM2.5累计均值
+													<span>(77ug/m
+														<sup>3</sup>)</span>
+												</div>
+												<div class="center">
+													<p class="bar" style="background: #5ec95e;"></p>
+													<div class="assess" style="left: 80.1%;">
+														<p class="red"></p>
+														<div class="assess-num" style="line-height: 16px;">73ug/m
+															<sup>3</sup>
+														</div>
+													</div>
+													<div class="assess" style="left: 89.1%;">
+														<p class="yellow"></p>
+														<div class="assess-num" style="line-height: 16px;">90ug/m
+															<sup>3</sup>
+														</div>
+													</div>
+												</div>
+											</div>
+											<!-- <div class="bar-list">
+												<div class="left">PM10累计均值
+													<span>(101ug/m
+														<sup>3</sup>)</span>
+												</div>
+												<div class="center">
+													<p class="bar" style="background: #5ec95e;"></p>
+													<div class="assess" style="left: 80.1%;">
+														<p class="red"></p>
+														<div class="assess-num" style="line-height: 16px;">73ug/m
+															<sup>3</sup>
+														</div>
+													</div>
+													<div class="assess" style="left: 89.1%;">
+														<p class="yellow"></p>
+														<div class="assess-num" style="line-height: 16px;">90ug/m
+															<sup>3</sup>
+														</div>
+													</div>
+												</div>
+											</div> -->
+										</div>
+									</div>
+									<div class="right-info">
+										<p class="p1">在余下的250天内，为确保完成考核目标</p>
+										<p class="p2">超标天数应控制在
+											<span>139天</span>以内</p>
+										<p class="p2">累计均值应控制在
+											<span>99ug/m3</span>以内</p>
+										<!-- <p class="p2">超标天数应控制在
+											<span>89ug/m3</span>以内</p>
+										<a href="#">查看国考区域详情</a> -->
+									</div>
+								</div>
+								<div class="air-info-tab-main" style="display: none;">
+									<p class="title">
+										<span>
+											<img src="images/index/tuli1.png" />去年同期值</span>
+										<span>
+											<img src="images/index/tuli2.png" />考核目标</span>
+									</p>
+									<div class="left-info">
+										<div class="bar">
+											<div class="bar-list">
+												<div class="left">优良天数
+													<span>(154天)</span>
+												</div>
+												<div class="center">
+													<p class="bar" style="background: #5ec95e;"></p>
+													<div class="assess" style="left: 80.1%;">
+														<p class="red"></p>
+														<div class="assess-num">267天</div>
+													</div>
+													<div class="assess" style="left: 89.1%;">
+														<p class="yellow"></p>
+														<div class="assess-num">367天</div>
+													</div>
+												</div>
+											</div>
+											<div class="bar-list">
+												<div class="left">PM2.5累计均值
+													<span>(77ug/m
+														<sup>3</sup>)</span>
+												</div>
+												<div class="center">
+													<p class="bar" style="background: #5ec95e;"></p>
+													<div class="assess" style="left: 80.1%;">
+														<p class="red"></p>
+														<div class="assess-num" style="line-height: 16px;">73ug/m
+															<sup>3</sup>
+														</div>
+													</div>
+													<div class="assess" style="left: 89.1%;">
+														<p class="yellow"></p>
+														<div class="assess-num" style="line-height: 16px;">90ug/m
+															<sup>3</sup>
+														</div>
+													</div>
+												</div>
+											</div>
+											<div class="bar-list">
+												<div class="left">PM10累计均值
+													<span>(101ug/m
+														<sup>3</sup>)</span>
+												</div>
+												<div class="center">
+													<p class="bar" style="background: #5ec95e;"></p>
+													<div class="assess" style="left: 80.1%;">
+														<p class="red"></p>
+														<div class="assess-num" style="line-height: 16px;">73ug/m
+															<sup>3</sup>
+														</div>
+													</div>
+													<div class="assess" style="left: 89.1%;">
+														<p class="yellow"></p>
+														<div class="assess-num" style="line-height: 16px;">90ug/m
+															<sup>3</sup>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="right-info">
+										<p class="p1">在余下的250天内，为确保完成考核目标</p>
+										<p class="p2">超标天数应控制在
+											<span>139天</span>以内</p>
+										<p class="p2">累计均值应控制在
+											<span>99ug/m3</span>以内</p>
+										<!-- <p class="p2">超标天数应控制在
+											<span>89ug/m3</span>以内</p> -->
+										<!-- <a href="#">查看其他县市区详情</a> -->
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="clear">
+					<div class="air-bottom">
+						<div class="main-info-module">
+							<div class="mim-title">
+								<p class="title">空气质量近30天同比变化</p>
+								<p class="time">今年截至2018年5月31日</p>
+							</div>
+							<div class="air-info air-info3">
+								<ul class="air-info-tab">
+									<li class="active">AQI</li>
+									<li>PM2.5</li>
+									<li>PM10</li>
+									<li>臭氧</li>
+								</ul>
+								<div class="air-info-tab-main">
+									<div class="air-echarts1" id="air-echarts1"></div>
+								</div>
+								<div class="air-info-tab-main" style="display: none;">
+									<div class="air-echarts1" id="air-echarts2"></div>
+								</div>
+								<div class="air-info-tab-main" style="display: none;">
+									<div class="air-echarts1" id="air-echarts3"></div>
+								</div>
+								<div class="air-info-tab-main" style="display: none;">
+									<div class="air-echarts1" id="air-echarts4"></div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="main-info" style="display: none;">
+				<div class="clear">
+					<div class="water-left">
+						<div class="main-info-module">
+							<div class="mim-title">
+								<p class="title">水环境月度总体概况</p>
+								<p class="time">2018.5月水质月报</p>
+							</div>
+							<div class="water-info1">
+								<div class="water-echarts1" id="water-echarts1">
+
+								</div>
+								<div class="month-num">
+									<a href="#">本月河流监测断面：
+										<span class="num">47个</span>
+									</a>
+									<span class="right">
+										本月超标断面共计：
+										<span class="num">3个</span>
+									</span>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="water-right">
+						<div class="main-info-module">
+							<div class="mim-title">
+								<p class="title">水质目标考核</p>
+								<p class="time">考核月份：2018.5</p>
+							</div>
+							<div class="water-info2">
+								<p class="title">
+									<span>
+										<img src="images/index/tuli1.png" />今年累计值</span>
+									<span>
+										<img src="images/index/tuli2.png" />考核目标</span>
+									<span>
+										<i class="green"></i>已达标</span>
+									<span>
+										<i class="orange"></i>未达标</span>
+								</p>
+								<div class="bar">
+									<div class="bar-list">
+										<div class="left">国考地表水断面
+											<br/>水质优良率</div>
+										<div class="center">
+											<p class="bar" style="background: #5ec95e;"></p>
+											<div class="assess" style="left: 80.1%;">
+												<p class="red"></p>
+												<div class="assess-num">80.1%</div>
+											</div>
+											<div class="assess" style="left: 89.1%;">
+												<p class="yellow"></p>
+												<div class="assess-num">89.1%</div>
+											</div>
+										</div>
+									</div>
+									<div class="bar-list">
+										<div class="left">省考跨界断面
+											<br/>水质优良率</div>
+										<div class="center">
+											<p class="bar" style="background: #faaa43;"></p>
+											<div class="assess" style="left: 80.1%;">
+												<p class="red"></p>
+												<div class="assess-num">80.1%</div>
+											</div>
+											<div class="assess" style="left: 89.1%;">
+												<p class="yellow"></p>
+												<div class="assess-num">89.1%</div>
+											</div>
+										</div>
+									</div>
+									<div class="bar-list">
+										<div class="left">市级考核断面
+											<br/>水质优良率</div>
+										<div class="center">
+											<p class="bar" style="background: #5ec95e;"></p>
+											<div class="assess" style="left: 80.1%;">
+												<p class="red"></p>
+												<div class="assess-num">80.1%</div>
+											</div>
+											<div class="assess" style="left: 89.1%;">
+												<p class="yellow"></p>
+												<div class="assess-num">89.1%</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="clear">
+					<div class="water-bottom">
+						<div class="main-info-module">
+							<div class="mim-title">
+								<p class="title">监测河流水质现状</p>
+								<p class="time">统计月份：2018.5</p>
+							</div>
+							<div class="water-info3">
+								<p class="echarts-name">断面个数（个）</p>
+								<div class="water-echarts2" id="water-echarts2">
+
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- <div class="main-info" style="display: none;">
+					<div class="soil-top">
+						<div class="main-info-module">
+							<div class="mim-title">
+								<p class="title">土壤环境监管</p>
+								<p class="time">统计时间：2018年6月</p>
+							</div>
+							<div class="soil-info soil-info1">
+								<div class="soil-info-left">
+									<ul class="data">
+										<li class="yellow">
+											<p><i></i>127个</p>
+											<span>疑似污染地块</span>
+										</li>
+										<li class="blue">
+											<p><i></i>87个</p>
+											<span>确认污染地块</span>
+										</li>
+										<li class="purple">
+											<p><i></i>18个</p>
+											<span>治理修复地块</span>
+										</li>
+										<li class="green">
+											<p><i></i>8个</p>
+											<span>风险管控地块</span>
+										</li>
+									</ul>
+								</div>
+								<div class="soil-info-right">
+									<div class="echarts-title">
+										<p class="name">各区域疑似土壤地块数量统计</p>
+									</div>
+									<div class="soil-echarts1" id="soil-echarts5">
+										
+									</div>
+								</div>								
+							</div>
+						</div>
+					</div>
+					<div class="soil-bottom">
+						<div class="main-info-module">
+							<div class="mim-title">
+								<p class="title">固体废物监管</p>
+								<p class="time">统计时间：2017年</p>
+							</div>
+							<div class="soil-info soil-info2">
+								<div class="soil-info-left">
+									<div class="soil-echarts2" id="soil-echarts6">
+										
+									</div>
+									<ul class="data">
+										<li class="purple2">
+											<p><i></i>38家</p>
+											<span>一般工业废物企业</span>
+										</li>
+										<li class="green2">
+											<p><i></i>159家</p>
+											<span>危险废物企业</span>
+										</li>
+									</ul>
+								</div>
+								<div class="soil-info-right">
+									<div class="echarts-title">
+										<p class="name">各区域固废产生量统计</p>
+									</div>
+									<div class="soil-echarts3" id="soil-echarts7">
+										
+									</div>
+								</div>							
+							</div>
+						</div>
+					</div>
+				</div> -->
+			<div class="main-info" style="display: none;">
+				<div class="clear">
+					<div class="pollution-left">
+						<div class="main-info-module">
+							<div class="mim-title">
+								<p class="title">全市污染源统计</p>
+							</div>
+							<div class="pollution-info1">
+								<div class="type">
+									<p>全市污染源
+										<span class="orange">559家</span>
+									</p>
+									<a href="#" class="look">查看污染源地图</a>
+								</div>
+								<ul class="type-list">
+									<li>
+										<a href="#">
+											<img src="images/index/qswrytj_icon1.png" />
+											<span class="name">工业源</span>
+											<span class="num">321家</span>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<img src="images/index/qswrytj_icon2.png" />
+											<span class="name">农业源</span>
+											<span class="num">129家</span>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<img src="images/index/qswrytj_icon3.png" />
+											<span class="name">集中式处理设施</span>
+											<span class="num">43家</span>
+										</a>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<div class="pollution-right">
+						<div class="main-info-module">
+							<div class="mim-title">
+								<p class="title">建设项目</p>
+								<p class="time">本年截至2018.6.4</p>
+							</div>
+							<div class="pollution-info pollution-info2">
+								<div class="echarts-title">
+									<p class="name">建设项目主要行业审批数量统计</p>
+									<p class="num">
+										本年新增建设项目数量
+										<span class="orange">25个</span>同比
+										<img src="images/index/jt_icon.png" />4.5%
+									</p>
+								</div>
+								<div class="pollution-echarts1" id="pollution-echarts1">
+
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="clear">
+					<div class="pollution-left pollution-bottom">
+						<div class="main-info-module">
+							<div class="mim-title">
+								<p class="title">排污许可证发放</p>
+								<p class="time">发证起截至2018.5</p>
+							</div>
+							<div class="pollution-info pollution-info3">
+								<ul class="data">
+									<li class="green">
+										<p>
+											<i></i>59家</p>
+										<span>已发证行业</span>
+									</li>
+									<li class="green">
+										<p>
+											<i></i>13家</p>
+										<span>已发证行业</span>
+									</li>
+								</ul>
+								<div class="echarts-title">
+									<p class="name">已发证企业大气排放总许可量</p>
+									<ul class="pollution-echarts-tab">
+										<li class="active">大气</li>
+										<li>废水</li>
+									</ul>
+								</div>
+								<div class="pollution-tab-main">
+									<div class="pollution-echarts2" id="pollution-echarts2">
+
+									</div>
+								</div>
+								<div class="pollution-tab-main" style="display: none;">
+									<div class="pollution-echarts2" id="pollution-echarts3">
+
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="pollution-right pollution-bottom">
+						<div class="main-info-module">
+							<div class="mim-title">
+								<p class="title">在线监控污染源</p>
+							</div>
+							<div class="pollution-info pollution-info4">
+								<ul class="data">
+									<li class="blue">
+										<p>
+											<i></i>327家</p>
+										<span>在线监控污染源</span>
+									</li>
+									<li class="blue">
+										<p>
+											<i></i>110家</p>
+										<span>废水污染源</span>
+									</li>
+									<li class="blue">
+										<p>
+											<i></i>217家</p>
+										<span>废气污染源</span>
+									</li>
+								</ul>
+								<div class="echarts-title">
+									<p class="name">近7日在线企业超标数统计</p>
+								</div>
+								<div class="pollution-echarts4" id="pollution-echarts4">
+
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="footer">
+
+	</div>
+	<script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
+	<script type="text/javascript" src="js/echarts.min.js"></script>
+	<script type="text/javascript" src="js/index.js"></script>
+	<script type="text/javascript" src="./js/main.js"></script>
+	<script type="text/javascript" src="js/index-situation.js"></script>
+	<script type="text/javascript" src="js/index-air.js"></script>
+	<script type="text/javascript" src="js/index-water.js"></script>
+	<script type="text/javascript" src="js/index-soil.js"></script>
+	<script type="text/javascript" src="js/index-pollution.js"></script>
+</body>
+
+</html>

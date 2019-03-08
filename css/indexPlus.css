@@ -1,0 +1,25 @@
+.navLi {
+  padding-top: 7px;
+}
+.navLi img {
+  display: block;
+  margin: 2px auto;
+}
+.navLi .navTheme {
+  line-height: 26px;
+  height: 26px;
+  font-size: 16px;
+  padding: 0 10px;
+  color: #ffffff;
+}
+.air-info1 .air-info {
+  position: relative;
+}
+.num.rank2 .canvasFont {
+  width: 120px;
+  color: #ffffff;
+  position: absolute;
+  bottom: 60px;
+  z-index: 2;
+  text-align: center;
+}

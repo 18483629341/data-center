@@ -1,0 +1,1630 @@
+/* CSS Document */
+
+* {
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+}
+
+html,
+body {
+	padding: 0;
+	margin: 0;
+	font-family: 'Microsoft yahei';
+	height: 100%;
+	min-height: 100%;
+	/*width: 1600px;*/
+	min-width: 1360px;
+}
+
+ul,
+li,
+span,
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+a,
+dl,
+dt,
+dd,
+input {
+	padding: 0;
+	margin: 0;
+	list-style: none;
+	color: #333;
+	text-decoration: none;
+	font-weight: normal;
+	font-style: normal;
+	font-family: 'Microsoft yahei';
+}
+
+img {
+	vertical-align: middle;
+	border: 0;
+}
+
+
+/*导航*/
+
+.header {
+	height: 60px;
+	background: url(../images/header_bg.png) no-repeat;
+	background-size: 100% 100%;
+}
+
+.header .logo {
+	font-size: 28px;
+	color: #ffffff;
+	line-height: 60px;
+	padding-left: 23px;
+	float: left;
+}
+
+.header .logo img {
+	padding-right: 10px;
+	vertical-align: -12px;
+}
+
+.header .nav {
+	
+	float: right;
+}
+
+.header .nav ul {
+	height: 60px;
+	float: left;
+}
+
+.header .nav ul li {
+	float: left;
+	cursor: pointer;
+}
+
+.header .nav ul li.active {
+	background: #0693db;
+	border-bottom: 4px solid #ffc000;
+}
+
+
+.people-info {
+	float: right;
+	height: 60px;
+}
+
+.people-info .line {
+	width: 2px;
+	height: 22px;
+	background: #0a78b1;
+	border-right: 1px solid #2cb7ed;
+	margin-top: 19px;
+	display: block;
+	float: left;
+	margin-right: 19px;
+}
+
+.people-info p {
+	float: left;
+	font-size: 14px;
+	color: #ffffff;
+	line-height: 60px;
+	margin-right: 33px;
+}
+
+.people-info a {
+	float: left;
+	display: block;
+	width: 19px;
+	height: 19px;
+	background: url(../images/index_icon6.png) no-repeat;
+	margin-top: 21px;
+	margin-right: 28px;
+}
+
+.footer {
+	height: 25px;
+	background: #079fed;
+}
+
+
+/*首页*/
+
+.clear {
+	clear: both;
+}
+
+
+/*主内容*/
+
+.index-main {
+	height: 815px;
+	padding: 23px 60px;
+	overflow: hidden;
+	background: #f8fbff;
+}
+
+.index-main .index-main-tab {
+	width: 144px;
+	float: left;
+	height: 100%;
+}
+
+.index-main-tab {}
+
+.index-main-tab dl {
+	width: 120px;
+	height: 120px;
+	background: #eff8fe;
+	border: 1px solid #37aae8;
+	border-radius: 3px;
+	text-align: center;
+	margin-bottom: 42px;
+	position: relative;
+	cursor: pointer;
+}
+
+.index-main-tab dl dt {
+	height: 42px;
+	margin: 18px 0 14px;
+}
+
+.index-main-tab dl dt.icon1 {
+	background: url(../images/index/tab_off_icon1.png)no-repeat center;
+}
+
+.index-main-tab dl dt.icon2 {
+	background: url(../images/index/tab_off_icon2.png)no-repeat center;
+}
+
+.index-main-tab dl dt.icon3 {
+	background: url(../images/index/tab_off_icon3.png)no-repeat center;
+}
+
+.index-main-tab dl dt.icon4 {
+	background: url(../images/index/tab_off_icon6.png)no-repeat center;
+}
+
+.index-main-tab dl dt.icon5 {
+	background: url(../images/index/tab_off_icon5.png)no-repeat center;
+}
+
+.index-main-tab dl dd {
+	color: #333;
+	font-size: 16px;
+}
+
+.index-main-tab dl.active {
+	box-shadow: 2px 2px 6px #cde8fc;
+	background: url(../images/index/tab_on_bg.png) no-repeat center;
+}
+
+.index-main-tab dl.active:after {
+	content: ' ';
+	display: block;
+	width: 9px;
+	height: 14px;
+	background: url(../images/index/tab_sj.png) no-repeat;
+	position: absolute;
+	right: -26px;
+	top: 50%;
+	margin-top: -7px;
+}
+
+.index-main-tab dl.active dt.icon1 {
+	background: url(../images/index/tab_on_icon1.png)no-repeat center;
+}
+
+.index-main-tab dl.active dt.icon2 {
+	background: url(../images/index/tab_on_icon2.png)no-repeat center;
+}
+
+.index-main-tab dl.active dt.icon3 {
+	background: url(../images/index/tab_on_icon3.png)no-repeat center;
+}
+
+.index-main-tab dl.active dt.icon4 {
+	background: url(../images/index/tab_on_icon4.png)no-repeat center;
+}
+
+.index-main-tab dl.active dt.icon5 {
+	background: url(../images/index/tab_on_icon5.png)no-repeat center;
+}
+
+.index-main-tab dl.active dd {
+	color: #fff;
+}
+
+.index-main .index-main-info {
+	width: 1336px;
+	float: left;
+	height: 100%;
+	background: #e8edf1;
+	border: 1px solid #98d2f1;
+	padding: 19px 19px;
+}
+
+.main-info-module {
+	width: 100%;
+	height: 100%;
+	background: #fff;
+	border-radius: 3px;
+	box-shadow: 3px 3px 14px #d8dee3;
+}
+
+.main-info-module .mim-title {
+	height: 47px;
+	border-bottom: 1px solid #e3e3e3;
+	overflow: hidden;
+}
+
+.main-info-module .mim-title .title {
+	float: left;
+	font-size: 18px;
+	color: #666666;
+	line-height: 46px;
+	padding-left: 33px;
+	position: relative;
+	font-weight: bold;
+}
+
+.main-info-module .mim-title .title:before {
+	content: ' ';
+	display: block;
+	width: 4px;
+	height: 18px;
+	background: #139de5;
+	position: absolute;
+	left: 18px;
+	top: 14px;
+}
+
+.main-info-module .mim-title .time {
+	float: right;
+	line-height: 46px;
+	font-size: 14px;
+	color: #999999;
+	padding-right: 20px;
+}
+
+.main-info-module .mim-title .tab {
+	float: right;
+	overflow: hidden;
+}
+
+.main-info-module .mim-title .tab li {
+	float: left;
+	font-size: 16px;
+	color: #666666;
+	line-height: 46px;
+	height: 46px;
+	cursor: pointer;
+	margin: 0 16px;
+	position: relative;
+}
+
+.main-info-module .mim-title .tab li:after {
+	content: ' ';
+	display: block;
+	width: 1px;
+	height: 18px;
+	background: #d2d2d2;
+	position: absolute;
+	right: -17px;
+	top: 14px;
+}
+
+.main-info-module .mim-title .tab li.active {
+	color: #139de5;
+	border-bottom: 2px solid #139de5;
+}
+
+
+/*数据概况*/
+
+.situation-left {
+	width: 429px;
+	height: 275px;
+	float: left;
+}
+
+.situation-center {
+	width: 354px;
+	height: 275px;
+	float: left;
+	padding: 0 18px;
+}
+
+.situation-right {
+	width: 513px;
+	height: 275px;
+	float: right;
+}
+
+.situation-left-bottom {
+	width: 662px;
+	height: 453px;
+	float: left;
+	padding-right: 9px;
+	padding-top: 18px;
+}
+
+.situation-right-bottom {
+	width: 634px;
+	height: 453px;
+	float: right;
+	padding-left: 9px;
+	padding-top: 18px;
+}
+
+.situation-info1 {
+	overflow: hidden;
+	padding: 0 18px;
+}
+
+.situation-info1 p.title {
+	font-size: 16px;
+	color: #2781e6;
+	height: 42px;
+	line-height: 40px;
+}
+
+.situation-info1 p.num {
+	overflow: hidden;
+	text-align: center;
+}
+
+.situation-info1 p.num span {
+	width: 39px;
+	width: 9.7%;
+	max-width: 39px;
+	height: 54px;
+	display: inline-block;
+	color: #fff;
+	text-align: center;
+	line-height: 54px;
+	background: url(../images/index/1.png) repeat-x;
+	border-radius: 2px;
+	overflow: hidden;
+	font-size: 24px;
+	font-weight: bold;
+	margin-right: 0px;
+}
+
+.situation-info1 p.num span:last-child {
+	margin-right: 0;
+}
+
+.situation-info1 .data {
+	overflow: hidden;
+	border: 1px solid #dedede;
+	border-radius: 2px;
+	margin-top: 18px;
+	height: 94px;
+}
+
+.situation-info1 .data li {
+	float: left;
+	width: 50%;
+	height: 100%;
+	text-align: center;
+}
+
+.situation-info1 .data li:last-child {
+	border-left: 1px solid #dedede;
+}
+
+.situation-info1 .data li p {
+	font-size: 18px;
+	color: #666;
+	font-weight: bold;
+	height: 58px;
+	line-height: 58px;
+}
+
+.situation-info1 .data li p i {
+	width: 14px;
+	height: 14px;
+	border-radius: 100%;
+	display: inline-block;
+	margin-right: 4px;
+}
+
+.situation-info1 .data li p i.yellow {
+	background: #ffad42;
+}
+
+.situation-info1 .data li p i.blue {
+	background: #18a4eb;
+}
+
+.situation-info1 .data li span {
+	font-size: 16px;
+	color: #666;
+}
+
+.situation-info2 {
+	overflow: hidden;
+	padding: 15px 18px 0;
+}
+
+.situation-info2 dl {
+	overflow: hidden;
+	border: 1px solid #dedede;
+	border-radius: 2px;
+	height: 86px;
+	margin-bottom: 18px;
+}
+
+.situation-info2 dl dt {
+	float: left;
+	width: 85px;
+	height: 100%;
+	border-right: 1px solid #dedede;
+	text-align: center;
+	padding-top: 22px;
+}
+
+.situation-info2 dl dd {
+	float: left;
+	width: calc(100% - 85px);
+	height: 100%;
+	overflow: hidden;
+	text-align: center;
+}
+
+.situation-info2 dl dd p {
+	font-size: 18px;
+	color: #666;
+	font-weight: bold;
+	height: 47px;
+	line-height: 53px;
+}
+
+.situation-info2 dl dd span {
+	font-size: 16px;
+	color: #666;
+}
+
+.situation-info3 {
+	overflow: visible;
+}
+
+.situation-info3 .data {
+	clear: both;
+	height: 194px;
+	border-bottom: 1px solid #dedede;
+}
+
+.situation-info3 .data li {
+	float: left;
+	width: 33.3%;
+	height: 100%;
+	padding: 33px 0;
+	text-align: center;
+	border-right: 1px solid #dedede;
+	position: relative;
+	cursor: pointer;
+}
+
+.situation-info3 .data li:hover:after {
+	content: ' ';
+	display: block;
+	width: 100%;
+	height: 100%;
+	border: 1px solid #9abcd1;
+	box-shadow: 0 0 8px 1px #9abcd1;
+	position: absolute;
+	left: -1px;
+	top: -1px;
+}
+
+.situation-info3 .data li:last-child {
+	border-right: none;
+}
+
+.situation-info3 .data li p {
+	font-size: 18px;
+	color: #666;
+	font-weight: bold;
+	height: 66px;
+	line-height: 75px;
+}
+
+.situation-info3 .data li p img {
+	margin-right: 3px;
+	vertical-align: -9px;
+}
+
+.situation-info3 .data li span {
+	font-size: 16px;
+	color: #666;
+}
+
+.situation-info4 {}
+
+.situation-info4 .situation-echarts-tab {
+	width: 118px;
+	height: 26px;
+	border: 1px solid #c8dfeb;
+	border-radius: 13px;
+	overflow: hidden;
+	margin-top: 8px;
+	margin-left: 18px;
+}
+
+.situation-info4 .situation-echarts-tab li {
+	cursor: pointer;
+	width: 50%;
+	height: 26px;
+	line-height: 24px;
+	font-size: 14px;
+	color: #333333;
+	float: left;
+	text-align: center;
+}
+
+.situation-info4 .situation-echarts-tab li.active {
+	color: #079fed;
+	background: #e4eef4;
+}
+
+.situation-info4 .situation-echarts-tab-main {
+	height: 354px;
+}
+
+.situation-echarts1 {
+	height: 230px;
+}
+
+.situation-echarts2 {
+	height: 410px;
+	margin-top: 12px;
+}
+
+
+/*空气环境质量*/
+
+.air-left {
+	width: 746px;
+	height: 358px;
+	float: left;
+	padding-right: 9px;
+}
+
+.air-right {
+	width: 550px;
+	height: 358px;
+	float: right;
+	padding-left: 9px;
+}
+
+.air-bottom {
+	width: 100%;
+	height: 370px;
+	padding-top: 18px;
+}
+
+.air-info1 {
+	height: 100%;
+	overflow: hidden;
+}
+
+.air-info1 .left {
+	width: 335px;
+	height: 100%;
+	float: left;
+	border: 1px solid #eeeeee;
+	border-radius: 3px;
+}
+
+.air-info1 .map {
+	float: left;
+	width: calc(100% - 335px);
+	height: 100%;
+	/*background: #f00;*/
+	position: relative;
+}
+
+
+/*图例*/
+
+.map-legend {
+	position: absolute;
+	top: 15px;
+	right: 20px;
+	z-index: 5;
+	overflow: hidden;
+}
+
+.map-legend .title {
+	width: 71px;
+	z-index: 2;
+	padding-right: 2px;
+	font-size: 14px;
+	color: #999;
+	background: url(../images/index/select.png) no-repeat right center;
+	cursor: pointer;
+	text-align: center;
+}
+
+.map-legend ul {
+	overflow: hidden;
+	background: #fff;
+	border-radius: 3px;
+	width: 71px;
+	border: 1px solid #e7e7e7;
+	margin-top: 10px;
+	display: none;
+}
+
+.map-legend ul li {
+	margin: 14px 0;
+	overflow: hidden;
+}
+
+.map-legend ul li div {
+	width: 12px;
+	height: 12px;
+	background: #ccc;
+	border-radius: 50%;
+	float: left;
+	margin-left: 8px;
+	margin-top: 2px;
+}
+
+.map-legend ul li p {
+	font-size: 12px;
+	color: #888888;
+	float: left;
+	margin-left: 14px;
+	width: 26px;
+}
+
+.map-legend .one div {
+	background: #6dca70;
+}
+
+.map-legend .two div {
+	background: #f1c93e;
+}
+
+.map-legend .three div {
+	background: #f1933e;
+}
+
+.map-legend .four div {
+	background: #d35124;
+}
+
+.map-legend .five div {
+	background: #a93fc0;
+}
+
+.map-legend .six div {
+	background: #5d0b0b;
+}
+
+.air-info1 .air-info {
+	height: 189px;
+	overflow: hidden;
+	border-bottom: 1px solid #eeeeee;
+	background: url(../images/index/airbg.png) repeat-x;
+	background-size: auto 100%;
+	padding: 34px 18px;
+}
+
+.air-info1 .air-info .time {
+	font-size: 14px;
+	color: #d8f3ff;
+	height: 26px;
+	line-height: 38px;
+	text-align: right;
+	overflow: hidden;
+	clear: both;
+	margin-bottom: 10px;
+}
+
+.air-info1 .air-info .num {
+	width: 120px;
+    height: 120px;
+    float: left;
+    overflow: hidden;
+    text-align: center;
+   
+}
+
+.air-info1 .air-info .num p {
+	font-size: 44px;
+	color: #ffffff;
+	height: 104px;
+	line-height: 138px;
+}
+
+.air-info1 .air-info .num span {
+	font-size: 24px;
+	color: #ffffff;
+}
+
+.air-info1 .air-info .num.rank1 {
+	background: url(../images/index/AQI_1.png) no-repeat;
+}
+
+.air-info1 .air-info .num.rank2 {
+	/* background: url(../images/index/AQI_2.png) no-repeat; */
+}
+
+
+.air-info1 .air-info .num.rank3 {
+	background: url(../images/index/AQI_3.png) no-repeat;
+}
+
+.air-info1 .air-info .num.rank4 {
+	background: url(../images/index/AQI_4.png) no-repeat;
+}
+
+.air-info1 .air-info .num.rank5 {
+	background: url(../images/index/AQI_5.png) no-repeat;
+}
+
+.air-info1 .air-info .num.rank6 {
+	background: url(../images/index/AQI_6.png) no-repeat;
+}
+
+.air-info1 .air-info .word {
+	float: right;
+	width: 140px;
+}
+
+.air-info1 .air-info .word p {
+	font-size: 14px;
+	color: #fbfbfb;
+	line-height: 25px;
+}
+
+.air-info1 .air-forecast-title {
+	font-size: 16px;
+	color: #666666;
+	height: 40px;
+	line-height: 38px;
+	border-bottom: 1px solid #eeeeee;
+	padding: 0 16px;
+}
+
+.air-info1 .air-forecast-list {}
+
+.air-info1 .air-forecast-list li {
+	overflow: hidden;
+	border-bottom: 1px solid #eeeeee;
+	margin: 0 16px;
+	text-align: center;
+}
+
+.air-info1 .air-forecast-list li p {
+	font-size: 14px;
+	color: #333;
+	height: 42px;
+	line-height: 40px;
+	display: inline-block;
+}
+
+.air-info1 .air-forecast-list li p.time {
+	width: 53px;
+	float: left;
+}
+
+.air-info1 .air-forecast-list li p.num {
+	width: 60px;
+	text-align: center;
+}
+
+.air-info1 .air-forecast-list li p.poll {
+	color: #666;
+	float: right;
+}
+
+.air-info1 .air-forecast-list li p.poll span {
+	color: #333;
+}
+
+.air-info-tab {
+	width: 155px;
+	height: 26px;
+	border: 1px solid #c8dfeb;
+	border-radius: 13px;
+	overflow: hidden;
+}
+
+.air-info-tab li {
+	cursor: pointer;
+	width: 50%;
+	height: 26px;
+	line-height: 24px;
+	font-size: 14px;
+	color: #333333;
+	float: left;
+	text-align: center;
+}
+
+.air-info-tab li.active {
+	color: #079fed;
+	background: #e4eef4;
+}
+
+.air-info2 {
+	position: relative;
+	height: 100%;
+}
+
+.air-info2 .air-info-tab {
+	position: absolute;
+	right: 18px;
+	top: 7px;
+	z-index: 2;
+}
+
+.air-info2 .air-info-tab-main {}
+
+.air-info2 .air-info-tab-main .title {
+	height: 27px;
+	clear: both;
+}
+
+.air-info2 .air-info-tab-main .title span {
+	padding-top: 10px;
+	height: 17px;
+	line-height: 17px;
+	display: inline-block;
+	font-size: 14px;
+	color: #666666;
+	margin: 0 8px 0 18px;
+}
+
+.air-info2 .air-info-tab-main .title span img {
+	vertical-align: -3px;
+	margin-right: 6px;
+}
+
+.air-info2 .air-info-tab-main .left-info {
+	width: 315px;
+	padding-left: 18px;
+	float: left;
+	height: 50px;
+}
+
+.air-info2 .bar {}
+
+.air-info2 .bar-list {
+	height: 66px;
+	clear: both;
+	margin-top: 18px;
+}
+
+.air-info2 .bar-list .left {
+	line-height: 24px;
+	font-size: 14px;
+	color: #666666;
+	text-align: left;
+}
+
+.air-info2 .bar-list .left span {
+	color: #409b40;
+	display: block;
+}
+
+.air-info2 .bar-list .center {
+	width: 100%;
+	margin-top: 6px;
+}
+
+.air-info2 .air-info-tab-main .right-info {
+	float: left;
+	width: 210px;
+	padding-left: 18px;
+}
+
+.air-info2 .air-info-tab-main .right-info .p1 {
+	font-size: 14px;
+	color: #666;
+	line-height: 24px;
+	padding: 20px 0 15px;
+}
+
+.air-info2 .air-info-tab-main .right-info .p2 {
+	font-size: 14px;
+	color: #333;
+	padding-left: 12px;
+	line-height: 24px;
+	margin-bottom: 12px;
+	background: url(../images/index/dot.png) no-repeat left 7px;
+}
+
+.air-info2 .air-info-tab-main .right-info .p2 span {
+	color: #ee7f25;
+}
+
+.air-info2 .air-info-tab-main .right-info a {
+	float: right;
+	font-size: 14px;
+	color: #98b4c9;
+	padding-right: 22px;
+	background: url(../images/index/more.png) no-repeat right center;
+}
+
+.air-info3 {
+	position: relative;
+}
+
+.air-info3 .air-info-tab {
+	width: 234px;
+	top: 8px;
+	left: 18px;
+	position: absolute;
+	z-index: 2;
+}
+
+.air-info3 .air-info-tab li {
+	width: 25%;
+}
+
+.air-echarts1 {
+	height: 305px;
+}
+
+
+/*水环境质量*/
+
+.water-left {
+	width: 584px;
+	height: 358px;
+	float: left;
+	padding-right: 9px;
+}
+
+.water-right {
+	width: 712px;
+	height: 358px;
+	float: right;
+	padding-left: 9px;
+}
+
+.water-bottom {
+	width: 100%;
+	height: 370px;
+	padding-top: 18px;
+}
+
+.water-info1 {
+	overflow: hidden;
+}
+
+.water-info1 .month-num {
+	padding: 0 18px;
+	line-height: 21px;
+}
+
+.water-info1 .month-num a {
+	float: left;
+	font-size: 14px;
+	color: #999999;
+	background: url(../images/index/more3.png) no-repeat right 5px;
+	padding-right: 17px;
+}
+
+.water-info1 .month-num a .num {
+	font-size: 16px;
+	font-weight: bold;
+	color: #333333;
+}
+
+.water-info1 .month-num .right {
+	float: right;
+	font-size: 14px;
+	color: #999999;
+}
+
+.water-info1 .month-num .right .num {
+	font-size: 16px;
+	color: #333333;
+}
+
+.water-echarts1 {
+	height: 273px;
+}
+
+.water-info2 {}
+
+.water-info2 .title {
+	height: 27px;
+	text-align: right;
+}
+
+.water-info2 .title span {
+	padding-top: 10px;
+	height: 17px;
+	line-height: 17px;
+	display: inline-block;
+	font-size: 14px;
+	color: #666666;
+	margin: 0 20px 0 8px;
+}
+
+.water-info2 .title span img {
+	vertical-align: -3px;
+	margin-right: 6px;
+}
+
+.water-info2 .title span i {
+	display: inline-block;
+	width: 26px;
+	height: 16px;
+	border-radius: 3px;
+	vertical-align: -3px;
+	margin-right: 6px;
+}
+
+.water-info2 .title span i.green {
+	background: #5ec95e;
+}
+
+.water-info2 .title span i.orange {
+	background: #faaa43;
+}
+
+.water-info2 .bar {}
+
+.water-info2 .bar-list {
+	height: 60px;
+	clear: both;
+	margin-top: 30px;
+}
+
+.water-info2 .bar-list .left {
+	float: left;
+	width: 153px;
+	line-height: 28px;
+	font-size: 16px;
+	color: #333333;
+	text-align: center;
+}
+
+.bar-list .center {
+	width: 530px;
+	height: 12px;
+	background: #f0f0f0;
+	border-radius: 13px;
+	float: left;
+	position: relative;
+	margin-top: 25px;
+}
+
+.bar-list .center .bar {
+	width: 50%;
+	height: 100%;
+	border-radius: 10px;
+}
+
+.bar-list .center .assess {
+	width: 6px;
+	margin-left: -3px;
+	height: 34px;
+	position: absolute;
+	top: 50%;
+}
+
+.bar-list .center .assess p.red {
+	width: 6px;
+	height: 34px;
+	background: url(../images/index/tulibig2.png) no-repeat;
+	background-size: 100% 100%;
+	cursor: pointer;
+	margin-top: -17px;
+}
+
+.bar-list .center .assess p.yellow {
+	width: 6px;
+	height: 34px;
+	background: url(../images/index/tulibig1.png) no-repeat;
+	background-size: 100% 100%;
+	cursor: pointer;
+	margin-top: -17px;
+}
+
+.bar-list .center .assess .assess-num {
+	font-size: 14px;
+	color: #333;
+	position: absolute;
+	top: -52px;
+	left: 1px;
+	background: #fff;
+	border: 1px solid #bfbfbf;
+	padding: 0px 7px;
+	border-radius: 5px 5px 5px 0px;
+	text-align: center;
+	display: none;
+	white-space: nowrap;
+	line-height: 26px;
+	height: 27px;
+}
+
+.bar-list .center .assess .assess-num:after {
+	content: ' ';
+	display: block;
+	width: 7px;
+	height: 7px;
+	background: url(../images/index/6.png) no-repeat;
+	position: absolute;
+	top: 25px;
+	left: -1px;
+}
+
+.water-info3 {
+	height: 302px;
+	position: relative;
+}
+
+.water-info3 .echarts-name {
+	position: absolute;
+	left: 18px;
+	top: 8px;
+	font-size: 14px;
+	color: #999;
+}
+
+.water-echarts2 {
+	height: 302px;
+}
+
+
+/*土壤与固废*/
+
+.soil-top {
+	width: 100%;
+	height: 306px;
+}
+
+.soil-bottom {
+	width: 100%;
+	height: 402px;
+	margin-top: 20px;
+}
+
+.soil-info {
+	overflow: hidden;
+}
+
+.soil-info .soil-info-left {
+	width: 388px;
+	float: left;
+}
+
+.soil-info .data {
+	overflow: hidden;
+}
+
+.soil-info .data li {
+	float: left;
+	width: 50%;
+	text-align: center;
+	height: 130px;
+	border-right: 1px solid #dedede;
+	border-bottom: 1px solid #dedede;
+}
+
+.soil-info .data li p {
+	font-size: 18px;
+	color: #666;
+	font-weight: bold;
+	height: 78px;
+	line-height: 88px;
+}
+
+.soil-info .data li p i {
+	width: 14px;
+	height: 14px;
+	border-radius: 100%;
+	display: inline-block;
+	margin-right: 4px;
+}
+
+.soil-info .data li.yellow p {
+	color: #ffad42;
+}
+
+.soil-info .data li.yellow p i {
+	background: #ffad42;
+}
+
+.soil-info .data li.blue p {
+	color: #18a4eb;
+}
+
+.soil-info .data li.blue p i {
+	background: #18a4eb;
+}
+
+.soil-info .data li.purple p {
+	color: #7183e2;
+}
+
+.soil-info .data li.purple p i {
+	background: #7183e2;
+}
+
+.soil-info .data li.green p {
+	color: #6dc96d;
+}
+
+.soil-info .data li.green p i {
+	background: #6dc96d;
+}
+
+.soil-info .data li.purple2 p {
+	color: #4d8bf3;
+}
+
+.soil-info .data li.purple2 p i {
+	background: #4d8bf3;
+}
+
+.soil-info .data li.green2 p {
+	color: #63cba6;
+}
+
+.soil-info .data li.green2 p i {
+	background: #63cba6;
+}
+
+.soil-info .data li span {
+	font-size: 16px;
+	color: #666;
+}
+
+.soil-echarts2 {
+	height: 250px;
+	border-right: 1px solid #dedede;
+}
+
+.soil-info2 .data li {
+	height: 105px;
+	border-right: 1px solid #dedede;
+	border-top: 1px solid #dedede;
+	border-bottom: none;
+}
+
+.soil-info2 .data li p {
+	height: 56px;
+	line-height: 62px;
+}
+
+.soil-info-right {
+	width: 907px;
+	float: right;
+	height: 259px;
+}
+
+.soil-info-right .echarts-title {
+	height: 30px;
+	overflow: hidden;
+	padding: 0 20px;
+}
+
+.soil-info-right .echarts-title .name {
+	float: left;
+	font-size: 16px;
+	color: #666666;
+	padding-top: 11px;
+}
+
+.soil-echarts1 {
+	height: 229px;
+}
+
+.soil-echarts3 {
+	height: 325px;
+}
+
+
+/*污染源*/
+
+.pollution-left {
+	width: 511px;
+	height: 313px;
+	float: left;
+	padding-right: 9px;
+}
+
+.pollution-right {
+	width: 785px;
+	height: 313px;
+	float: right;
+	padding-left: 9px;
+}
+
+.pollution-bottom {
+	height: 415px;
+	padding-top: 18px;
+}
+
+.pollution-info1 {}
+
+.pollution-info1 .type {
+	overflow: hidden;
+	height: 43px;
+	line-height: 43px;
+	padding: 0 18px;
+}
+
+.pollution-info1 .type p {
+	font-size: 14px;
+	color: #333333;
+	float: left;
+}
+
+.pollution-info1 .type p .orange {
+	color: #f67004;
+	font-size: 16px;
+	font-weight: bold;
+}
+
+.pollution-info1 .type .look {
+	float: right;
+	font-size: 14px;
+	color: #98b4c9;
+	padding-right: 22px;
+	background: url(../images/index/more.png) no-repeat right center;
+}
+
+.pollution-info1 .type-list {
+	padding: 0 18px;
+}
+
+.pollution-info1 .type-list li {
+	height: 65px;
+	border: 1px solid #ebebeb;
+	border-radius: 2px;
+	overflow: hidden;
+	padding: 0 16px;
+	line-height: 65px;
+	margin-bottom: 8px;
+}
+
+.pollution-info1 .type-list li a {
+	display: block;
+}
+
+.pollution-info1 .type-list li img {
+	vertical-align: -13px;
+}
+
+.pollution-info1 .type-list li .name {
+	color: #333333;
+	font-size: 14px;
+}
+
+.pollution-info1 .type-list li .num {
+	float: right;
+	color: #666666;
+	font-size: 16px;
+	font-weight: bold;
+	padding-right: 20px;
+	background: url(../images/index/more2.png) no-repeat right center;
+}
+
+.pollution-info .data {
+	overflow: hidden;
+	border-bottom: 1px solid #dedede;
+}
+
+.pollution-info .data li {
+	float: left;
+	width: 50%;
+	text-align: center;
+	height: 73px;
+}
+
+.pollution-info .data li:first-child {
+	border-right: 1px solid #dedede;
+}
+
+.pollution-info .data li p {
+	font-size: 18px;
+	color: #666;
+	font-weight: bold;
+	height: 42px;
+	line-height: 44px;
+}
+
+.pollution-info .data li p i {
+	width: 14px;
+	height: 14px;
+	border-radius: 100%;
+	display: inline-block;
+	margin-right: 4px;
+}
+
+.pollution-info .data li.blue p {
+	color: #47c2cf;
+}
+
+.pollution-info .data li.blue p i {
+	background: #47c2cf;
+}
+
+.pollution-info .data li.green p {
+	color: #63cba6;
+}
+
+.pollution-info .data li.green p i {
+	background: #63cba6;
+}
+
+.pollution-info .data li span {
+	font-size: 16px;
+	color: #666;
+}
+
+.pollution-info4 .data li {
+	width: 33.3%;
+}
+
+.pollution-info4 .data li:last-child {
+	border-left: 1px solid #dedede;
+}
+
+.pollution-info .echarts-title {
+	height: 34px;
+	overflow: hidden;
+	padding: 0 15px;
+}
+
+.pollution-info .echarts-title .name {
+	float: left;
+	font-size: 16px;
+	color: #333;
+	padding-top: 7px;
+}
+
+.pollution-info .echarts-title .num {
+	float: right;
+	font-size: 14px;
+	color: #333;
+	padding-top: 7px;
+}
+
+.pollution-info .echarts-title .num .orange {
+	font-size: 16px;
+	font-weight: bold;
+	color: #f67004;
+}
+
+.pollution-info .echarts-title .num img {
+	vertical-align: -1px;
+	margin: 0 2px;
+}
+
+.pollution-info .pollution-echarts-tab {
+	float: right;
+	width: 118px;
+	height: 26px;
+	border: 1px solid #c8dfeb;
+	border-radius: 13px;
+	overflow: hidden;
+	margin-top: 8px;
+}
+
+.pollution-info .pollution-echarts-tab li {
+	cursor: pointer;
+	width: 50%;
+	height: 26px;
+	line-height: 24px;
+	font-size: 14px;
+	color: #333333;
+	float: left;
+	text-align: center;
+}
+
+.pollution-info .pollution-echarts-tab li.active {
+	color: #079fed;
+	background: #e4eef4;
+}
+
+.pollution-echarts1 {
+	height: 232px;
+}
+
+.pollution-echarts4 {
+	height: 242px;
+}
+
+.pollution-echarts2 {
+	height: 242px;
+}
+
+/*以下代码为设置宽度百分比*/
+
+html,
+body {
+	width: 100%;
+}
+
+.index-main .index-main-info {
+	width: calc(100% - 144px);
+}
+
+/*数据概览*/
+
+.situation-left {
+	width: 33.1%;
+}
+
+.situation-center {
+	width: 27.3%;
+}
+
+.situation-right {
+	width: 65.2%;
+}
+
+.situation-left-bottom {
+	width: 51%;
+}
+
+.situation-right-bottom {
+	width: 49%;
+}
+
+/*空气质量*/
+
+.air-left {
+	width: 57.5%;
+}
+
+.air-info1 .left {
+	/*width: 45.5%;*/
+	width: 51%;
+}
+
+.air-info1 .map {
+	width: 49%;
+}
+
+.air-right {
+	width: 42.5%;
+}
+
+.air-info2 .air-info-tab-main .left-info {
+	width: calc(100% - 236px);
+}
+
+/*水环境质量*/
+
+.water-left {
+	width: 45%;
+}
+
+.water-right {
+	width: 55%;
+}
+
+.water-right .bar-list .center {
+	width: calc(100% - 171px);
+}
+
+/*土壤与固废*/
+
+.soil-info-right {
+	width: calc(100% - 388px);
+}
+
+/*污染源*/
+
+.pollution-left {
+	width: 39.4%;
+}
+
+.pollution-right {
+	width: 60.6%;
+}
