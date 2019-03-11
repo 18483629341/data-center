@@ -87,7 +87,7 @@
   height: 13px;
   margin-right: 5px;
   position: relative;
-  top: 9px;
+  top: 2px;
 }
 .downIcon {
   background: url(../images/index/yyl_down.png) no-repeat;
@@ -109,6 +109,19 @@
 .noise-info1 {
   height: 310px;
 }
+.noise-info1 .pieTu_con {
+  position: relative;
+}
+.noise-info1 .orangeback {
+  position: absolute;
+  width: 230px;
+  height: 230px;
+  border-radius: 50%;
+  background: #eec60a;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
 .rightDes {
   width: 260px;
   border-left: 1px solid #e3e3e3;
@@ -128,6 +141,8 @@
 .rightDes .lengIcon {
   width: 30px;
   height: 30px;
+  position: relative;
+  top: 9px;
 }
 .rightDes .quliIcon {
   background: url(../images/index/u2077.png) no-repeat;
@@ -140,4 +155,18 @@
 .rightDes .lengIcon {
   background: url(../images/index/u2075.png) no-repeat;
   background-size: 100%;
+}
+.noise-info1 .pieTu_con {
+  padding: 0 20px;
+}
+.noise-info2,
+.noise-info3 {
+  padding: 0 20px;
+}
+.noise-echarts1,
+.noise-echarts2,
+.noise-echarts3 {
+  width: 100%;
+  height: 305px;
+  border: 1px solid red;
 }

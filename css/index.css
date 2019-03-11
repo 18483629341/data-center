@@ -361,7 +361,7 @@ img {
 
 .situation-info1 {
 	overflow: hidden;
-	padding: 0 18px;
+	padding: 44px 18px;
 }
 
 .situation-info1 p.title {
@@ -378,7 +378,7 @@ img {
 
 .situation-info1 p.num span {
 	width: 39px;
-	width: 9.7%;
+	width: 9.2%;
 	max-width: 39px;
 	height: 54px;
 	display: inline-block;
@@ -1443,7 +1443,7 @@ body {
 /*数据概览*/
 
 .situation-left {
-	width: 33.1%;
+	width: 25.1%;
 }
 
 .situation-center {
@@ -1451,7 +1451,7 @@ body {
 }
 
 .situation-right {
-	width: 65.2%;
+	width: 73.2%;
 }
 
 .situation-left-bottom {

@@ -1,202 +1,272 @@
 //土壤与固废
 function indexNoise() {
 	/*echarts*/
-	//各区域疑似土壤地块数量统计
-	var option1 = {
-		tooltip: {
-			confine: true,
-			padding: [5, 10, 5, 10],
-			backgroundColor: '#fff',
-			borderColor: '#d1d1d1',
-			borderWidth: 1,
-			extraCssText: 'box-shadow: 1px 1px 3px rgba(45, 58, 50, 0.3);',
-			textStyle: {
-				color: '#333333',
-				align: 'center'
-			},
-			formatter: '<span style="color:#666">2017年</span><br/>{b0}疑似污染地块数: {c0}个'
-		},
-		color: ['#13a6e3'],
-		legend: {
-			selectedMode: false,
-			data: ['疑似污染地块'],
-			show: false
-		},
-		grid: {
-			left: '0%',
-			right: '2%',
-			bottom: '15px',
-			top: '15px',
-			containLabel: true
-		},
-		xAxis: {
-			type: 'category',
-			data: ['夷陵区', '西陵区', '伍家岗区', '点军区', '高新区', '猇亭区', '宜都市', '枝江市', '当阳市', '远安县', '兴山县', '秭归县', '长阳县', '五峰县'],
-			axisLine: {
-				show: false
-			},
-			axisTick: {
-				show: false
-			},
-			axisLabel: {
-				textStyle: {
-					fontSize: 14,
-					color: '#666666',
-				}
-			}
-		},
-		yAxis: {
-			name: '',
-			type: 'value',
-			show: false
-		},
-		series: [{
-			name: '疑似污染地块',
-			type: 'bar',
-			data: [5, 10, 4, 3, 2, 3, 4, 5, 6, 7, 8, 9, 10, 5],
-			barWidth: '22',
-			itemStyle: {
-				normal: {
-					barBorderRadius: 22
-				}
-			}
-		}]
-	};
-	var echarts1 = echarts.init(document.getElementById('soil-echarts1'));
-	echarts1.setOption(option1);
-	//固废企业数量统计
-	var formatterValue = 0; //固废企业数量统计
+		//交通噪音统计
+		var waterData1=[ //!!!!!需要后台传入的数据
+			{value:68.4, name:'地表水达标数量'},
+			{value:15, name:'地表水非达标数量'}
+		]
+		var option21=setOptionfun(['#f07810','#f5f4e8'],'{value|{c}dB}\n{text|平均等效声级}',waterData1);
+		var myChart21 = echarts.init(document.getElementById('noise-echarts1'));
+		myChart21.setOption(option21);
+		PieAutoHighLight(myChart21,waterData1);
+		//区域噪声声源构成占比
 	var option2 = {
-		color: ['#63cba6', '#4d8bf3'],
+		color: ['#32cd32', '#87cefa', '#ff7f50', '#bf62bb', '#fa7b14', '#ff483f'],
 		legend: {
 			selectedMode: false,
-			data: ['危险废物企业', '一般工业废物企业'],
-			show: false
+			data: [{
+					name: '生活',
+					icon: 'image://./images/index/echartsNoise1.png'
+				},
+				{
+					name: '交通',
+					icon: 'image://./images/index/echartsNoise2.png'
+				},
+				{
+					name: '施工',
+					icon: 'image://./images/index/echartsNoise3.png'
+				},
+				{
+					name: '工业',
+					icon: 'image://./images/index/echartsNoise4.png'
+				}
+			],
+			right: 20,
+			top: 80,
+			width:60,
+			itemGap: 20,
+			itemWidth: 30,
+			itemHeight: 13,
+			textStyle: {
+				fontSize: 14,
+				//color: '#999',
+			}
+		},
+		tooltip:{
+			
+				show: true,
+				backgroundColor:'rgba(0,0,0,0.5)',
+				padding:[3,8,3,8],
+				textStyle: {
+					fontSize: '14',
+					color: '#fff',
+				},
+				formatter: "{b}<br/>声源占比{d}%<br/>平均等效声级：{c}dB"
+		
 		},
 		series: [{
+			name: '-',
 			type: 'pie',
-			radius: ['68%', '80%'],
-			hoverAnimation: false,
+			center:['40%','50%'],
+			radius: ['0%', '65%'],
 			avoidLabelOverlap: false,
+			hoverAnimation: false,
 			label: {
 				normal: {
-					position: 'center',
 					show: true,
-					textStyle: {
-						fontSize: '14',
-						color: '#333'
-					},
-					formatter: function(params) {
-						if(params.dataIndex == 0) {
-							formatterValue = params.value;
-							return '';
-						} else {
-							var num = formatterValue + params.value;
-							var main = '{numstyle|' + num + '家}\n固废企业数量统计';
-							return main;
-						}
-					},
-					rich: {
-						numstyle: {
-							color: '#333',
-							padding: [20, 0, 0, 0],
-							fontSize: 18,
-							fontWeight: 'bold'
-						}
-					}
+					formatter: "{b}"
+
+				},
+				emphasis: {
+					show: true,
 				}
 			},
 			data: [{
-					value: 159,
-					name: '危险废物企业'
+					value: 54.5,
+					name: '生活'
 				},
 				{
-					value: 38,
-					name: '一般工业废物企业'
+					value: 34.5,
+					name: '交通'
+				},
+				{
+					value: 21.5,
+					name: '施工'
+				},
+				{
+					value: 15.6,
+					name: '工业'
 				}
 			]
 		}]
 	};
-	var echarts2 = echarts.init(document.getElementById('soil-echarts2'));
+	var echarts2 = echarts.init(document.getElementById('noise-echarts2'));
 	echarts2.setOption(option2);
-	//各区域固废产生量统计
 	var option3 = {
+		color:['#48e0e4','#e40475'],
 		tooltip: {
 			trigger: 'axis',
 			axisPointer: {
-				lineStyle: {
-					color: '#ddd'
-				}
-			},
-			confine: true,
-			padding: [5, 10, 5, 10],
-			backgroundColor: '#fff',
-			borderColor: '#d1d1d1',
-			borderWidth: 1,
-			extraCssText: 'box-shadow: 1px 1px 3px rgba(45, 58, 50, 0.3);',
-			textStyle: {
-				color: '#333333'
-			},
-			formatter: '<span style="color:#666;padding-left:60px;">2017年</span><br/>{b0}一般固废产生量: {c0}吨<br/>{b1}危险废物产生量: {c1}吨'
+				type: 'shadow'
+			}
 		},
-		color: ['#4d8bf3', '#62caa4'],
 		legend: {
 			selectedMode: false,
-			data: ['一般固废产生量', '危险废物产生量'],
-			show: false
+			data: ['昼间', '夜间'],
+			
+			bottom: 6,
+			itemGap: 75,
+			itemWidth:40,
+			textStyle: {
+				fontSize: 14,
+				color: '#999',
+			}
 		},
 		grid: {
-			left: '0%',
-			right: '2%',
-			bottom: '15px',
-			top: '15px',
+			left: '3%',
+			right: '4%',
+			bottom: '50px',
 			containLabel: true
 		},
 		xAxis: {
 			type: 'category',
-			data: ['夷陵区', '西陵区', '伍家岗区', '点军区', '高新区', '猇亭区', '宜都市', '枝江市', '当阳市', '远安县', '兴山县', '秭归县', '长阳县', '五峰县'],
-			axisLine: {
-				show: false
+			data: ['疗养区','居民区','混合区','工业区','交通干线上市两侧区'],
+			split:{
+				lineStyle:{
+					color:'#c9c9c9'
+				}
 			},
-			axisTick: {
-				show: false
-			},
-			axisLabel: {
-				textStyle: {
-					fontSize: 14,
-					color: '#666666',
+			axisLine:{
+				lineStyle:{
+					color:'#73a0c1'
 				}
 			}
 		},
 		yAxis: {
-			name: '',
+			name:"(dB)",
 			type: 'value',
-			show: false
+			boundaryGap: [0, 0.2],
+			max:80,
+			axisLine:{
+				lineStyle:{
+					color:'#73a0c1'
+				}
+			}
 		},
-		series: [{
-			name: '一般固废产生量',
-			type: 'bar',
-			data: [5, 10, 4, 3, 2, 3, 4, 5, 6, 7, 8, 9, 10, 5],
-			barWidth: '22',
-			itemStyle: {
-				normal: {
-					barBorderRadius: 22
-				}
+		
+		series: [
+			{
+				name: '昼间',
+				type: 'bar',
+				barWidth:18,
+				itemStyle: {
+					normal: {
+						barBorderRadius: [9,9,0,0],
+					}
+				},
+				data: [43, 50, 55, 61, 64]
 			},
-			stack: '产生量'
-		}, {
-			name: '危险废物产生量',
-			type: 'bar',
-			data: [5, 2, 4, 3, 2, 3, 4, 5, 6, 7, 8, 9, 10, 5],
-			barWidth: '22',
-			itemStyle: {
-				normal: {
-					barBorderRadius: 22
-				}
-			},
-			stack: '产生量'
-		}]
+			{
+				name: '夜间',
+				type: 'bar',
+				barWidth:18,
+				itemStyle: {
+					normal: {
+						barBorderRadius: [9,9,0,0],
+					}
+				},
+				data: [41, 46, 48, 57, 61]
+			}
+		]
 	};
-	var echarts3 = echarts.init(document.getElementById('soil-echarts3'));
+	var echarts3 = echarts.init(document.getElementById('noise-echarts3'));
 	echarts3.setOption(option3);
 }
+// 指定饼状图的配置项和数据
+function setOptionfun(colors, format, data){
+	//达标的数据和不达标的数据组成的数组     //!!!!!!!需要后台引入的数据
+	var option = {
+		 grid: {
+			 top: 0,
+		 },
+		 color: colors,
+		 //backgroundColor:'#eec60a',
+		 series: [
+			{
+				 name: '访问来源',
+				 type: 'pie',
+				 startAngle: 0,
+				 center: ['50%', '50%'],
+				 radius: ['75%', '90%'],
+				 avoidLabelOverlap: false,
+				 hoverAnimation:false,
+				 startAngle:0,
+				 clockwise:false,
+
+				 label: {
+ 
+					 normal: {
+						 show: false,
+						 position: 'center',
+						 color: '#ffffff',
+						 align: 'center',
+						 verticalAlign: 'middle',
+						 formatter:format ,
+						 rich: {
+							 value: {
+								 color: "#fff",
+								 fontSize: 30,
+								 fontWeight:'bolder',
+								 padding: 3
+							 },
+							 text:{
+								 color: "#fff",
+								 fontSize: 14,
+								 padding: [5,0, 5,0]
+							 }
+						 },
+					 },
+					 emphasis: {
+						 show: true,
+						 
+					 }
+				 },
+				 labelLine: {
+					 normal: {
+						 show: false,
+					 }
+				 },
+				 data: data
+			 }
+ 
+		 ]
+	 };
+ return option;
+ }
+ //至少高亮显示一个饼图中的一个item
+ function PieAutoHighLight(chartNum,data){
+	 setTimeout(function() {
+		 chartNum.dispatchAction({
+			 type: 'highlight',
+			 seriesIndex: 0,
+			 dataIndex: 0
+		 });
+	 
+		 chartNum.on('mouseover', function(params) {
+			 console.log('over');
+			 if (params.name == data[0].name) {
+				 chartNum.dispatchAction({
+					 type: 'highlight',
+					 seriesIndex: 0,
+					 dataIndex: 0
+				 });
+			 } else {
+				 chartNum.dispatchAction({
+					 type: 'downplay',
+					 seriesIndex: 0,
+					 dataIndex: 0
+				 });
+			 }
+		 });
+	 
+		 chartNum.on('mouseout', function(params) {
+			 console.log('out');
+			 chartNum.dispatchAction({
+				 type: 'highlight',
+				 seriesIndex: 0,
+				 dataIndex: 0
+			 });
+		 });
+	 }, 1000);
+ }
