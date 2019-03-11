@@ -74,7 +74,7 @@ function indexWater() {
 			},
 			formatter: '{b0}达标断面数: {c0}个<br/>{b1}超标断面数: {c1}个'
 		},
-		color: ['#5ec95e', '#faaa43'],
+		color: ['#52b052', '#df3f37'],
 		legend: {
 			selectedMode: false,
 			data: ['达标', '超标'],
@@ -149,4 +149,116 @@ function indexWater() {
 	};
 	var echarts2 = echarts.init(document.getElementById('water-echarts2'));
 	echarts2.setOption(option2);
+	//地表水达标率
+	var waterData1=[ //!!!!!需要后台传入的数据
+		{value:85, name:'地表水达标数量'},
+		{value:15, name:'地表水非达标数量'}
+	]
+	var option21=setOptionfun(['#158eff','#e3e3e3'],'{value|{d}}{text|%}',waterData1);
+	var myChart21 = echarts.init(document.getElementById('CompRateCanvas021'));
+	myChart21.setOption(option21);
+	PieAutoHighLight(myChart21,waterData1);
+	//饮用水达标率
+	var waterData2=[ //!!!!!需要后台传入的数据
+		{value:90, name:'饮用水达标数量'},
+		{value:0, name:'饮用水非达标数量'}
+	]
+	var option2=setOptionfun(['#158eff','#e3e3e3'],'{value|{d}}{text|%}',waterData2);
+	var myChart2 = echarts.init(document.getElementById('CompRateCanvas022'));
+	myChart2.setOption(option2);
+	PieAutoHighLight(myChart2,waterData2);
+}
+// 指定饼状图的配置项和数据
+function setOptionfun(colors, format, data){
+   //达标的数据和不达标的数据组成的数组     //!!!!!!!需要后台引入的数据
+   var option = {
+		grid: {
+			top: 0,
+		},
+		color: colors,
+		series: [{
+				name: '访问来源',
+				type: 'pie',
+				startAngle: 0,
+				center: ['50%', '50%'],
+				radius: ['75%', '90%'],
+				avoidLabelOverlap: false,
+				hoverAnimation:false,
+				startAngle:90,
+				clockwise:false,
+				label: {
+
+					normal: {
+						show: false,
+						position: 'center',
+						color: '#333333',
+						align: 'center',
+						verticalAlign: 'middle',
+						formatter:format ,
+						rich: {
+							value: {
+								color: "#333",
+								fontSize: 24,
+								fontWeight:'bolder',
+								padding: 3
+							},
+							text:{
+								color: "#333",
+								fontSize: 18,
+								padding: [5,0, 5,0]
+							}
+						},
+					},
+					emphasis: {
+						show: true,
+						
+					}
+				},
+				labelLine: {
+					normal: {
+						show: false,
+					}
+				},
+				data: data
+			}
+
+		]
+	};
+return option;
+}
+//至少高亮显示一个饼图中的一个item
+function PieAutoHighLight(chartNum,data){
+    setTimeout(function() {
+        chartNum.dispatchAction({
+            type: 'highlight',
+            seriesIndex: 0,
+            dataIndex: 0
+        });
+    
+        chartNum.on('mouseover', function(params) {
+            console.log('over');
+            if (params.name == data[0].name) {
+                chartNum.dispatchAction({
+                    type: 'highlight',
+                    seriesIndex: 0,
+                    dataIndex: 0
+                });
+            } else {
+                chartNum.dispatchAction({
+                    type: 'downplay',
+                    seriesIndex: 0,
+                    dataIndex: 0
+                });
+            }
+        });
+    
+        chartNum.on('mouseout', function(params) {
+            console.log('out');
+            chartNum.dispatchAction({
+                type: 'highlight',
+                seriesIndex: 0,
+                dataIndex: 0
+            });
+        });
+    }, 1000);
 }

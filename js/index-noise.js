@@ -1,5 +1,5 @@
 //土壤与固废
-function indexSoil() {
+function indexNoise() {
 	/*echarts*/
 	//各区域疑似土壤地块数量统计
 	var option1 = {

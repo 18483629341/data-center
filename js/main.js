@@ -19,7 +19,7 @@ function drawpollutionEcharts(text, val, bg){
     series.push(setValue(25, 'transparent'));
     const option = {
       title: {
-        x: '48%',
+        x: '44%',
         y: '33%',
         subtext: text,
         textAlign: 'center',

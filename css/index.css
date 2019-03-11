@@ -618,6 +618,7 @@ img {
 	float: left;
 	border: 1px solid #eeeeee;
 	border-radius: 3px;
+	background: #079fed;
 }
 
 .air-info1 .map {
@@ -625,6 +626,8 @@ img {
 	width: calc(100% - 335px);
 	height: 100%;
 	/*background: #f00;*/
+	background: url('../images/index/u1433.png');
+    background-size: 100% 100%;
 	position: relative;
 }
 
@@ -708,14 +711,24 @@ img {
 }
 
 .air-info1 .air-info {
-	height: 189px;
+	height: 180px;
 	overflow: hidden;
-	border-bottom: 1px solid #eeeeee;
+	/* border-bottom: 1px solid #eeeeee; */
 	background: url(../images/index/airbg.png) repeat-x;
 	background-size: auto 100%;
-	padding: 34px 18px;
+	padding: 18px 18px;
+	background: #079fed;
 }
-
+.air-info1 .air-info .canvasFont{
+	width: 208px;
+    color: #ffffff;
+    position: absolute;
+    bottom: 11px;
+    left: 0;
+    z-index: 2;
+    font-size: 20px;
+    text-align: center;
+}
 .air-info1 .air-info .time {
 	font-size: 14px;
 	color: #d8f3ff;
@@ -728,12 +741,11 @@ img {
 }
 
 .air-info1 .air-info .num {
-	width: 120px;
-    height: 120px;
+	width: 174px;
+    height:170px;
     float: left;
     overflow: hidden;
     text-align: center;
-   
 }
 
 .air-info1 .air-info .num p {
@@ -774,63 +786,75 @@ img {
 }
 
 .air-info1 .air-info .word {
-	float: right;
-	width: 140px;
+	flex: 1;
+    padding: 27px 0 0 23px;
 }
 
 .air-info1 .air-info .word p {
-	font-size: 14px;
-	color: #fbfbfb;
-	line-height: 25px;
+	font-size: 18px;
+    color: #fbfbfb;
+    line-height: 30px;
+    text-align: left;
 }
 
 .air-info1 .air-forecast-title {
 	font-size: 16px;
-	color: #666666;
-	height: 40px;
-	line-height: 38px;
-	border-bottom: 1px solid #eeeeee;
-	padding: 0 16px;
+    color: #ffffff;
+    height: 40px;
+    line-height: 47px;
+    padding: 0 18px;
 }
 
-.air-info1 .air-forecast-list {}
+.air-info1 .air-forecast-list {
+	height: 130px;
+	padding:7px 18px;
+}
 
 .air-info1 .air-forecast-list li {
 	overflow: hidden;
-	border-bottom: 1px solid #eeeeee;
-	margin: 0 16px;
+	border: 1px solid #37bbf7;
+	
 	text-align: center;
+	background: #28abe6;
 }
-
+.air-info1 .air-forecast-list li+li {
+	margin-left:16px;
+}
 .air-info1 .air-forecast-list li p {
 	font-size: 14px;
-	color: #333;
+	color: #ffffff;
 	height: 42px;
 	line-height: 40px;
-	display: inline-block;
 }
 
 .air-info1 .air-forecast-list li p.time {
-	width: 53px;
-	float: left;
+	
+	
 }
 
 .air-info1 .air-forecast-list li p.num {
 	width: 60px;
+	padding:0 16px;
+	height: 25px;
+    line-height: 25px;
+	color:#333;
+	font-size: 14px;
+	border-radius:9px;
+	background:#fdf100;
+	margin: 0 auto;
 	text-align: center;
 }
 
 .air-info1 .air-forecast-list li p.poll {
-	color: #666;
-	float: right;
+	font-size: 16px;
 }
 
 .air-info1 .air-forecast-list li p.poll span {
-	color: #333;
+	color: #ffffff;
 }
 
 .air-info-tab {
-	width: 155px;
+	width: 350px;
 	height: 26px;
 	border: 1px solid #c8dfeb;
 	border-radius: 13px;
@@ -838,6 +862,7 @@ img {
 }
 
 .air-info-tab li {
+	flex: 1;
 	cursor: pointer;
 	width: 50%;
 	height: 26px;
@@ -868,8 +893,9 @@ img {
 .air-info2 .air-info-tab-main {}
 
 .air-info2 .air-info-tab-main .title {
-	height: 27px;
-	clear: both;
+	height: 40px;
+    clear: both;
+    margin-top: 15px;
 }
 
 .air-info2 .air-info-tab-main .title span {
@@ -898,8 +924,8 @@ img {
 
 .air-info2 .bar-list {
 	height: 66px;
-	clear: both;
-	margin-top: 18px;
+    clear: both;
+    margin-top: 27px;
 }
 
 .air-info2 .bar-list .left {
@@ -927,18 +953,18 @@ img {
 
 .air-info2 .air-info-tab-main .right-info .p1 {
 	font-size: 14px;
-	color: #666;
-	line-height: 24px;
-	padding: 20px 0 15px;
+    color: #666;
+    line-height: 24px;
+    padding: 0px 0 23px;
 }
 
 .air-info2 .air-info-tab-main .right-info .p2 {
 	font-size: 14px;
-	color: #333;
-	padding-left: 12px;
-	line-height: 24px;
-	margin-bottom: 12px;
-	background: url(../images/index/dot.png) no-repeat left 7px;
+    color: #333;
+    padding-left: 12px;
+    line-height: 29px;
+    margin-bottom: 35px;
+    background: url(../images/index/dot.png) no-repeat left 7px;
 }
 
 .air-info2 .air-info-tab-main .right-info .p2 span {
@@ -955,42 +981,47 @@ img {
 
 .air-info3 {
 	position: relative;
+	border-right:1px solid #e3e3e3;
 }
 
-.air-info3 .air-info-tab {
-	width: 234px;
-	top: 8px;
-	left: 18px;
-	position: absolute;
-	z-index: 2;
-}
 
 .air-info3 .air-info-tab li {
-	width: 25%;
+	flex: 1;
 }
 
 .air-echarts1 {
 	height: 305px;
 }
-
+.air-info3 .air-info-tab {
+	width: 490px;
+	top: 8px;
+	left: 18px;
+	position: absolute;
+	z-index: 2;
+}
+.air-info3 .air-info-tab2{
+	position: absolute;
+	width: 140px;
+	top:40px;
+}
 
 /*水环境质量*/
 
-.water-left {
+.water-left,.noise-left{
 	width: 584px;
 	height: 358px;
 	float: left;
 	padding-right: 9px;
 }
 
-.water-right {
+.water-right,.noise-right {
 	width: 712px;
 	height: 358px;
 	float: right;
 	padding-left: 9px;
 }
 
-.water-bottom {
+.water-bottom ,.noise-bottom{
 	width: 100%;
 	height: 370px;
 	padding-top: 18px;
@@ -1134,19 +1165,19 @@ img {
 
 .bar-list .center .assess .assess-num {
 	font-size: 14px;
-	color: #333;
-	position: absolute;
-	top: -52px;
-	left: 1px;
-	background: #fff;
-	border: 1px solid #bfbfbf;
-	padding: 0px 7px;
-	border-radius: 5px 5px 5px 0px;
-	text-align: center;
-	display: none;
-	white-space: nowrap;
-	line-height: 26px;
-	height: 27px;
+    color: #ff625b;
+    position: absolute;
+    top: -61px;
+    left: 1px;
+    background: #fff;
+    border: 1px solid #bfbfbf;
+    padding: 0 7px;
+    border-radius: 5px 5px 5px 0px;
+    text-align: center;
+    display: none;
+    white-space: nowrap;
+    line-height: 36px;
+    height: 36px;
 }
 
 .bar-list .center .assess .assess-num:after {
@@ -1156,7 +1187,7 @@ img {
 	height: 7px;
 	background: url(../images/index/6.png) no-repeat;
 	position: absolute;
-	top: 25px;
+	top: 34px;
 	left: -1px;
 }
 
@@ -1178,153 +1209,8 @@ img {
 }
 
 
-/*土壤与固废*/
+/*声环境质量*/
 
-.soil-top {
-	width: 100%;
-	height: 306px;
-}
-
-.soil-bottom {
-	width: 100%;
-	height: 402px;
-	margin-top: 20px;
-}
-
-.soil-info {
-	overflow: hidden;
-}
-
-.soil-info .soil-info-left {
-	width: 388px;
-	float: left;
-}
-
-.soil-info .data {
-	overflow: hidden;
-}
-
-.soil-info .data li {
-	float: left;
-	width: 50%;
-	text-align: center;
-	height: 130px;
-	border-right: 1px solid #dedede;
-	border-bottom: 1px solid #dedede;
-}
-
-.soil-info .data li p {
-	font-size: 18px;
-	color: #666;
-	font-weight: bold;
-	height: 78px;
-	line-height: 88px;
-}
-
-.soil-info .data li p i {
-	width: 14px;
-	height: 14px;
-	border-radius: 100%;
-	display: inline-block;
-	margin-right: 4px;
-}
-
-.soil-info .data li.yellow p {
-	color: #ffad42;
-}
-
-.soil-info .data li.yellow p i {
-	background: #ffad42;
-}
-
-.soil-info .data li.blue p {
-	color: #18a4eb;
-}
-
-.soil-info .data li.blue p i {
-	background: #18a4eb;
-}
-
-.soil-info .data li.purple p {
-	color: #7183e2;
-}
-
-.soil-info .data li.purple p i {
-	background: #7183e2;
-}
-
-.soil-info .data li.green p {
-	color: #6dc96d;
-}
-
-.soil-info .data li.green p i {
-	background: #6dc96d;
-}
-
-.soil-info .data li.purple2 p {
-	color: #4d8bf3;
-}
-
-.soil-info .data li.purple2 p i {
-	background: #4d8bf3;
-}
-
-.soil-info .data li.green2 p {
-	color: #63cba6;
-}
-
-.soil-info .data li.green2 p i {
-	background: #63cba6;
-}
-
-.soil-info .data li span {
-	font-size: 16px;
-	color: #666;
-}
-
-.soil-echarts2 {
-	height: 250px;
-	border-right: 1px solid #dedede;
-}
-
-.soil-info2 .data li {
-	height: 105px;
-	border-right: 1px solid #dedede;
-	border-top: 1px solid #dedede;
-	border-bottom: none;
-}
-
-.soil-info2 .data li p {
-	height: 56px;
-	line-height: 62px;
-}
-
-.soil-info-right {
-	width: 907px;
-	float: right;
-	height: 259px;
-}
-
-.soil-info-right .echarts-title {
-	height: 30px;
-	overflow: hidden;
-	padding: 0 20px;
-}
-
-.soil-info-right .echarts-title .name {
-	float: left;
-	font-size: 16px;
-	color: #666666;
-	padding-top: 11px;
-}
-
-.soil-echarts1 {
-	height: 229px;
-}
-
-.soil-echarts3 {
-	height: 325px;
-}
 
 
 /*污染源*/
@@ -1601,11 +1487,11 @@ body {
 
 /*水环境质量*/
 
-.water-left {
+.water-left{
 	width: 45%;
 }
 
-.water-right {
+.water-right{
 	width: 55%;
 }
 
@@ -1615,7 +1501,7 @@ body {
 
 /*土壤与固废*/
 
-.soil-info-right {
+.noise-info-right {
 	width: calc(100% - 388px);
 }
 

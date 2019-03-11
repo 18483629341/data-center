@@ -12,11 +12,10 @@ $(function() {
 		} else if(index == 2) {
 			indexWater();
 		} else if(index == 3) {
+			indexNoise();	
+		}else if(index == 4){
 			indexPollution();
 		}
-		//		else if(index == 3){
-		//			indexSoil();			
-		//		}
 	});
 	indexSituation();
 	//进度条上的tip显示

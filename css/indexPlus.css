@@ -1,3 +1,31 @@
+.flexBlock {
+  display: flex;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+}
+.flex1 {
+  flex: 1;
+}
+.inlineBlock {
+  display: inline-block;
+}
+.clear {
+  clear: both;
+}
+.floatLeft {
+  float: left;
+}
+.floatRight {
+  float: right;
+}
+.alignRight {
+  text-align: right!important;
+}
+.icon {
+  display: inline-block;
+}
 .navLi {
   padding-top: 7px;
 }
@@ -15,11 +43,101 @@
 .air-info1 .air-info {
   position: relative;
 }
-.num.rank2 .canvasFont {
-  width: 120px;
-  color: #ffffff;
-  position: absolute;
-  bottom: 60px;
-  z-index: 2;
+.right_des {
+  width: 300px;
+}
+.right_des .name {
+  font-size: 18px;
+  line-height: 22px;
+  margin-top: 7px;
+  color: #333;
+  padding-top: 7px;
   text-align: center;
+}
+.right_des .dec_ul {
+  margin-top: 58px;
+  padding: 0 35px;
+}
+.right_des .dec_ul .dec_li {
+  margin-top: 30px;
+  height: 52px;
+  line-height: 26px;
+  font-size: 14px;
+}
+.right_des .orange {
+  color: #ff9900;
+}
+.pieTu_con .pieTu_con_center {
+  width: 170px;
+  margin: 0 auto;
+}
+.pieTu_con .CompRateCanvas {
+  width: 170px;
+  height: 170px;
+  margin-bottom: 18px;
+  margin-top: 23px;
+}
+.pieTu_con .PieTuDes {
+  font-weight: 700;
+  line-height: 30px;
+}
+.downIcon,
+.upIcon {
+  width: 11px;
+  height: 13px;
+  margin-right: 5px;
+  position: relative;
+  top: 9px;
+}
+.downIcon {
+  background: url(../images/index/yyl_down.png) no-repeat;
+  background-size: 100% 100%;
+}
+.upIcon {
+  background: url(../images/index/yyl_up.png) no-repeat;
+  background-size: 100% 100%;
+}
+/*声环境质量*/
+.water-left,
+.noise-left {
+  width: 55%;
+}
+.water-right,
+.noise-right {
+  width: 45%;
+}
+.noise-info1 {
+  height: 310px;
+}
+.rightDes {
+  width: 260px;
+  border-left: 1px solid #e3e3e3;
+}
+.rightDes .noiseLi {
+  height: 103px;
+  padding: 30px 0 30px 20px;
+}
+.rightDes .item {
+  font-size: 16px;
+}
+.rightDes .noiseLi + .noiseLi {
+  border-top: 1px solid #e3e3e3;
+}
+.rightDes .quliIcon,
+.rightDes .numIcon,
+.rightDes .lengIcon {
+  width: 30px;
+  height: 30px;
+}
+.rightDes .quliIcon {
+  background: url(../images/index/u2077.png) no-repeat;
+  background-size: 100%;
+}
+.rightDes .numIcon {
+  background: url(../images/index/u2073.png) no-repeat;
+  background-size: 100%;
+}
+.rightDes .lengIcon {
+  background: url(../images/index/u2075.png) no-repeat;
+  background-size: 100%;
 }
