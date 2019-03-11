@@ -27,16 +27,32 @@ function indexPollution() {
 			extraCssText: 'box-shadow: 1px 1px 3px rgba(45, 58, 50, 0.3);',
 			textStyle: {
 				color: '#333333'
+			},
+			formatter: function(params) {
+				var main = params[0].name;
+				for(var i = 0; i < params.length - 1; i++) {
+					main += '<br>' + params[i].marker + params[i].seriesName + '：' + params[i].value
+				}
+				return main;
 			}
 		},
-		color: ['#ffc000', '#469dee'],
+		color: ['#00ccff', '#fff'],
 		legend: {
 			selectedMode: false,
-			data: ['同比新增项目数', '项目数'],
+			data: [{
+					name: '污染源数量',
+					icon: 'roundRect'
+				},
+				{
+					name: '标准源匹配数量',
+					icon: 'image://./images/index/echartsicon1.png'
+				}
+			],
 			right: 10,
 			top: 0,
 			itemGap: 20,
-			itemHeight: 9,
+			itemWidth: 30,
+			itemHeight: 13,
 			textStyle: {
 				fontSize: 14,
 				color: '#999',
@@ -49,26 +65,47 @@ function indexPollution() {
 			top: '34px',
 			containLabel: true
 		},
-		xAxis: {
-			type: 'category',
-			data: ['制浆造纸', '化肥', '钢铁', '电镀', '炼焦', '水泥', '制革', '火电', '水泥'],
-			axisLine: {
-				lineStyle: {
-					color: '#c5c5c5'
+		xAxis: [
+			{
+				type: 'category',
+				data: ['05-11', '05-12', '05-13', '05-14', '05-15', '05-16', '05-17'],
+				axisLine: {
+					lineStyle: {
+						color: '#c5c5c5'
+					}
+				},
+				axisTick: {
+					show: false
+				},
+				axisLabel: {
+					textStyle: {
+						fontSize: 14,
+						color: '#666666',
+					}
 				}
-			},
-			axisTick: {
-				show: false
-			},
-			axisLabel: {
-				textStyle: {
-					fontSize: 14,
-					color: '#666666',
-				}
+			}, 
+			{
+				type: 'category',
+				axisLine: {
+					show: false
+				},
+				axisTick: {
+					show: false
+				},
+				axisLabel: {
+					show: false
+				},
+				splitArea: {
+					show: false
+				},
+				splitLine: {
+					show: false
+				},
+				data: ['05-11', '05-12', '05-13', '05-14', '05-15', '05-16', '05-17'],
 			}
-		},
+		],
 		yAxis: {
-			name: '单位：个',
+			name: '单位：家',
 			type: 'value',
 			axisLine: {
 				lineStyle: {
@@ -92,27 +129,52 @@ function indexPollution() {
 			}
 		},
 		series: [{
-			name: '同比新增项目数',
-			type: 'line',
-			data: [5, 15, 4, 3, 2, 3, 4, 5, 6, 7, 8, 9, 10, 5],
-			smooth: true,
-			symbolSize: 6,
-			lineStyle: {
-				width: 3
-			},
+			name: '污染源数量',
+			type: 'bar',
+			data: [99, 58, 55, 60, 68, 70,96],
+			barWidth: '30',
+			xAxisIndex: 1,
 			itemStyle: {
 				normal: {
-					borderWidth: 2
+					barBorderRadius: 37,
+					label: {
+						show: true,
+						position: 'top',
+						textStyle: {
+							color: '#00ccff'
+						}
+					}
 				}
 			}
 		}, {
-			name: '项目数',
+			name: '污染源数量',
 			type: 'bar',
-			data: [5, 10, 4, 3, 2, 3, 4, 5, 6, 7, 8, 9, 10, 5],
-			barWidth: '22',
+			data: [33, 20, 20,30, 25, 33, 28],
+			barWidth: '29',
+			stack: 'sum',
 			itemStyle: {
 				normal: {
-					barBorderRadius: 22
+					barBorderRadius: 36,
+				}
+			}
+		}, {
+			name: '标准源匹配数量',
+			type: 'bar',
+			stack: 'sum',
+			data: [66, 38, 35, 30, 43, 37,68],
+			barWidth: '29',
+			itemStyle: {
+				normal: {
+					barBorderWidth: 6,
+					barBorderColor: '#00ccff',
+					barBorderRadius: 36,
+					label: {
+						show: true,
+						position: 'inside',
+						textStyle: {
+							color: '#333'
+						}
+					}
 				}
 			}
 		}]
@@ -136,41 +198,85 @@ function indexPollution() {
 			extraCssText: 'box-shadow: 1px 1px 3px rgba(45, 58, 50, 0.3);',
 			textStyle: {
 				color: '#333333'
+			},
+			formatter: function(params) {
+				var main = params[0].name;
+				for(var i = 0; i < params.length - 1; i++) {
+					main += '<br>' + params[i].marker + params[i].seriesName + '：' + params[i].value
+				}
+				return main;
 			}
 		},
-		color: ['#63cba6'],
+		color: ['#139de5', '#fff'],
 		legend: {
 			selectedMode: false,
-			data: ['已发证企业大气排放总许可量'],
-			show: false
+			data: [{
+					name: '发证企业',
+					icon: 'roundRect'
+				},
+				{
+					name: '未发证企业',
+					icon: 'image://./images/index/echartsicon2.png'
+				}
+			],
+			right: 10,
+			top: 0,
+			itemGap: 25,
+			itemWidth: 28,
+			itemHeight: 13,
+			textStyle: {
+				fontSize: 14,
+				color: '#999',
+			}
 		},
 		grid: {
-			left: '6%',
+			left: '2%',
 			right: '2%',
 			bottom: '15px',
 			top: '34px',
 			containLabel: true
 		},
-		xAxis: {
-			type: 'category',
-			data: ['颗粒物', 'SO2', 'NOx', 'VOCs', '氨(氨气)'],
-			axisLine: {
-				lineStyle: {
-					color: '#c5c5c5'
+		xAxis: [
+			{
+				type: 'category',
+				data:  ['能源', '火力发电', '矿产', '化工', '制造业'],
+				axisLine: {
+					lineStyle: {
+						color: '#c5c5c5'
+					}
+				},
+				axisTick: {
+					show: false
+				},
+				axisLabel: {
+					textStyle: {
+						fontSize: 14,
+						color: '#666666',
+					}
 				}
-			},
-			axisTick: {
-				show: false
-			},
-			axisLabel: {
-				textStyle: {
-					fontSize: 14,
-					color: '#666666',
-				}
+			}, 
+			{
+				type: 'category',
+				axisLine: {
+					show: false
+				},
+				axisTick: {
+					show: false
+				},
+				axisLabel: {
+					show: false
+				},
+				splitArea: {
+					show: false
+				},
+				splitLine: {
+					show: false
+				},
+				data: ['能源', '火力发电', '矿产', '化工', '制造业'],
 			}
-		},
+		],
 		yAxis: {
-			name: '单位：万吨/年',
+			name: '单位：家',
 			type: 'value',
 			axisLine: {
 				lineStyle: {
@@ -194,13 +300,52 @@ function indexPollution() {
 			}
 		},
 		series: [{
-			name: '已发证企业大气排放总许可量',
+			name: '发证企业',
 			type: 'bar',
-			data: [50, 100, 40, 30, 20, 30],
-			barWidth: '22',
+			data: [55, 109, 59, 99, 111],
+			barWidth: '30',
+			xAxisIndex: 1,
 			itemStyle: {
 				normal: {
-					barBorderRadius: 22
+					barBorderRadius: 30,
+					label: {
+						show: true,
+						position: 'top',
+						textStyle: {
+							color: '#139de5'
+						}
+					}
+				}
+			}
+		}, {
+			name: '发证企业',
+			type: 'bar',
+			data: [36, 80, 40, 70, 78],
+			barWidth: '29',
+			stack: 'sum',
+			itemStyle: {
+				normal: {
+					barBorderRadius: 30,
+				}
+			}
+		}, {
+			name: '未发证企业',
+			type: 'bar',
+			stack: 'sum',
+			data: [19,29,19,29,33],
+			barWidth: '29',
+			itemStyle: {
+				normal: {
+					barBorderWidth: 6,
+					barBorderColor: '#139de5',
+					barBorderRadius: 30,
+					label: {
+						show: true,
+						position: 'inside',
+						textStyle: {
+							color: '#333'
+						}
+					}
 				}
 			}
 		}]
@@ -209,94 +354,6 @@ function indexPollution() {
 	echarts2.setOption(option2);
 	//已发证企业大气排放总许可量，废水
 	var option3 = {
-		tooltip: {
-			trigger: 'axis',
-			axisPointer: {
-				lineStyle: {
-					color: '#ddd'
-				}
-			},
-			confine: true,
-			padding: [5, 10, 5, 10],
-			backgroundColor: '#fff',
-			borderColor: '#d1d1d1',
-			borderWidth: 1,
-			extraCssText: 'box-shadow: 1px 1px 3px rgba(45, 58, 50, 0.3);',
-			textStyle: {
-				color: '#333333'
-			}
-		},
-		color: ['#63cba6'],
-		legend: {
-			selectedMode: false,
-			data: ['已发证企业大气排放总许可量'],
-			show: false
-		},
-		grid: {
-			left: '6%',
-			right: '2%',
-			bottom: '15px',
-			top: '34px',
-			containLabel: true
-		},
-		xAxis: {
-			type: 'category',
-			data: ['CODcr', '氨氮', '总磷'],
-			axisLine: {
-				lineStyle: {
-					color: '#c5c5c5'
-				}
-			},
-			axisTick: {
-				show: false
-			},
-			axisLabel: {
-				textStyle: {
-					fontSize: 14,
-					color: '#666666',
-				}
-			}
-		},
-		yAxis: {
-			name: '单位：万吨/年',
-			type: 'value',
-			axisLine: {
-				lineStyle: {
-					color: '#c5c5c5'
-				}
-			},
-			axisTick: {
-				show: false
-			},
-			splitLine: {
-				show: false
-			},
-			axisLabel: {
-				textStyle: {
-					fontSize: 14,
-					color: '#666666',
-				}
-			},
-			nameTextStyle: {
-				color: '#999999',
-			}
-		},
-		series: [{
-			name: '已发证企业大气排放总许可量',
-			type: 'bar',
-			data: [50, 100, 40, 30, 20, 30],
-			barWidth: '22',
-			itemStyle: {
-				normal: {
-					barBorderRadius: 22
-				}
-			}
-		}]
-	};
-	var echarts3 = echarts.init(document.getElementById('pollution-echarts3'));
-	echarts3.setOption(option3);
-	//近7日在线企业超标数统计
-	var option4 = {
 		tooltip: {
 			trigger: 'axis',
 			axisPointer: {
@@ -350,9 +407,48 @@ function indexPollution() {
 			top: '34px',
 			containLabel: true
 		},
-		xAxis: [{
-			type: 'category',
-			data: ['05-11', '05-12', '05-13', '05-14', '05-15', '05-16', '05-17'],
+		xAxis: [
+			{
+				type: 'category',
+				data: ['05-11', '05-12', '05-13', '05-14', '05-15', '05-16', '05-17'],
+				axisLine: {
+					lineStyle: {
+						color: '#c5c5c5'
+					}
+				},
+				axisTick: {
+					show: false
+				},
+				axisLabel: {
+					textStyle: {
+						fontSize: 14,
+						color: '#666666',
+					}
+				}
+			}, 
+			{
+				type: 'category',
+				axisLine: {
+					show: false
+				},
+				axisTick: {
+					show: false
+				},
+				axisLabel: {
+					show: false
+				},
+				splitArea: {
+					show: false
+				},
+				splitLine: {
+					show: false
+				},
+				data: ['05-11', '05-12', '05-13', '05-14', '05-15', '05-16', '05-17'],
+			}
+		],
+		yAxis: {
+			name: '单位：家',
+			type: 'value',
 			axisLine: {
 				lineStyle: {
 					color: '#c5c5c5'
@@ -361,31 +457,166 @@ function indexPollution() {
 			axisTick: {
 				show: false
 			},
+			splitLine: {
+				show: false
+			},
 			axisLabel: {
 				textStyle: {
 					fontSize: 14,
 					color: '#666666',
 				}
+			},
+			nameTextStyle: {
+				color: '#999999',
+			}
+		},
+		series: [{
+			name: '发证企业',
+			type: 'bar',
+			data: [55, 109, 59, 99, 111],
+			barWidth: '30',
+			xAxisIndex: 1,
+			itemStyle: {
+				normal: {
+					barBorderRadius: 37,
+					label: {
+						show: true,
+						position: 'top',
+						textStyle: {
+							color: '#139de5'
+						}
+					}
+				}
 			}
 		}, {
-			type: 'category',
-			axisLine: {
-				show: false
+			name: '发证企业',
+			type: 'bar',
+			data: [36, 80, 40, 70, 78],
+			barWidth: '36',
+			stack: 'sum',
+			itemStyle: {
+				normal: {
+					barBorderRadius: 36,
+				}
+			}
+		}, {
+			name: '未发证企业',
+			type: 'bar',
+			stack: 'sum',
+			data: [19,29,19,29,33],
+			barWidth: '36',
+			itemStyle: {
+				normal: {
+					barBorderWidth: 6,
+					barBorderColor: '#4bc3d3',
+					barBorderRadius: 36,
+					label: {
+						show: true,
+						position: 'inside',
+						textStyle: {
+							color: '#333'
+						}
+					}
+				}
+			}
+		}]
+	};
+	var echarts3 = echarts.init(document.getElementById('pollution-echarts3'));
+	echarts3.setOption(option3);
+	//近7日在线企业超标数统计
+	var option4 = {
+		tooltip: {
+			trigger: 'axis',
+			axisPointer: {
+				lineStyle: {
+					color: '#ddd'
+				}
 			},
-			axisTick: {
-				show: false
+			confine: true,
+			padding: [5, 10, 5, 10],
+			backgroundColor: '#fff',
+			borderColor: '#d1d1d1',
+			borderWidth: 1,
+			extraCssText: 'box-shadow: 1px 1px 3px rgba(45, 58, 50, 0.3);',
+			textStyle: {
+				color: '#333333'
 			},
-			axisLabel: {
-				show: false
-			},
-			splitArea: {
-				show: false
-			},
-			splitLine: {
-				show: false
-			},
-			data: ['05-11', '05-12', '05-13', '05-14', '05-15', '05-16', '05-17'],
-		}],
+			formatter: function(params) {
+				var main = params[0].name;
+				for(var i = 0; i < params.length - 1; i++) {
+					main += '<br>' + params[i].marker + params[i].seriesName + '：' + params[i].value
+				}
+				return main;
+			}
+		},
+		color: ['#3f7ce2', '#fff'],
+		legend: {
+			selectedMode: false,
+			data: [{
+					name: '监控企业数',
+					icon: 'roundRect'
+				},
+				{
+					name: '超标企业数',
+					icon: 'image://./images/index/echartsicon3.png'
+				}
+			],
+			right: 10,
+			top: 0,
+			itemGap: 20,
+			itemWidth: 30,
+			itemHeight: 13,
+			textStyle: {
+				fontSize: 14,
+				color: '#999',
+			}
+		},
+		grid: {
+			left: '2%',
+			right: '2%',
+			bottom: '15px',
+			top: '34px',
+			containLabel: true
+		},
+		xAxis: [
+			{
+				type: 'category',
+				data: ['05-11', '05-12', '05-13', '05-14', '05-15', '05-16', '05-17'],
+				axisLine: {
+					lineStyle: {
+						color: '#c5c5c5'
+					}
+				},
+				axisTick: {
+					show: false
+				},
+				axisLabel: {
+					textStyle: {
+						fontSize: 14,
+						color: '#666666',
+					}
+				}
+			}, 
+			{
+				type: 'category',
+				axisLine: {
+					show: false
+				},
+				axisTick: {
+					show: false
+				},
+				axisLabel: {
+					show: false
+				},
+				splitArea: {
+					show: false
+				},
+				splitLine: {
+					show: false
+				},
+				data: ['05-11', '05-12', '05-13', '05-14', '05-15', '05-16', '05-17'],
+			}
+		],
 		yAxis: {
 			name: '单位：家',
 			type: 'value',
@@ -414,7 +645,7 @@ function indexPollution() {
 			name: '监控企业数',
 			type: 'bar',
 			data: [120, 160, 100, 160, 160, 140, 200],
-			barWidth: '37',
+			barWidth: '30',
 			xAxisIndex: 1,
 			itemStyle: {
 				normal: {
@@ -423,7 +654,7 @@ function indexPollution() {
 						show: true,
 						position: 'top',
 						textStyle: {
-							color: '#4bc3d3'
+							color: '#3f7ce2'
 						}
 					}
 				}
@@ -432,7 +663,7 @@ function indexPollution() {
 			name: '监控企业数',
 			type: 'bar',
 			data: [60, 80, 50, 80, 80, 70, 100],
-			barWidth: '36',
+			barWidth: '29',
 			stack: 'sum',
 			itemStyle: {
 				normal: {
@@ -444,11 +675,11 @@ function indexPollution() {
 			type: 'bar',
 			stack: 'sum',
 			data: [60, 80, 50, 80, 80, 70, 100],
-			barWidth: '36',
+			barWidth: '29',
 			itemStyle: {
 				normal: {
 					barBorderWidth: 6,
-					barBorderColor: '#4bc3d3',
+					barBorderColor: '#3f7ce2',
 					barBorderRadius: 36,
 					label: {
 						show: true,
