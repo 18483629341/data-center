@@ -187,23 +187,21 @@ function setOptionfun(colors, format, data){
 				startAngle:90,
 				clockwise:false,
 				label: {
-
 					normal: {
 						show: false,
 						position: 'center',
-						color: '#333333',
 						align: 'center',
 						verticalAlign: 'middle',
 						formatter:format ,
 						rich: {
 							value: {
-								color: "#333",
+								color: "#333333",
 								fontSize: 24,
 								fontWeight:'bolder',
 								padding: 3
 							},
 							text:{
-								color: "#333",
+								color: "#333333",
 								fontSize: 18,
 								padding: [5,0, 5,0]
 							}

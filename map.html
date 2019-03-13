@@ -1,488 +1,644 @@
 <!DOCTYPE html>
 <html>
 
-	<head>
-		<meta http-equiv="X-UA-Compatible" content="IE=Edge" charset="utf-8">
-		<title>宜昌市环保大数据中心</title>
-		<link rel="stylesheet" href="css/map.css" />
-	</head>
+<head>
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge" charset="utf-8">
+	<title>徐州空气质量发布及数据管理平台</title>
+	<link rel="stylesheet" href="css/map.css" />
+</head>
 
-	<body>
-		<div class="header">
-			<p class="logo">
-				<img src="images/logo.png" />宜昌市环保大数据中心
-			</p>
-			<div class="nav">
-				<ul>
+<body>
+	<div class="header">
+		<p class="logo">
+			<img src="images/logo.png" />徐州空气质量发布及数据管理平台
+		</p>
+		<div class="nav">
+			<ul>
+				<li>
+					<img src="images/index_icon1.png" /> 空气地图
+				</li>
+				<li>
+					<img src="images/index_icon2.png" /> 综合分析
+				</li>
+				<li class="active">
+					<img src="images/index_icon3.png" /> 数据报表
+				</li>
+				<li>
+					<img src="images/index_icon4.png" /> 数据监控
+				</li>
+				<li>
+					<img src="images/index_icon5.png" /> 信息帮助
+				</li>
+			</ul>
+			<div class="people-info">
+				<i class="line"></i>
+				<p>欢迎您Admin</p>
+				<a href="#" title="注销"></a>
+			</div>
+		</div>
+	</div>
+	<div class="main">
+		<div class="map">
+
+		</div>
+		<div class="map-alert">
+			<div class="map-alert-title">
+				<p class="name">森林公园空气自动站</p>
+				<div class="map-alert-close" title="关闭"></div>
+			</div>
+			<div class="map-alert-main">
+				<dl class="dl1">
+					<dt class="rank2">
+						<p>138</p>
+						<span>AQI</span>
+					</dt>
+					<dd>
+						<p class="time">更新时间：2018-05-08 9:00</p>
+						<p class="word">轻度污染</p>
+						<p class="word">
+							<span>首要污染物:</span>PM
+							<sub>2.5</sub>
+						</p>
+					</dd>
+				</dl>
+				<ul class="ul1">
 					<li>
-						<img src="images/index_icon1.png" /> 首页
+						<p class="name">SO
+							<sub>2</sub>：</p>
+						<p class="value">62
+							<span>μg/m³</span>
+						</p>
 					</li>
 					<li>
-						<img src="images/index_icon2.png" /> 资源目录
-					</li>
-					<li class="active">
-						<img src="images/index_icon3.png" /> 生态环保地图
-					</li>
-					<li>
-						<img src="images/index_icon4.png" /> 污染源档案
+						<p class="name">NO
+							<sub>2</sub>：</p>
+						<p class="value">62
+							<span>μg/m³</span>
+						</p>
 					</li>
 					<li>
-						<img src="images/index_icon5.png" /> 数据管理平台
+						<p class="name">CO：</p>
+						<p class="value">62
+							<span>mg/m³</span>
+						</p>
+					</li>
+					<li>
+						<p class="name">PM
+							<sub>2.5</sub>：</p>
+						<p class="value">62
+							<span>μg/m³</span>
+						</p>
+					</li>
+					<li>
+						<p class="name">PM
+							<sub>10</sub>：</p>
+						<p class="value">62
+							<span>μg/m³</span>
+						</p>
+					</li>
+					<li>
+						<p class="name">O
+							<sub>3</sub>-1h
+							<sub>2</sub>：</p>
+						<p class="value">62
+							<span>μg/m³</span>
+						</p>
 					</li>
 				</ul>
-				<div class="people-info">
-					<i class="line"></i>
-					<p>欢迎您Admin</p>
-					<a href="#" title="注销"></a>
+				<div class="map-alert-echarts-title">
+					<p class="left">近24小时监测数据趋势图</p>
+					<div class="selectdiv">
+						<div class="select-value">CO</div>
+						<div class="select-valueall">
+							<span>CO</span>
+							<span>PM
+								<sub>2.5</sub>
+							</span>
+						</div>
+					</div>
+				</div>
+				<div class="map-alert-echarts" id="map-echarts1">
+
+				</div>
+				<div class="map-alert-href">
+					<a href="#">查看污染源地图</a>
 				</div>
 			</div>
 		</div>
-		<div class="main">
-			<div class="map">
-
+		<div class="map-alert" style="z-index: 5;left: 20%;">
+			<div class="map-alert-title">
+				<p class="name">枝江市助力建材有限公司
+					<a href="#">详情</a>
+				</p>
+				<div class="map-alert-close" title="关闭"></div>
 			</div>
-			<div class="map-alert">
-				<div class="map-alert-title">
-					<p class="name">森林公园空气自动站</p>
-					<div class="map-alert-close" title="关闭"></div>
-				</div>
-				<div class="map-alert-main">
-					<dl class="dl1">
-						<dt class="rank2">
-							<p>138</p>
-							<span>AQI</span>
-						</dt>
-						<dd>
-							<p class="time">更新时间：2018-05-08 9:00</p>
-							<p class="word">轻度污染</p>
-							<p class="word"><span>首要污染物:</span>PM<sub>2.5</sub></p>
-						</dd>
-					</dl>
-					<ul class="ul1">
-						<li>
-							<p class="name">SO<sub>2</sub>：</p>
-							<p class="value">62<span>μg/m³</span></p>
-						</li>
-						<li>
-							<p class="name">NO<sub>2</sub>：</p>
-							<p class="value">62<span>μg/m³</span></p>
-						</li>
-						<li>
-							<p class="name">CO：</p>
-							<p class="value">62<span>mg/m³</span></p>
-						</li>
-						<li>
-							<p class="name">PM<sub>2.5</sub>：</p>
-							<p class="value">62<span>μg/m³</span></p>
-						</li>
-						<li>
-							<p class="name">PM<sub>10</sub>：</p>
-							<p class="value">62<span>μg/m³</span></p>
-						</li>
-						<li>
-							<p class="name">O<sub>3</sub>-1h<sub>2</sub>：</p>
-							<p class="value">62<span>μg/m³</span></p>
-						</li>
-					</ul>
-					<div class="map-alert-echarts-title">
-						<p class="left">近24小时监测数据趋势图</p>
-						<div class="selectdiv">
-							<div class="select-value">CO</div>
+			<div class="map-alert-main">
+				<ul class="ul2">
+					<li>
+						<p>所属行政区：</p>宜昌市枝江市</li>
+					<li>
+						<p>排水去向：</p>长江</li>
+					<li>
+						<p>整治类型：</p>关停</li>
+					<li></li>
+					<li>
+						<p>整治启动时间：</p>2018-05</li>
+					<li>
+						<p>整治完成时间：</p>长江</li>
+					<li>
+						<p>排放口：</p>
+						<div class="selectdiv map-alert-selectdiv2">
+							<div class="select-value">废气001</div>
 							<div class="select-valueall">
-								<span>CO</span>
-								<span>PM<sub>2.5</sub></span>
-							</div>
-						</div>
-					</div>
-					<div class="map-alert-echarts" id="map-echarts1">
-						
-					</div>
-					<div class="map-alert-href">
-						<a href="#">查看污染源地图</a>	
-					</div>
-				</div>
-			</div>
-			<div class="map-alert" style="z-index: 5;left: 20%;">
-				<div class="map-alert-title">
-					<p class="name">枝江市助力建材有限公司<a href="#">详情</a></p>
-					<div class="map-alert-close" title="关闭"></div>
-				</div>
-				<div class="map-alert-main">
-					<ul class="ul2">
-						<li><p>所属行政区：</p>宜昌市枝江市</li>
-						<li><p>排水去向：</p>长江</li>
-						<li><p>整治类型：</p>关停</li>
-						<li></li>
-						<li><p>整治启动时间：</p>2018-05</li>
-						<li><p>整治完成时间：</p>长江</li>
-						<li><p>排放口：</p>
-							<div class="selectdiv map-alert-selectdiv2">
-								<div class="select-value">废气001</div>
-								<div class="select-valueall">
-									<span>废气001</span>
-									<span>废气002</span>
-								</div>
-							</div>
-						</li>
-					</ul>
-					<ul class="ul1" style="padding: 2px 0;">
-						<li>
-							<p class="name">SO<sub>2</sub>：</p>
-							<p class="value">62<span>mg/L</span></p>
-						</li>
-						<li>
-							<p class="name">NO<sub>x</sub>：</p>
-							<p class="value">62<span>mg/L</span></p>
-						</li>
-						<li>
-							<p class="name">烟(粉)尘 ：</p>
-							<p class="value">62<span>mg/L</span></p>
-						</li>
-					</ul>
-					<div class="map-alert-echarts-title map-alert-echarts-title2">
-						<p class="left">近24小时监测数据趋势图<span>更新时间：2018-09-12 9:00</span></p>
-						<div class="selectdiv">
-							<div class="select-value">CO</div>
-							<div class="select-valueall">
-								<span>CO</span>
-								<span>PM<sub>2.5</sub></span>
-							</div>
-						</div>
-					</div>
-					<div class="map-alert-echarts" id="map-echarts2">
-						
-					</div>
-					<div class="map-alert-echarts-info">年累计排放量：219吨，许可总量：220吨</div>
-					<div class="map-alert-href">
-						<a href="#">周报查询</a>	
-					</div>
-				</div>
-			</div>
-			<div class="map-time">
-				<div class="selectdiv">
-					<div class="select-value">小时</div>
-					<div class="select-valueall">
-						<span class="radio active">小时</span>
-						<span class="radio">日</span>
-						<span class="radio">月</span>
-					</div>
-				</div>
-				<div class="data" onClick="WdatePicker({dateFmt:'yyyy-MM-dd'})">
-					2018-04-05
-				</div>
-				<div class="data" onClick="WdatePicker({dateFmt:'yyyy-MM'})" style="display: none;">
-					2018-04
-				</div>
-				<div class="data" onClick="WdatePicker({dateFmt:'yyyy'})" style="display: none;">
-					2018
-				</div>
-				<div class="num">
-				</div>
-			</div>
-			<div class="map-layer-seach">
-				<ul class="tab">
-					<li class="active">空气站</li>
-					<li>考核断面</li>
-					<li>水质自动站</li>
-				</ul>
-				<div class="tab-main">
-					<div class="tab-main-checkbox">
-						<p class="active">全部</p>
-						<p>优</p>
-						<p>良</p>
-						<p>轻度污染</p>
-						<p>中度污染</p>
-						<p>重度污染</p>
-						<p>严重污染</p>
-					</div>
-					<div class="tab-main-checkbox" style="display: none;">
-						<p class="active">全部</p>
-						<p>I类</p>
-						<p>II类</p>
-						<p>III类</p>
-						<p>IV类</p>
-						<p>V类</p>
-						<p>劣V类</p>
-					</div>
-					<div class="tab-main-checkbox" style="display: none;">
-						<p class="active">全部</p>
-						<p>I类</p>
-						<p>II类</p>
-						<p>III类</p>
-						<p>IV类</p>
-						<p>V类</p>
-						<p>劣V类</p>
-					</div>
-				</div>
-			</div>
-			<div class="map-widgets">
-				<ul class="map-widgets1">
-					<li class="one active">
-						<div class="map-widgets-layer">
-							<p class="title">底图</p>
-							<div class="layer">
-								<dl>
-									<dt><img src="images/map/map_dt1.png" /></dt>
-									<dd>宜昌矢量图</dd>
-								</dl>
-								<dl>
-									<dt><img src="images/map/map_dt2.png" /></dt>
-									<dd>宜昌影像图</dd>
-								</dl>
-								<dl>
-									<dt><img src="images/map/map_dt3.png" /></dt>
-									<dd>全省基础图</dd>
-								</dl>
-								<dl>
-									<dt><img src="images/map/map_dt4.png" /></dt>
-									<dd>全省影像图</dd>
-								</dl>
-								<dl class="active">
-									<dt><img src="images/map/map_dt5.png" /></dt>
-									<dd>全省地形图</dd>
-								</dl>
-							</div>
-							<p class="title">环境专题图</p>
-							<div class="layer-word">
-								<ul>
-									<li>
-										<div class="first">
-											<span></span>
-											<p>大气环境</p>
-										</div>
-										<div class="first-main">
-											<p>水质自动监测</p>
-											<p>水质手工监测</p>
-										</div>
-									</li>
-									<li>
-										<div class="first">
-											<span></span>
-											<p>水环境监测</p>
-										</div>
-										<div class="first-main">
-											<p>大气环境红线</p>
-											<p>水环境红线</p>
-											<p>生态功能红线</p>
-										</div>
-									</li>
-									<li>
-										<div class="first">
-											<span></span>
-											<p>环境总体规划</p>
-										</div>
-									</li>
-									<li>
-										<div class="first">
-											<span></span>
-											<p>数字城管网格化</p>
-										</div>
-									</li>
-								</ul>
+								<span>废气001</span>
+								<span>废气002</span>
 							</div>
 						</div>
 					</li>
-					<li class="two"></li>
-					<li class="three"></li>
 				</ul>
-				<ul class="map-widgets2">
-					<li class="one"></li>
-					<li class="two"></li>
-					<li class="three"></li>
+				<ul class="ul1" style="padding: 2px 0;">
+					<li>
+						<p class="name">SO
+							<sub>2</sub>：</p>
+						<p class="value">62
+							<span>mg/L</span>
+						</p>
+					</li>
+					<li>
+						<p class="name">NO
+							<sub>x</sub>：</p>
+						<p class="value">62
+							<span>mg/L</span>
+						</p>
+					</li>
+					<li>
+						<p class="name">烟(粉)尘 ：</p>
+						<p class="value">62
+							<span>mg/L</span>
+						</p>
+					</li>
 				</ul>
-				<ul class="map-widgets3">
-					<li class="one">
-						<div class="legend">
-							<p class="title">图例</p>
+				<div class="map-alert-echarts-title map-alert-echarts-title2">
+					<p class="left">近24小时监测数据趋势图
+						<span>更新时间：2018-09-12 9:00</span>
+					</p>
+					<div class="selectdiv">
+						<div class="select-value">CO</div>
+						<div class="select-valueall">
+							<span>CO</span>
+							<span>PM
+								<sub>2.5</sub>
+							</span>
+						</div>
+					</div>
+				</div>
+				<div class="map-alert-echarts" id="map-echarts2">
+
+				</div>
+				<div class="map-alert-echarts-info">年累计排放量：219吨，许可总量：220吨</div>
+				<div class="map-alert-href">
+					<a href="#">周报查询</a>
+				</div>
+			</div>
+		</div>
+		<div class="map-time">
+			<div class="selectdiv">
+				<div class="select-value">小时</div>
+				<div class="select-valueall">
+					<span class="radio active">小时</span>
+					<span class="radio">日</span>
+					<span class="radio">月</span>
+				</div>
+			</div>
+			<div class="data" onClick="WdatePicker({dateFmt:'yyyy-MM-dd'})">
+				2018-04-05
+			</div>
+			<div class="data" onClick="WdatePicker({dateFmt:'yyyy-MM'})" style="display: none;">
+				2018-04
+			</div>
+			<div class="data" onClick="WdatePicker({dateFmt:'yyyy'})" style="display: none;">
+				2018
+			</div>
+			<div class="num">
+			</div>
+		</div>
+		<div class="map-layer-seach">
+			<ul class="tab">
+				<li class="active">空气站</li>
+				<li>考核断面</li>
+				<li>水质自动站</li>
+			</ul>
+			<div class="tab-main">
+				<div class="tab-main-checkbox">
+					<p class="active">全部</p>
+					<p>优</p>
+					<p>良</p>
+					<p>轻度污染</p>
+					<p>中度污染</p>
+					<p>重度污染</p>
+					<p>严重污染</p>
+				</div>
+				<div class="tab-main-checkbox" style="display: none;">
+					<p class="active">全部</p>
+					<p>I类</p>
+					<p>II类</p>
+					<p>III类</p>
+					<p>IV类</p>
+					<p>V类</p>
+					<p>劣V类</p>
+				</div>
+				<div class="tab-main-checkbox" style="display: none;">
+					<p class="active">全部</p>
+					<p>I类</p>
+					<p>II类</p>
+					<p>III类</p>
+					<p>IV类</p>
+					<p>V类</p>
+					<p>劣V类</p>
+				</div>
+			</div>
+		</div>
+		<div class="map-widgets">
+			<ul class="map-widgets1">
+				<li class="one active">
+					<div class="map-widgets-layer">
+						<p class="title">底图</p>
+						<div class="layer">
+							<dl>
+								<dt>
+									<img src="images/map/map_dt1.png" />
+								</dt>
+								<dd>宜昌矢量图</dd>
+							</dl>
+							<dl>
+								<dt>
+									<img src="images/map/map_dt2.png" />
+								</dt>
+								<dd>宜昌影像图</dd>
+							</dl>
+							<dl>
+								<dt>
+									<img src="images/map/map_dt3.png" />
+								</dt>
+								<dd>全省基础图</dd>
+							</dl>
+							<dl>
+								<dt>
+									<img src="images/map/map_dt4.png" />
+								</dt>
+								<dd>全省影像图</dd>
+							</dl>
+							<dl class="active">
+								<dt>
+									<img src="images/map/map_dt5.png" />
+								</dt>
+								<dd>全省地形图</dd>
+							</dl>
+						</div>
+						<p class="title">环境专题图</p>
+						<div class="layer-word">
 							<ul>
 								<li>
-									<p>废气在线<img src="images/map/legend/1-1.png" /></p>
-									<p>废气离线<img src="images/map/legend/1-2.png" /></p>
-									<p>废气超标<img src="images/map/legend/1-3.png" /></p>
-									<p>废水在线<img src="images/map/legend/1-4.png" /></p>
-									<p>废水离线<img src="images/map/legend/1-5.png" /></p>
-									<p>废水超标<img src="images/map/legend/1-6.png" /></p>
-									<p>关停企业<img src="images/map/legend/1-7.png" /></p>
+									<div class="first">
+										<span></span>
+										<p>大气环境</p>
+									</div>
+									<div class="first-main">
+										<p>水质自动监测</p>
+										<p>水质手工监测</p>
+									</div>
 								</li>
 								<li>
-									<p>优<img src="images/map/legend/2-1.png" /></p>
-									<p>良<img src="images/map/legend/2-2.png" /></p>
-									<p>轻度污染<img src="images/map/legend/2-3.png" /></p>
-									<p>中度污染 <img src="images/map/legend/2-4.png" /></p>
-									<p>重度污染<img src="images/map/legend/2-5.png" /></p>
-									<p>严重污染<img src="images/map/legend/2-6.png" /></p>
+									<div class="first">
+										<span></span>
+										<p>水环境监测</p>
+									</div>
+									<div class="first-main">
+										<p>大气环境红线</p>
+										<p>水环境红线</p>
+										<p>生态功能红线</p>
+									</div>
 								</li>
 								<li>
-									<p>Ⅰ类<img src="images/map/legend/3-1.png" /></p>
-									<p>Ⅱ类<img src="images/map/legend/3-2.png" /></p>
-									<p>Ⅲ类<img src="images/map/legend/3-3.png" /></p>
-									<p>Ⅳ类<img src="images/map/legend/3-4.png" /></p>
-									<p>Ⅴ类<img src="images/map/legend/3-5.png" /></p>
-									<p>劣Ⅴ类<img src="images/map/legend/3-6.png" /></p>
+									<div class="first">
+										<span></span>
+										<p>环境总体规划</p>
+									</div>
+								</li>
+								<li>
+									<div class="first">
+										<span></span>
+										<p>数字城管网格化</p>
+									</div>
 								</li>
 							</ul>
 						</div>
-					</li>
-				</ul>
-			</div>
-			<div class="map-info-show"></div>
-			<div class="map-info">
-				<div class="map-title-tab">
+					</div>
+				</li>
+				<li class="two"></li>
+				<li class="three"></li>
+			</ul>
+			<ul class="map-widgets2">
+				<li class="one"></li>
+				<li class="two"></li>
+				<li class="three"></li>
+			</ul>
+			<ul class="map-widgets3">
+				<li class="one">
+					<div class="legend">
+						<p class="title">图例</p>
+						<ul>
+							<li>
+								<p>废气在线
+									<img src="images/map/legend/1-1.png" />
+								</p>
+								<p>废气离线
+									<img src="images/map/legend/1-2.png" />
+								</p>
+								<p>废气超标
+									<img src="images/map/legend/1-3.png" />
+								</p>
+								<p>废水在线
+									<img src="images/map/legend/1-4.png" />
+								</p>
+								<p>废水离线
+									<img src="images/map/legend/1-5.png" />
+								</p>
+								<p>废水超标
+									<img src="images/map/legend/1-6.png" />
+								</p>
+								<p>关停企业
+									<img src="images/map/legend/1-7.png" />
+								</p>
+							</li>
+							<li>
+								<p>优
+									<img src="images/map/legend/2-1.png" />
+								</p>
+								<p>良
+									<img src="images/map/legend/2-2.png" />
+								</p>
+								<p>轻度污染
+									<img src="images/map/legend/2-3.png" />
+								</p>
+								<p>中度污染
+									<img src="images/map/legend/2-4.png" />
+								</p>
+								<p>重度污染
+									<img src="images/map/legend/2-5.png" />
+								</p>
+								<p>严重污染
+									<img src="images/map/legend/2-6.png" />
+								</p>
+							</li>
+							<li>
+								<p>Ⅰ类
+									<img src="images/map/legend/3-1.png" />
+								</p>
+								<p>Ⅱ类
+									<img src="images/map/legend/3-2.png" />
+								</p>
+								<p>Ⅲ类
+									<img src="images/map/legend/3-3.png" />
+								</p>
+								<p>Ⅳ类
+									<img src="images/map/legend/3-4.png" />
+								</p>
+								<p>Ⅴ类
+									<img src="images/map/legend/3-5.png" />
+								</p>
+								<p>劣Ⅴ类
+									<img src="images/map/legend/3-6.png" />
+								</p>
+							</li>
+						</ul>
+					</div>
+				</li>
+			</ul>
+		</div>
+		<div class="map-info-show"></div>
+		<div class="map-info">
+			<!-- <div class="map-title-tab">
 					<p class="active">污染源查询</p>
 					<p>污染源监控</p>
+				</div> -->
+			<div class="mim-title">
+				<p class="title">徐州市</p>
+				<p class="time">2018-12-20 07:00</p>
+			</div>
+			<div class="map-info-header flexBlock">
+				<div class="num rank2 " id='poll-radio-canvas'>
 				</div>
-				<div class="map-tab-main">
-					<ul class="city-name">
-						<li class="active">宜昌市</li>
-						<li>西陵区</li>
-						<li>夷陵区</li>
-						<li>秭归县</li>
-						<li>伍家岗区</li>
-						<li>猇亭区</li>
-						<li>点军区</li>
-						<li>兴山县</li>
-						<li>远安县</li>
-						<li>宜都市</li>
-						<li>枝江市</li>
-						<li>长阳土家族自治县</li>
-						<li>五峰土家族自治县</li>
+				<p class="canvasFont">
+					<span class="warnFont">中度污染</span>
+				</p>
+				<p class="canvasAdd">首要污染物：PM
+					<sub>2.5</sub>
+				</p>
+				<dl class="noiseList">
+					<li class="noiseLi">
+						<span class="icon shiIcon"></span>
+						<span class="item">湿度：
+							<span>85</span>%</span>
+					</li>
+					<li class="noiseLi">
+						<span class="icon fengVIcon"></span>
+						<span class="item">风速：
+							<span>1.3</span>m/s</span>
+					</li>
+					<li class="noiseLi">
+						<span class="icon jiangIcon"></span>
+						<span class="item">降水：
+							<span>0.0</span>mm</span>
+					</li>
+					<li class="noiseLi">
+						<span class="icon fengIcon"></span>
+						<span class="item">风向：
+							<span>东南</span>风</span>
+					</li>
+				</dl>
+
+			</div>
+			<div class="map-tab-main">
+				<div class="districtCon flexBlock">
+					<div class="leftCon">
+						行政区：
+					</div>
+					<ul class="city-name flex1">
+						<li class="active">徐州市</li>
+						<li>云龙区</li>
+						<li>鼓楼区政府</li>
+						<li>泉山区</li>
+						<li>贾汪区</li>
+						<li>铜山区</li>
+						<li>新沂区</li>
+						<li>邳州区</li>
+						<li>眦宁县</li>
+						<li>沛县</li>
+						<li>丰县</li>
 					</ul>
-					<div class="search">
-						<div class="search-div">
-							<div class="left">
-								<p class="title">年份：</p>
-								<div class="content">
-									<input type="text" name="" value="2017" class="time" onClick="WdatePicker({dateFmt:'yyyy'})" />
-								</div>
-							</div>
-							<div class="right">
-								<p class="title">级别：</p>
-								<div class="content">
-									<div class="selectdiv">
-										<div class="select-value">级别</div>
-										<div class="select-valueall">
-											<span>级别</span>
-										</div>
-									</div>
-								</div>
+				</div>
+				<div class="districtCon flexBlock">
+					<div class="leftTypeCon">
+						测试类型：
+					</div>
+					<ul class="section-name flex1">
+						<li class="active">国控站点</li>
+						<li class="active">省控站点</li>
+						<li class="active">徐州市</li>
+					</ul>
+				</div>
+				<!-- <div class="search">
+					<div class="search-div">
+						<div class="left">
+							<p class="title">年份：</p>
+							<div class="content">
+								<input type="text" name="" value="2017" class="time" onClick="WdatePicker({dateFmt:'yyyy'})" />
 							</div>
 						</div>
-						<div class="search-div">
-							<p class="title">类别：</p>
+						<div class="right">
+							<p class="title">级别：</p>
 							<div class="content">
 								<div class="selectdiv">
-									<div class="select-value">排污权交易</div>
+									<div class="select-value">级别</div>
 									<div class="select-valueall">
-										<span>排污权交易</span>
+										<span>级别</span>
 									</div>
 								</div>
 							</div>
 						</div>
-						<div class="search-div">
-							<p class="title">名称：</p>
-							<div class="content content-width">
-								<input type="text" name="" placeholder="请输入站点名称" class="name" />
-								<span class="btn">搜索</span>
+					</div>
+					<div class="search-div">
+						<p class="title">类别：</p>
+						<div class="content">
+							<div class="selectdiv">
+								<div class="select-value">排污权交易</div>
+								<div class="select-valueall">
+									<span>排污权交易</span>
+								</div>
 							</div>
 						</div>
 					</div>
-					<div class="table">
-						<table class="tab-head" cellpadding="0" cellspacing="0">
-							<tr>
-								<td width="10%">定位</td>
-								<td width="66%" style="padding-right: 15%;">公司名称</td>
-								<td width="16%">操作</td>
-							</tr>
-						</table>
-						<table class="tab-body" cellpadding="0" cellspacing="0">
-							<tr>
-								<td width="10%"><i class="location"></i></td>
-								<td width="66%" style="padding-left: 10%;" title="湖北广济药业集团有限公司">湖北广济药业集团有限公司</td>
-								<td width="16%" style="text-align: center;">
-									<a href="#">查看详情</a>
-								</td>
-							</tr>
-							<tr>
-								<td width="10%"><i class="location"></i></td>
-								<td width="66%" style="padding-left: 10%;" title="黄石山力兴治纸业有限公司">黄石山力兴治纸业有限公司</td>
-								<td width="16%" style="text-align: center;">
-									<a href="#">查看详情</a>
-								</td>
-							</tr>
-							<tr>
-								<td width="10%"><i class="location"></i></td>
-								<td width="66%" style="padding-left: 10%;" title="湖北广济药业集团有限公司">湖北广济药业集团有限公司</td>
-								<td width="16%" style="text-align: center;">
-									<a href="#">查看详情</a>
-								</td>
-							</tr>
-							<tr>
-								<td width="10%"><i class="location"></i></td>
-								<td width="66%" style="padding-left: 10%;" title="黄石山力兴治纸业有限公司">黄石山力兴治纸业有限公司</td>
-								<td width="16%" style="text-align: center;">
-									<a href="#">查看详情</a>
-								</td>
-							</tr>
-							<tr>
-								<td width="10%"><i class="location"></i></td>
-								<td width="66%" style="padding-left: 10%;" title="中国石化江汉油分公司盐化工总厂">中国石化江汉油分公司盐化工总厂</td>
-								<td width="16%" style="text-align: center;">
-									<a href="#">查看详情</a>
-								</td>
-							</tr>
-							<tr>
-								<td width="10%"><i class="location"></i></td>
-								<td width="66%" style="padding-left: 10%;" title="中国石化江汉油分公司盐化工总厂">中国石化江汉油分公司盐化工总厂</td>
-								<td width="16%" style="text-align: center;">
-									<a href="#">查看详情</a>
-								</td>
-							</tr>
-							<tr>
-								<td width="10%"><i class="location"></i></td>
-								<td width="66%" style="padding-left: 10%;" title="中国石化江汉油分公司盐化工总厂">中国石化江汉油分公司盐化工总厂</td>
-								<td width="16%" style="text-align: center;">
-									<a href="#">查看详情</a>
-								</td>
-							</tr>
-							<tr>
-								<td width="10%"><i class="location"></i></td>
-								<td width="66%" style="padding-left: 10%;" title="湖北广济药业集团有限公司">湖北广济药业集团有限公司</td>
-								<td width="16%" style="text-align: center;">
-									<a href="#">查看详情</a>
-								</td>
-							</tr>
-							<tr>
-								<td width="10%"><i class="location"></i></td>
-								<td width="66%" style="padding-left: 10%;" title="黄石山力兴治纸业有限公司">黄石山力兴治纸业有限公司</td>
-								<td width="16%" style="text-align: center;">
-									<a href="#">查看详情</a>
-								</td>
-							</tr>
-							<tr>
-								<td width="10%"><i class="location"></i></td>
-								<td width="66%" style="padding-left: 10%;" title="中国石化江汉油分公司盐化工总厂">中国石化江汉油分公司盐化工总厂</td>
-								<td width="16%" style="text-align: center;">
-									<a href="#">查看详情</a>
-								</td>
-							</tr>
-						</table>
-						<div class="tab-info">
-							<p class="left">当前数据量：176家</p>
-						</div>
-						<div class="page">
-							<a href="#" class="first">首页</a>
-							<a href="#" class="prev">
-								< </a>
-									<a href="#">1</a>
-									<a href="#" class="cur">2</a>
-									<a href="#">...</a>
-									<a href="#">8</a>
-									<a href="#" class="next"> > </a>
-									<a href="#" class="last">末页</a>
+					<div class="search-div">
+						<p class="title">名称：</p>
+						<div class="content content-width">
+							<input type="text" name="" placeholder="请输入站点名称" class="name" />
+							<span class="btn">搜索</span>
 						</div>
 					</div>
+				</div> -->
+				<div class="table">
+					<table class="tab-body" cellpadding="0" cellspacing="0">
+						<thead>
+							<tr>
+								<td class="td1">排名</td>
+								<td class="td2">测点</td>
+								<td class="td3">AQI</td>
+								<td class="td4">首要污染物</td>
+								<td class="td5">相比上小时</td>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td class="td1">01</td>
+								<td class="td2" title="鼓楼区政府">鼓楼区政府</td>
+								<td class="td3 greenFont" style="text-align: center;"> 37</td>
+								<td class="td4">PM2.5</td>
+								<td class="td5 downTd">
+									<i class="icon downIcon"></i>2</td>
+							</tr>
+							<tr>
+								<td class="td1">02</td>
+								<td class="td2" title="农科院">农科院</td>
+								<td class="td3 orangeFont" style="text-align: center;"> 55</td>
+								<td class="td4">PM2.5</td>
+								<td class="td5 downTd">
+									<i class="icon downIcon"></i>2</td>
+							</tr>
+							<tr>
+								<td class="td1">03</td>
+								<td class="td2" title="吕梁湖">吕梁湖</td>
+								<td class="td3 orangeFont" style="text-align: center;"> 60</td>
+								<td class="td4">PM2.5</td>
+								<td class="td5 upTd">
+									<i class="icon upIcon"></i>2</td>
+							</tr>
+							<tr>
+								<td class="td1">04</td>
+								<td class="td2" title="XX1站点">XX1站点</td>
+								<td class="td3 orangeFont" style="text-align: center;"> 67</td>
+								<td class="td4">PM2.5</td>
+								<td class="td5 downTd">
+									<i class="icon downIcon"></i>2</td>
+							</tr>
+							<tr>
+								<td class="td1">05</td>
+								<td class="td2" title="XX2站点">XX2站点</td>
+								<td class="td3 orangeFont" style="text-align: center;"> 77</td>
+								<td class="td4">PM2.5</td>
+								<td class="td5 downTd">
+									<i class="icon downIcon"></i>2</td>
+							</tr>
+							<tr>
+								<td class="td1">06</td>
+								<td class="td2" title="XX3站点">XX3站点</td>
+								<td class="td3 orangeFont" style="text-align: center;"> 90</td>
+								<td class="td4">PM2.5</td>
+								<td class="td5 upTd">
+									<i class="icon upIcon"></i>2</td>
+							</tr>
+							<tr>
+								<td class="td1">07</td>
+								<td class="td2" title="XX4站点">XX4站点</td>
+								<td class="td3 warnFontTd" style="text-align: center;">106</td>
+								<td class="td4">PM2.5</td>
+								<td class="td5 upTd">
+									<i class="icon upIcon"></i>2</td>
+							</tr>
+							<tr>
+								<td class="td1">08</td>
+								<td class="td2" title="XX6站点">XX6站点</td>
+								<td class="td3 warnFontTd" style="text-align: center;">110</td>
+								<td class="td4">PM2.5</td>
+								<td class="td5 downTd">
+									<i class="icon downIcon"></i>2</td>
+							</tr>
+							<tr>
+								<td class="td1">09</td>
+								<td class="td2" title="XX7站点">XX7站点</td>
+								<td class="td3 warnFontTd" style="text-align: center;">106</td>
+								<td class="td4">PM2.5</td>
+								<td class="td5 downTd">
+									<i class="icon downIcon"></i>2</td>
+							</tr>
+							<tr>
+								<td class="td1">10</td>
+								<td class="td2" title="XX6站点">XX6站点</td>
+								<td class="td3 warnFontTd" style="text-align: center;">110</td>
+								<td class="td4">PM2.5</td>
+								<td class="td5 upTd">
+									<i class="icon upIcon"></i>2</td>
+							</tr>
+						</tbody>
+
+					</table>
+					<div class="tab-info">
+						<p class="left">当前数据量：176家</p>
+					</div>
+					<div class="page">
+						<a href="#" class="first">首页</a>
+						<a href="#" class="prev">
+							< </a>
+								<a href="#">1</a>
+								<a href="#" class="cur">2</a>
+								<a href="#">...</a>
+								<a href="#">8</a>
+								<a href="#" class="next"> > </a>
+								<a href="#" class="last">末页</a>
+					</div>
 				</div>
-				<div class="map-tab-main map-tab-main2" style="display: none;">
+			</div>
+			<!-- <div class="map-tab-main map-tab-main2" style="display: none;">
 					<div class="search">
 						<div class="search-title">区域分布</div>
 						<div class="search-div">
@@ -545,52 +701,52 @@
 						</table>
 						<table class="tab-body" cellpadding="0" cellspacing="0">
 							<tr>
-								<td width="44%" style="text-align: left;" title="湖北广济药业集团有限公司">湖北广济药业集团有限公司</td>
+								<td width="44%" style="text-align: left;" title="鼓楼区政府">鼓楼区政府</td>
 								<td width="34%" style="text-align: center;color: #ff0000;">是</td>
 								<td width="22%" style="text-align: left;" title="总磷">总磷</td>
 							</tr>
 							<tr>
-								<td width="44%" style="text-align: left;" title="湖北广济药业集团有限公司">湖北广济药业集团有限公司</td>
+								<td width="44%" style="text-align: left;" title="鼓楼区政府">鼓楼区政府</td>
 								<td width="34%" style="text-align: center;">否</td>
 								<td width="22%" style="text-align: left;" title="COD、氨氮">COD、氨氮</td>
 							</tr>
 							<tr>
-								<td width="44%" style="text-align: left;" title="湖北广济药业集团有限公司">湖北广济药业集团有限公司</td>
+								<td width="44%" style="text-align: left;" title="鼓楼区政府">鼓楼区政府</td>
 								<td width="34%" style="text-align: center;color: #ff0000;">是</td>
 								<td width="22%" style="text-align: left;" title="总磷">总磷</td>
 							</tr>
 							<tr>
-								<td width="44%" style="text-align: left;" title="湖北广济药业集团有限公司">湖北广济药业集团有限公司</td>
+								<td width="44%" style="text-align: left;" title="鼓楼区政府">鼓楼区政府</td>
 								<td width="34%" style="text-align: center;">否</td>
 								<td width="22%" style="text-align: left;" title="COD、氨氮">COD、氨氮</td>
 							</tr>
 							<tr>
-								<td width="44%" style="text-align: left;" title="湖北广济药业集团有限公司">湖北广济药业集团有限公司</td>
+								<td width="44%" style="text-align: left;" title="鼓楼区政府">鼓楼区政府</td>
 								<td width="34%" style="text-align: center;color: #ff0000;">是</td>
 								<td width="22%" style="text-align: left;" title="总磷">总磷</td>
 							</tr>
 							<tr>
-								<td width="44%" style="text-align: left;" title="湖北广济药业集团有限公司">湖北广济药业集团有限公司</td>
+								<td width="44%" style="text-align: left;" title="鼓楼区政府">鼓楼区政府</td>
 								<td width="34%" style="text-align: center;">否</td>
 								<td width="22%" style="text-align: left;" title="COD、氨氮">COD、氨氮</td>
 							</tr>
 							<tr>
-								<td width="44%" style="text-align: left;" title="湖北广济药业集团有限公司">湖北广济药业集团有限公司</td>
+								<td width="44%" style="text-align: left;" title="鼓楼区政府">鼓楼区政府</td>
 								<td width="34%" style="text-align: center;color: #ff0000;">是</td>
 								<td width="22%" style="text-align: left;" title="总磷">总磷</td>
 							</tr>
 							<tr>
-								<td width="44%" style="text-align: left;" title="湖北广济药业集团有限公司">湖北广济药业集团有限公司</td>
+								<td width="44%" style="text-align: left;" title="鼓楼区政府">鼓楼区政府</td>
 								<td width="34%" style="text-align: center;">否</td>
 								<td width="22%" style="text-align: left;" title="COD、氨氮">COD、氨氮</td>
 							</tr>
 							<tr>
-								<td width="44%" style="text-align: left;" title="湖北广济药业集团有限公司">湖北广济药业集团有限公司</td>
+								<td width="44%" style="text-align: left;" title="鼓楼区政府">鼓楼区政府</td>
 								<td width="34%" style="text-align: center;color: #ff0000;">是</td>
 								<td width="22%" style="text-align: left;" title="总磷">总磷</td>
 							</tr>
 							<tr>
-								<td width="44%" style="text-align: left;" title="湖北广济药业集团有限公司">湖北广济药业集团有限公司</td>
+								<td width="44%" style="text-align: left;" title="鼓楼区政府">鼓楼区政府</td>
 								<td width="34%" style="text-align: center;">否</td>
 								<td width="22%" style="text-align: left;" title="COD、氨氮">COD、氨氮</td>
 							</tr>
@@ -611,13 +767,13 @@
 									<a href="#" class="last">末页</a>
 						</div>
 					</div>
-				</div>
-			</div>
+				</div> -->
 		</div>
-		<script src="js/jquery-3.3.1.min.js"></script>
-		<script src="js/echarts.min.js" ></script>
-		<script src="js/My97DatePicker/WdatePicker.js"></script>
-		<script src="js/map.js"></script>
-	</body>
+	</div>
+	<script src="js/jquery-3.3.1.min.js"></script>
+	<script src="js/echarts.min.js"></script>
+	<script src="js/My97DatePicker/WdatePicker.js"></script>
+	<script src="js/map.js"></script>
+</body>
 
 </html>

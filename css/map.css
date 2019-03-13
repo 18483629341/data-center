@@ -1,5 +1,35 @@
 /* CSS Document */
-
+.flexBlock {
+	display: flex;
+	display: -webkit-box;
+	display: -moz-box;
+	display: -ms-flexbox;
+	display: -webkit-flex;
+}
+.flex1 {
+	flex: 1;
+}
+.inlineBlock {
+	display: inline-block;
+}
+.clear {
+	clear: both;
+}
+.floatLeft {
+	float: left;
+}
+.floatRight {
+	float: right;
+}
+.alignRight {
+	text-align: right!important;
+}
+table{
+	collapse:collapse;
+}
+.icon {
+	display: inline-block;
+}
 * {
 	box-sizing: border-box;
 	-moz-box-sizing: border-box;
@@ -790,12 +820,128 @@ img {
 .map-info {
 	position: relative;
 	z-index: 2;
-	width: 464px;
-	height: 100%;
 	background: #fff;
+	width: 450px;
+	height: 100%;
 	overflow: hidden;
 	overflow-y: auto;
 	transition: all 0.3s;
+}
+.map-info .mim-title {
+	height: 47px;
+	border-bottom: 1px solid #e3e3e3;
+	overflow: hidden;
+	padding-left: 12px;
+}
+
+.map-info .mim-title .title {
+	float: left;
+	font-size: 18px;
+	color: #666666;
+	line-height: 46px;
+	padding-left: 33px;
+	position: relative;
+	font-weight: bold;
+}
+
+.map-info .mim-title .title:before {
+	content: ' ';
+    display: block;
+    width: 13px;
+    height: 15px;
+    background-image: url(../images/map/1.png);
+    position: absolute;
+    left: 12px;
+    top: 16px;
+}
+
+.map-info .mim-title .time {
+	float: right;
+	line-height: 46px;
+	font-size: 14px;
+	color: #999999;
+	padding-right: 20px;
+}
+.map-info-header {
+	height: 190px;
+    overflow: hidden;
+    padding: 8px 18px;
+    background: #fff;
+    position: relative;
+}
+.map-info-header .canvasFont{
+	width:210px;
+    color: #ffffff;
+    position: absolute;
+    bottom: 11px;
+	left: 18px;
+    top: 113px;
+    z-index: 2;
+    font-size: 16px;
+    text-align: center;
+}
+.map-info-header .canvasAdd{
+	width:210px;
+	position: absolute;
+	color:#333;
+	bottom:10px;
+	text-align: center;
+    font-weight: 700;
+}
+.map-info-header .num.rank2 {
+	width: 150px;
+	margin-left:30px;
+}
+
+.map-info-header .time {
+	font-size: 14px;
+	color: #d8f3ff;
+	height: 26px;
+	line-height: 38px;
+	text-align: right;
+	overflow: hidden;
+	clear: both;
+	margin-bottom: 10px;
+}
+.warnFont{
+	background: #ff0000;
+    color: #fff;
+    padding: 2px 4px;
+    border-radius: 5px;
+}
+.noiseList{
+	flex: 1;
+	padding: 0 0 0 50px;
+}
+.noiseList .noiseLi{
+	height:42px;
+	/* padding:30px 0 30px 20px; */
+}
+.noiseList .item{
+	font-size: 16px;
+}
+
+.shiIcon,.fengVIcon,.jiangIcon,.fengIcon{
+	width:30px;
+	height:30px;
+	position: relative;
+	top: 9px;
+}
+.shiIcon{
+	background: url(../images/map/mapIcon1.png) no-repeat;
+	background-size:100%;
+}
+.fengVIcon{
+	background: url(../images/map/mapIcon2.png) no-repeat;
+	background-size:100%;
+}
+.jiangIcon{
+	background: url(../images/map/mapIcon3.png) no-repeat;
+	background-size:100%;
+}
+.fengIcon{
+	background: url(../images/map/mapIcon4.png) no-repeat;
+	background-size:100%;
 }
 
 .map-info-show {
@@ -839,24 +985,41 @@ img {
 	color: #079fed;
 }
 
-.map-tab-main {}
-
-.map-tab-main .city-name {
+.map-tab-main {
+	padding: 0 20px;
+}
+.districtCon{
+	border-top: 1px solid #eee;
+}
+.districtCon .leftCon,.districtCon .leftTypeCon{
+	width: 60px;
+    font-weight: 700;
+    font-size: 15px;
+    margin: 15px 0 0 0;
+}
+.districtCon .leftTypeCon{
+	width: 100px;
+}
+.map-tab-main .city-name,.map-tab-main .section-name {
 	overflow: hidden;
-	border-bottom: 1px solid #efefef;
+	
 	padding-bottom: 15px;
+    padding-top: 10px;
 }
 
-.map-tab-main .city-name li {
+.map-tab-main .city-name li,.map-tab-main .section-name li {
 	float: left;
-	font-size: 14px;
-	color: #161616;
-	cursor: pointer;
-	margin: 15px 22px 0;
+    font-size: 13px;
+    color: #161616;
+    cursor: pointer;
+    margin: 8px 12px 0;
 }
-
-.map-tab-main .city-name li.active {
-	color: #079fed;
+.map-tab-main .section-name li {
+    font-size: 14px;
+    margin: 8px 15px 0;
+}
+.map-tab-main .city-name li.active,.map-tab-main .section-name li.active {
+	color: #00a4ff;
 }
 
 .map-tab-main .search {
@@ -932,7 +1095,38 @@ img {
 	border-radius: 2px;
 }
 
+.greenFont{
+	background: #00c700;
+}
 
+.orangeFont{
+	background: #dfb42d;
+}
+
+.warnFontTd{
+	background: #dd7000;
+}
+.upTd{
+	color:#33a489;
+}
+.downTd{
+	color:#d95400;
+}
+.downIcon,.upIcon{
+	width: 11px;
+	height: 13px;	
+	margin-right: 5px;
+    position: relative;
+    top: 2px;
+}
+.downIcon{
+	background: url(../images/index/yyl_down.png) no-repeat;
+	background-size:100% 100%;
+}
+.upIcon{
+	background: url(../images/index/yyl_up.png) no-repeat;
+	background-size:100% 100%;
+}
 /*下拉框*/
 
 .selectdiv {
@@ -986,20 +1180,22 @@ img {
 }
 
 .table {
-	border-top: 10px solid #efefef;
-	padding: 0 20px;
+	/* border-top: 10px solid #efefef; */
+	/* padding: 0 20px; */
 }
 
 .table table {
 	width: 100%;
 	table-layout: fixed;
 }
-
+.table thead td{
+	background: #f2f2f2;
+}
 .table td {
 	line-height: 35px;
 	height: 36px;
-	text-align: left;
-	color: #161616;
+	text-align: center;
+	color: #333;
 	font-size: 14px;
 	overflow: hidden;
 	text-overflow: ellipsis;
@@ -1014,7 +1210,9 @@ img {
 	line-height: 41px;
 	border-bottom: 2px solid #efefef;
 }
-
+.td1{
+	
+}
 .table td a {
 	color: #666666;
 }
@@ -1143,15 +1341,11 @@ img {
 /*页面宽度自适应*/
 
 .map-info-show {
-	left: 29%;
+	left: 450px;
 }
 
 .map-info-hide {
 	left: 0;
-}
-
-.map-info {
-	width: 29%;
 }
 
 .map-layer-seach {

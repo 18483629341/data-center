@@ -3,13 +3,12 @@ function indexNoise() {
 	/*echarts*/
 		//交通噪音统计
 		var waterData1=[ //!!!!!需要后台传入的数据
-			{value:68.4, name:'地表水达标数量'},
-			{value:15, name:'地表水非达标数量'}
+			{value:68.4, name:'平均等效声级'},
+			{value:15, name:''}
 		]
-		var option21=setOptionfun(['#f07810','#f5f4e8'],'{value|{c}dB}\n{text|平均等效声级}',waterData1);
+		var option21=setOptionfun(['#f07810','#f5f4e8'],'{value|{c}dB}\n{text|{a}}',waterData1);
 		var myChart21 = echarts.init(document.getElementById('noise-echarts1'));
 		myChart21.setOption(option21);
-		PieAutoHighLight(myChart21,waterData1);
 		//区域噪声声源构成占比
 	var option2 = {
 		color: ['#32cd32', '#87cefa', '#ff7f50', '#bf62bb', '#fa7b14', '#ff483f'],
@@ -181,44 +180,22 @@ function setOptionfun(colors, format, data){
 			 top: 0,
 		 },
 		 color: colors,
-		 //backgroundColor:'#eec60a',
 		 series: [
 			{
-				 name: '访问来源',
+				 name: '',
 				 type: 'pie',
-				 startAngle: 0,
 				 center: ['50%', '50%'],
 				 radius: ['75%', '90%'],
 				 avoidLabelOverlap: false,
 				 hoverAnimation:false,
 				 startAngle:0,
 				 clockwise:false,
-
 				 label: {
- 
 					 normal: {
 						 show: false,
-						 position: 'center',
-						 color: '#ffffff',
-						 align: 'center',
-						 verticalAlign: 'middle',
-						 formatter:format ,
-						 rich: {
-							 value: {
-								 color: "#fff",
-								 fontSize: 30,
-								 fontWeight:'bolder',
-								 padding: 3
-							 },
-							 text:{
-								 color: "#fff",
-								 fontSize: 14,
-								 padding: [5,0, 5,0]
-							 }
-						 },
 					 },
 					 emphasis: {
-						 show: true,
+						 show: false,
 						 
 					 }
 				 },
@@ -227,46 +204,11 @@ function setOptionfun(colors, format, data){
 						 show: false,
 					 }
 				 },
-				 data: data
-			 }
- 
-		 ]
+				data: data
+			},
+			
+		]
 	 };
  return option;
  }
- //至少高亮显示一个饼图中的一个item
- function PieAutoHighLight(chartNum,data){
-	 setTimeout(function() {
-		 chartNum.dispatchAction({
-			 type: 'highlight',
-			 seriesIndex: 0,
-			 dataIndex: 0
-		 });
-	 
-		 chartNum.on('mouseover', function(params) {
-			 console.log('over');
-			 if (params.name == data[0].name) {
-				 chartNum.dispatchAction({
-					 type: 'highlight',
-					 seriesIndex: 0,
-					 dataIndex: 0
-				 });
-			 } else {
-				 chartNum.dispatchAction({
-					 type: 'downplay',
-					 seriesIndex: 0,
-					 dataIndex: 0
-				 });
-			 }
-		 });
-	 
-		 chartNum.on('mouseout', function(params) {
-			 console.log('out');
-			 chartNum.dispatchAction({
-				 type: 'highlight',
-				 seriesIndex: 0,
-				 dataIndex: 0
-			 });
-		 });
-	 }, 1000);
- }
+ 
