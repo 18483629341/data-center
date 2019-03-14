@@ -645,7 +645,7 @@ function indexPollution() {
 			name: '监控企业数',
 			type: 'bar',
 			data: [120, 160, 100, 160, 160, 140, 200],
-			barWidth: '30',
+			barWidth: '33',
 			xAxisIndex: 1,
 			itemStyle: {
 				normal: {
@@ -663,7 +663,7 @@ function indexPollution() {
 			name: '监控企业数',
 			type: 'bar',
 			data: [60, 80, 50, 80, 80, 70, 100],
-			barWidth: '29',
+			barWidth: '32',
 			stack: 'sum',
 			itemStyle: {
 				normal: {
@@ -675,7 +675,7 @@ function indexPollution() {
 			type: 'bar',
 			stack: 'sum',
 			data: [60, 80, 50, 80, 80, 70, 100],
-			barWidth: '29',
+			barWidth: '32',
 			itemStyle: {
 				normal: {
 					barBorderWidth: 6,
