@@ -695,27 +695,27 @@ img {
 }
 
 .map-legend .one div {
-	background: #6dca70;
+	background: rgb(0,228,0);
 }
 
 .map-legend .two div {
-	background: #f1c93e;
+	background: rgb(255,255,0);
 }
 
 .map-legend .three div {
-	background: #f1933e;
+	background: rgb(255,126,0);
 }
 
 .map-legend .four div {
-	background: #d35124;
+	background: rgb(255,0,0);
 }
 
 .map-legend .five div {
-	background: #a93fc0;
+	background: rgb(153,0,76);
 }
 
 .map-legend .six div {
-	background: #5d0b0b;
+	background: rgb(126,0,35);
 }
 
 .air-info1 .air-info {

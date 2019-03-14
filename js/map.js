@@ -107,6 +107,7 @@ $(function() {
 		if($(this).hasClass('active')) {
 			$(this).removeClass('active');
 		} else {
+			$('.tab-main-checkbox p').removeClass('active');
 			$(this).addClass('active');
 		}
 	})
