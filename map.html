@@ -7,7 +7,7 @@
 	<link rel="stylesheet" href="css/map.css" />
 </head>
 
-<body>
+<body class="body1">
 	<div class="header">
 		<p class="logo">
 			<img src="images/logo.png" />徐州空气质量发布及数据管理平台
@@ -15,20 +15,21 @@
 		<div class="nav">
 			<ul>
 				<li>
-					<img src="images/index_icon1.png" /> 空气地图
+					<img src="images/index_icon11.png" /> 空气地图
 				</li>
 				<li>
-					<img src="images/index_icon2.png" /> 综合分析
+					<img src="images/index_icon9.png" /> 综合分析
 				</li>
 				<li class="active">
-					<img src="images/index_icon3.png" /> 数据报表
+					<img src="images/index_icon10.png" /> 数据报表
 				</li>
 				<li>
-					<img src="images/index_icon4.png" /> 数据监控
+					<img src="images/index_icon12.png" /> 数据监控
 				</li>
 				<li>
-					<img src="images/index_icon5.png" /> 信息帮助
+					<img src="images/index_icon13.png" /> 信息帮助
 				</li>
+
 			</ul>
 			<div class="people-info">
 				<i class="line"></i>
@@ -43,25 +44,36 @@
 		</div>
 		<div class="map-alert">
 			<div class="map-alert-title">
-				<p class="name">森林公园空气自动站</p>
+				<p class="name">淮搭</p>
 				<div class="map-alert-close" title="关闭"></div>
 			</div>
 			<div class="map-alert-main">
 				<dl class="dl1">
-					<dt class="rank2">
+					<!-- <dt class="rank2">
 						<p>138</p>
 						<span>AQI</span>
+					</dt> -->
+					<dt class="rank3 threeLevel">
+						<!-- 不同等级背景色对应的颜色 
+							优：oneLevel  ；良：twoLevel  ；轻度：threeLevel  ；
+							中度：fourLevel；重度：fiveLevel ；严重：sixLevel  ；
+						-->
+						<p>轻度污染</p>
 					</dt>
 					<dd>
 						<p class="time">更新时间：2018-05-08 9:00</p>
-						<p class="word">轻度污染</p>
+						<p class="word">AQI：124</p>
 						<p class="word">
 							<span>首要污染物:</span>PM
 							<sub>2.5</sub>
 						</p>
 					</dd>
 				</dl>
-				<ul class="ul1">
+				<ul class="flexBlock air-info-type">
+					<li class="active">小时</li>
+					<li>日</li>
+				</ul>
+				<!-- <ul class="ul1">
 					<li>
 						<p class="name">SO
 							<sub>2</sub>：</p>
@@ -104,10 +116,10 @@
 							<span>μg/m³</span>
 						</p>
 					</li>
-				</ul>
+				</ul> -->
 				<div class="map-alert-echarts-title">
 					<p class="left">近24小时监测数据趋势图</p>
-					<div class="selectdiv">
+					<!-- <div class="selectdiv">
 						<div class="select-value">CO</div>
 						<div class="select-valueall">
 							<span>CO</span>
@@ -115,17 +127,17 @@
 								<sub>2.5</sub>
 							</span>
 						</div>
-					</div>
+					</div> -->
 				</div>
 				<div class="map-alert-echarts" id="map-echarts1">
 
 				</div>
-				<div class="map-alert-href">
+				<!-- <div class="map-alert-href">
 					<a href="#">查看污染源地图</a>
-				</div>
+				</div> -->
 			</div>
 		</div>
-		<div class="map-alert" style="z-index: 5;left: 20%;">
+		<!-- <div class="map-alert" style="z-index: 5;left: 20%;">
 			<div class="map-alert-title">
 				<p class="name">枝江市助力建材有限公司
 					<a href="#">详情</a>
@@ -200,8 +212,8 @@
 					<a href="#">周报查询</a>
 				</div>
 			</div>
-		</div>
-		<div class="map-time">
+		</div> -->
+		<!-- <div class="map-time">
 			<div class="selectdiv">
 				<div class="select-value">小时</div>
 				<div class="select-valueall">
@@ -221,130 +233,65 @@
 			</div>
 			<div class="num">
 			</div>
-		</div>
+		</div> -->
 		<div class="map-layer-seach">
 			<ul class="tab">
-				<li class="active">空气站</li>
-				<li>考核断面</li>
-				<li>水质自动站</li>
+				<li class="active">检测项目</li>
+				<li>插值渲染</li>
 			</ul>
 			<div class="tab-main">
 				<div class="tab-main-checkbox">
-					<p class="active">全部</p>
-					<p>优</p>
-					<p>良</p>
-					<p>轻度污染</p>
-					<p>中度污染</p>
-					<p>重度污染</p>
-					<p>严重污染</p>
+					<p class="active">AQI</p>
+					<p>PM
+						<sub>2.5</sub>
+					</p>
+					<p>PM
+						<sub>10</sub>
+					</p>
+					<p>SO
+						<sub>2</sub>
+					</p>
+					<p>NO
+						<sub>2</sub>
+					</p>
+					<p>CO</p>
+					<p>O
+						<sub>3</sub>
+					</p>
 				</div>
 				<div class="tab-main-checkbox" style="display: none;">
-					<p class="active">全部</p>
-					<p>I类</p>
-					<p>II类</p>
-					<p>III类</p>
-					<p>IV类</p>
-					<p>V类</p>
-					<p>劣V类</p>
-				</div>
-				<div class="tab-main-checkbox" style="display: none;">
-					<p class="active">全部</p>
-					<p>I类</p>
-					<p>II类</p>
-					<p>III类</p>
-					<p>IV类</p>
-					<p>V类</p>
-					<p>劣V类</p>
+					<p class="active">AQI</p>
+					<p>PM
+						<sub>2.5</sub>
+					</p>
+					<p>PM
+						<sub>10</sub>
+					</p>
+					<p>SO
+						<sub>2</sub>
+					</p>
+					<p>NO
+						<sub>2</sub>
+					</p>
+					<p>CO</p>
+					<p>O
+						<sub>3</sub>
+					</p>
+					<p>降水</p>
+					<p>气温</p>
+					<p>风向风速</p>
 				</div>
 			</div>
 		</div>
 		<div class="map-widgets">
 			<ul class="map-widgets1">
-				<li class="one active">
-					<div class="map-widgets-layer">
-						<p class="title">底图</p>
-						<div class="layer">
-							<dl>
-								<dt>
-									<img src="images/map/map_dt1.png" />
-								</dt>
-								<dd>宜昌矢量图</dd>
-							</dl>
-							<dl>
-								<dt>
-									<img src="images/map/map_dt2.png" />
-								</dt>
-								<dd>宜昌影像图</dd>
-							</dl>
-							<dl>
-								<dt>
-									<img src="images/map/map_dt3.png" />
-								</dt>
-								<dd>全省基础图</dd>
-							</dl>
-							<dl>
-								<dt>
-									<img src="images/map/map_dt4.png" />
-								</dt>
-								<dd>全省影像图</dd>
-							</dl>
-							<dl class="active">
-								<dt>
-									<img src="images/map/map_dt5.png" />
-								</dt>
-								<dd>全省地形图</dd>
-							</dl>
-						</div>
-						<p class="title">环境专题图</p>
-						<div class="layer-word">
-							<ul>
-								<li>
-									<div class="first">
-										<span></span>
-										<p>大气环境</p>
-									</div>
-									<div class="first-main">
-										<p>水质自动监测</p>
-										<p>水质手工监测</p>
-									</div>
-								</li>
-								<li>
-									<div class="first">
-										<span></span>
-										<p>水环境监测</p>
-									</div>
-									<div class="first-main">
-										<p>大气环境红线</p>
-										<p>水环境红线</p>
-										<p>生态功能红线</p>
-									</div>
-								</li>
-								<li>
-									<div class="first">
-										<span></span>
-										<p>环境总体规划</p>
-									</div>
-								</li>
-								<li>
-									<div class="first">
-										<span></span>
-										<p>数字城管网格化</p>
-									</div>
-								</li>
-							</ul>
-						</div>
-					</div>
-				</li>
+				<li class="one active"></li>
+				<!-- <li class="two"></li>
+				<li class="three"></li> -->
 				<li class="two"></li>
 				<li class="three"></li>
-			</ul>
-			<ul class="map-widgets2">
-				<li class="one"></li>
-				<li class="two"></li>
-				<li class="three"></li>
-			</ul>
-			<ul class="map-widgets3">
-				<li class="one">
+				<li class="four"></li>
+				<li class="five">
 					<div class="legend">
 						<p class="title">图例</p>
 						<ul>
@@ -415,6 +362,7 @@
 					</div>
 				</li>
 			</ul>
+			
 		</div>
 		<div class="map-info-show"></div>
 		<div class="map-info">
@@ -430,7 +378,11 @@
 				<div class="num rank2 " id='poll-radio-canvas'>
 				</div>
 				<p class="canvasFont">
-					<span class="warnFont">中度污染</span>
+					<!-- 不同等级背景色对应的颜色 
+						优：oneLevel  ；良：twoLevel  ；轻度：threeLevel  ；
+						中度：fourLevel；重度：fiveLevel ；严重：sixLevel  ；
+					-->
+					<span class="fourLevel">中度污染</span>
 				</p>
 				<p class="canvasAdd">首要污染物：PM
 					<sub>2.5</sub>
@@ -542,7 +494,11 @@
 							<tr>
 								<td class="td1">01</td>
 								<td class="td2" title="鼓楼区政府">鼓楼区政府</td>
-								<td class="td3 greenFont" style="text-align: center;"> 37</td>
+								<!-- 不同等级背景色对应的颜色 
+									优：oneLevel  ；良：twoLevel  ；轻度：threeLevel  ；
+									中度：fourLevel；重度：fiveLevel ；严重：sixLevel  ；
+								-->
+								<td class="td3 oneLevel" style="text-align: center;"> 37</td>
 								<td class="td4">PM2.5</td>
 								<td class="td5 downTd">
 									<i class="icon downIcon"></i>2</td>
@@ -550,7 +506,7 @@
 							<tr>
 								<td class="td1">02</td>
 								<td class="td2" title="农科院">农科院</td>
-								<td class="td3 orangeFont" style="text-align: center;"> 55</td>
+								<td class="td3 twoLevel" style="text-align: center;"> 55</td>
 								<td class="td4">PM2.5</td>
 								<td class="td5 downTd">
 									<i class="icon downIcon"></i>2</td>
@@ -558,7 +514,7 @@
 							<tr>
 								<td class="td1">03</td>
 								<td class="td2" title="吕梁湖">吕梁湖</td>
-								<td class="td3 orangeFont" style="text-align: center;"> 60</td>
+								<td class="td3 twoLevel" style="text-align: center;"> 60</td>
 								<td class="td4">PM2.5</td>
 								<td class="td5 upTd">
 									<i class="icon upIcon"></i>2</td>
@@ -566,7 +522,7 @@
 							<tr>
 								<td class="td1">04</td>
 								<td class="td2" title="XX1站点">XX1站点</td>
-								<td class="td3 orangeFont" style="text-align: center;"> 67</td>
+								<td class="td3 twoLevel" style="text-align: center;"> 67</td>
 								<td class="td4">PM2.5</td>
 								<td class="td5 downTd">
 									<i class="icon downIcon"></i>2</td>
@@ -574,7 +530,7 @@
 							<tr>
 								<td class="td1">05</td>
 								<td class="td2" title="XX2站点">XX2站点</td>
-								<td class="td3 orangeFont" style="text-align: center;"> 77</td>
+								<td class="td3 twoLevel" style="text-align: center;"> 77</td>
 								<td class="td4">PM2.5</td>
 								<td class="td5 downTd">
 									<i class="icon downIcon"></i>2</td>
@@ -582,7 +538,7 @@
 							<tr>
 								<td class="td1">06</td>
 								<td class="td2" title="XX3站点">XX3站点</td>
-								<td class="td3 orangeFont" style="text-align: center;"> 90</td>
+								<td class="td3 twoLevel" style="text-align: center;"> 90</td>
 								<td class="td4">PM2.5</td>
 								<td class="td5 upTd">
 									<i class="icon upIcon"></i>2</td>
@@ -590,7 +546,7 @@
 							<tr>
 								<td class="td1">07</td>
 								<td class="td2" title="XX4站点">XX4站点</td>
-								<td class="td3 warnFontTd" style="text-align: center;">106</td>
+								<td class="td3 threeLevel" style="text-align: center;">106</td>
 								<td class="td4">PM2.5</td>
 								<td class="td5 upTd">
 									<i class="icon upIcon"></i>2</td>
@@ -598,7 +554,7 @@
 							<tr>
 								<td class="td1">08</td>
 								<td class="td2" title="XX6站点">XX6站点</td>
-								<td class="td3 warnFontTd" style="text-align: center;">110</td>
+								<td class="td3 threeLevel" style="text-align: center;">110</td>
 								<td class="td4">PM2.5</td>
 								<td class="td5 downTd">
 									<i class="icon downIcon"></i>2</td>
@@ -606,7 +562,7 @@
 							<tr>
 								<td class="td1">09</td>
 								<td class="td2" title="XX7站点">XX7站点</td>
-								<td class="td3 warnFontTd" style="text-align: center;">106</td>
+								<td class="td3 threeLevel" style="text-align: center;">106</td>
 								<td class="td4">PM2.5</td>
 								<td class="td5 downTd">
 									<i class="icon downIcon"></i>2</td>
@@ -614,7 +570,7 @@
 							<tr>
 								<td class="td1">10</td>
 								<td class="td2" title="XX6站点">XX6站点</td>
-								<td class="td3 warnFontTd" style="text-align: center;">110</td>
+								<td class="td3 threeLevel" style="text-align: center;">110</td>
 								<td class="td4">PM2.5</td>
 								<td class="td5 upTd">
 									<i class="icon upIcon"></i>2</td>

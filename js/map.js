@@ -96,6 +96,12 @@ $(function() {
 		//$(this).addClass('active').siblings('li').removeClass('active');
 
 	})
+	//弹窗线框图  日/月tab的切换
+	$('.air-info-type li').click(function() {
+		// var index = $(this).index();
+		$(this).addClass('active').siblings('li').removeClass('active');
+
+	})
 	//复选，空气站、考核断面、水质自动站中的内容
 	$('.tab-main-checkbox p').click(function() {
 		if($(this).hasClass('active')) {
@@ -105,29 +111,16 @@ $(function() {
 		}
 	})
 	//图例按钮点击
-	$('.map-widgets3 li.one').click(function() {
+	$('.map-widgets1 li.five').click(function() {
 		if($(this).hasClass('active')) {
 			$(this).removeClass('active');
 			$(this).find('.legend').hide();
 		} else {
 			$(this).addClass('active');
 			$(this).find('.legend').show();
-			$('.map-widgets1 li.one').removeClass('active');
-			$('.map-widgets1 li.one').find('.map-widgets-layer').hide();
 		}
 	})
-	//图层按钮点击
-	$('.map-widgets1 li.one').click(function() {
-		if($(this).hasClass('active')) {
-			$(this).removeClass('active');
-			$(this).find('.map-widgets-layer').hide();
-		} else {
-			$(this).addClass('active');
-			$(this).find('.map-widgets-layer').show();
-			$('.map-widgets3 li.one').removeClass('active');
-			$('.map-widgets3 li.one').find('.legend').hide();
-		}
-	})
+	
 	//底图点击
 	$('.map-widgets-layer .layer dl').click(function() {
 		$(this).addClass('active').siblings('dl').removeClass('active');

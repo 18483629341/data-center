@@ -5,34 +5,35 @@ function indexAir() {
 	//默认设置echarts的宽度
 	$('.air-echarts1').width($('.air-info3').width());
 	/*      线图的相关的tab切换    */
-	//污染物list的下标
+	//初始化：污染物list的下标
 	var activeIndex=0;
-	//展示'去年同比'和'上月环比'下标
+	//初始化：'去年同比'和'上月环比'下标
 	var activeType=0;
 	$('.air-info-tab li').click(function() {
 		var index = $(this).index();
 		//重置污染物list的下标
 		activeIndex= $(this).index();
 		$(this).addClass('active').siblings('li').removeClass('active');
+		//console.log(activeIndex,activeType);
 		//根据activeIndex和activeType展示同比和环比来重组option
 		switch(activeIndex){
-			case 0:return getAirOption(LineObj0,activeType+1)
+			case 0:return newOption=getAirOption(LineObj0,activeType+1)
 					break;
-			case 1:return getAirOption(LineObj1,activeType+1)
+			case 1:return newOption=getAirOption(LineObj1,activeType+1)
 				   break;
-			case 2:return getAirOption(LineObj2,activeType+1)
+			case 2:return newOption=getAirOption(LineObj2,activeType+1)
 				   break;
-			case 3:return getAirOption(LineObj3,activeType+1)
+			case 3:return newOption=getAirOption(LineObj3,activeType+1)
 				   break;
-			case 4:return getAirOption(LineObj4,activeType+1)
+			case 4:return newOption=getAirOption(LineObj4,activeType+1)
 				   break;
-			case 5:return getAirOption(LineObj5,activeType+1)
+			case 5:return newOption=getAirOption(LineObj5,activeType+1)
 				   break;
-			case 6:return getAirOption(LineObj6,activeType+1)
+			case 6:return newOption=getAirOption(LineObj6,activeType+1)
 			       break;
 			       
 		}
-		var newOption= getAirOption('LineObj'+activeIndex,activeType+1);
+		console.log(newOption);
 		echarts1.setOption(newOption);
 	})
 	$('.air-info-type li').click(function() {
@@ -40,8 +41,9 @@ function indexAir() {
 		//重置'去年同比'和'上月环比'下标
 		activeType= $(this).index();
 		$(this).addClass('active').siblings('li').removeClass('active');
+		console.log(activeIndex,activeType);
 		var newOption=null;
-		///根据activeIndex和activeType展示同比和环比来重组option
+		//根据activeIndex和activeType展示同比和环比来重组option
 		switch(activeIndex){
 			case 0:return newOption=getAirOption(LineObj0,activeType+1)
 					break;
@@ -110,7 +112,7 @@ function indexAir() {
 		targetValue:10,//目标值，如果为无目标值就不写此属性
         seriesData:[
 			{name:"2018年",arr:[5, 15, 4, 13, 12, 13, 14, 15, 16, 17, 18, 9, 10, 15]},
-			{name:"2017年",arr:[ 7, 8, 19, 10, 8, 10, 4, 3, 2, 3, 4, 5, 6, 5]},
+			{name:"2017年",arr:[10, 4, 3, 2, 3, 7, 8, 19, 10, 8,  4, 5, 6, 5]},
 			{name:"同期上月",arr:[ 5, 6, 7, 8, 19,8, 10, 4, 3, 2, 3, 4, 10, 5]}
 		]
 	}
@@ -123,7 +125,7 @@ function indexAir() {
         seriesData:[
 			{name:"2018年",arr:[5, 15, 4, 13, 12, 13, 14, 15, 16, 17, 18, 9, 10, 15]},
 			{name:"2017年",arr:[ 7, 8, 19, 10, 8, 10, 4, 3, 2, 3, 4, 5, 6, 5]},
-			{name:"同期上月",arr:[ 5, 6, 7, 8, 19,8, 10, 4, 3, 2, 3, 4, 10, 5]}
+			{name:"同期上月",arr:[  19,8, 10, 4, 3, 2,5, 6, 7, 8, 3, 4, 10, 5]}
 		]
 	}
 	//SO2
@@ -135,7 +137,7 @@ function indexAir() {
         seriesData:[
 			{name:"2018年",arr:[5, 15, 4, 13, 12, 13, 14, 15, 16, 17, 18, 9, 10, 15]},
 			{name:"2017年",arr:[ 7, 8, 19, 10, 8, 10, 4, 3, 2, 3, 4, 5, 6, 5]},
-			{name:"同期上月",arr:[ 5, 6, 7, 8, 19,8, 10, 4, 3, 2, 3, 4, 10, 5]}
+			{name:"同期上月",arr:[  4, 3, 2, 3, 4,5, 6, 7, 8, 19,8, 10, 10, 5]}
 		]
 	}
 	//O3
@@ -145,7 +147,7 @@ function indexAir() {
 		unit:"单位：ug/m3",
 		targetValue:10,//目标值，如果为无目标值就不写此属性
         seriesData:[
-			{name:"2018年",arr:[5, 15, 4, 13, 12, 13, 14, 15, 16, 17, 18, 9, 10, 15]},
+			{name:"2018年",arr:[ 15, 16, 17, 18, 9,5, 15, 4, 13, 12, 13, 14, 10, 15]},
 			{name:"2017年",arr:[ 7, 8, 19, 10, 8, 10, 4, 3, 2, 3, 4, 5, 6, 5]},
 			{name:"同期上月",arr:[ 5, 6, 7, 8, 19,8, 10, 4, 3, 2, 3, 4, 10, 5]}
 		]
@@ -162,7 +164,7 @@ function getAirOption(obj,i){
 	    }else{
 			legendData= [obj.seriesData[0].name, obj.seriesData[i].name]
 		}
-		console.log(legendData);
+		
     var option = {
 		tooltip: {
 			trigger: 'axis',
@@ -212,10 +214,10 @@ function getAirOption(obj,i){
 			}
 		},
 		grid: {
-			left: '2%',
+			left: '4%',
 			right: '4%',
-			bottom: '15px',
-			top: '75px',
+			bottom: '30px',
+			top: '85px',
 			containLabel: true
 		},
 		xAxis: {
@@ -305,6 +307,7 @@ function getAirOption(obj,i){
 		}
 		option.series.push(obj);
 	}
+	console.log(option.series);
 	return option;
 }
 

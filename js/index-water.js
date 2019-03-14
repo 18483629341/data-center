@@ -154,8 +154,8 @@ function indexWater() {
 		{value:85, name:'地表水达标数量'},
 		{value:15, name:'地表水非达标数量'}
 	]
-	var option21=setOptionfun(['#158eff','#e3e3e3'],'{value|{d}}{text|%}',waterData1);
-	var myChart21 = echarts.init(document.getElementById('CompRateCanvas021'));
+	var option21=getOptionfun(['#158eff','#e3e3e3'],'{value|{d}}{text|%}',waterData1);
+	var myChart21 = echarts.init(document.getElementById('CompRateCanvas21'));
 	myChart21.setOption(option21);
 	PieAutoHighLight(myChart21,waterData1);
 	//饮用水达标率
@@ -163,13 +163,13 @@ function indexWater() {
 		{value:90, name:'饮用水达标数量'},
 		{value:0, name:'饮用水非达标数量'}
 	]
-	var option2=setOptionfun(['#158eff','#e3e3e3'],'{value|{d}}{text|%}',waterData2);
-	var myChart2 = echarts.init(document.getElementById('CompRateCanvas022'));
+	var option2=getOptionfun(['#158eff','#e3e3e3'],'{value|{d}}{text|%}',waterData2);
+	var myChart2 = echarts.init(document.getElementById('CompRateCanvas22'));
 	myChart2.setOption(option2);
 	PieAutoHighLight(myChart2,waterData2);
 }
 // 指定饼状图的配置项和数据
-function setOptionfun(colors, format, data){
+function getOptionfun(colors, format, data){
    //达标的数据和不达标的数据组成的数组     //!!!!!!!需要后台引入的数据
    var option = {
 		grid: {
@@ -234,7 +234,6 @@ function PieAutoHighLight(chartNum,data){
         });
     
         chartNum.on('mouseover', function(params) {
-            console.log('over');
             if (params.name == data[0].name) {
                 chartNum.dispatchAction({
                     type: 'highlight',
@@ -251,7 +250,6 @@ function PieAutoHighLight(chartNum,data){
         });
     
         chartNum.on('mouseout', function(params) {
-            console.log('out');
             chartNum.dispatchAction({
                 type: 'highlight',
                 seriesIndex: 0,
