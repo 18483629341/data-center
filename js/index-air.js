@@ -12,9 +12,7 @@ function indexAir() {
 	$('.air-info-tab li').click(function () {
 		//重置污染物list的下标
 		activeIndex = parseInt($(this).index());
-		console.log(activeIndex,activeType);
 		$(this).addClass('active').siblings('li').removeClass('active');
-		//console.log(activeIndex,activeType);
 		//根据activeIndex和activeType展示同比和环比来重组option
 		switch (activeIndex) {
 			case 0:
@@ -41,14 +39,12 @@ function indexAir() {
 		}
 		
 		echarts1.setOption(newOption);
-		console.log('setOption成功');
 	})
 	$('.air-info-type li').click(function () {
 		//重置'去年同比'和'上月环比'下标
 		activeType = parseInt($(this).index()) + 1;
 	
 		$(this).addClass('active').siblings('li').removeClass('active');
-		console.log(typeof(activeIndex), activeType);
 		var newOption = null;
 		//根据activeIndex和activeType展示同比和环比来重组option
 		switch (activeIndex) {
@@ -75,9 +71,7 @@ function indexAir() {
 				break;
 
 		}
-		console.log(newOption);
 		echarts1.setOption(newOption);
-		console.log('setOption成功');
 	})
 	/*echarts*/
 	//AQI
@@ -233,14 +227,12 @@ function getAirOption(obj, i) {
 	var index=parseInt(i);
 
 	var seriesData=obj['seriesData'];
-	console.log( seriesData[1]);
 	var legendArr=[];
 	if (!!obj.targetValue) { //当对象存在时且数据不为‘’/0/null时
 		legendArr = ['目标值', seriesData[0].name,seriesData[index].name]
 	} else {
 		legendArr = [seriesData[0].name, seriesData[index].name]
 	}
-	console.log(legendArr);
 	var option = {
 		tooltip: {
 			trigger: 'axis',
@@ -388,7 +380,6 @@ function getAirOption(obj, i) {
 		}
 		option.series.push(obj);
 	}
-	console.log(option.series);
 	return option;
 }
 
