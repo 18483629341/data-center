@@ -335,6 +335,7 @@ $(function() {
 	var echarts2 = echarts.init(document.getElementById('map-echarts2'));
 	echarts2.setOption(option2);
 })
+
 /**  绘制显示进度的饼图
   
    * @param {String} text 设置中间文字
@@ -423,11 +424,10 @@ function drawpollutionEcharts(text, val, bg){
       }]
     };
 
-    const pollutionEcharts = echarts.init(
-     document.getElementById('poll-radio-canvas')
-    );
+    const pollutionEcharts = echarts.init(document.getElementById('poll-radio-canvas'));
     pollutionEcharts.setOption(option);
 }
+
 /**
 * 设置echarts显示对象
 * @param {numbr} value 值
