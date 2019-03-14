@@ -306,13 +306,16 @@ img {
 	width: 420px;
 	background: #ffffff;
 	overflow: hidden;
-	border-radius: 5px;
+	
 	margin-top: 3px;
+	
 }
 
 .map-layer-seach .tab-main-checkbox {
 	overflow: hidden;
 	padding-bottom: 13px;
+	border-radius: 5px;
+	border: 1px solid #079fed;
 }
 
 .map-layer-seach .tab-main-checkbox p {
