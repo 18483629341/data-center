@@ -6,166 +6,242 @@ function indexAir() {
 	$('.air-echarts1').width($('.air-info3').width());
 	/*      线图的相关的tab切换    */
 	//初始化：污染物list的下标
-	var activeIndex=0;
+	var activeIndex = 0;
 	//初始化：'去年同比'和'上月环比'下标
-	var activeType=0;
-	$('.air-info-tab li').click(function() {
-		var index = $(this).index();
+	var activeType = 1;
+	$('.air-info-tab li').click(function () {
 		//重置污染物list的下标
-		activeIndex= $(this).index();
+		activeIndex = parseInt($(this).index());
+		console.log(activeIndex,activeType);
 		$(this).addClass('active').siblings('li').removeClass('active');
 		//console.log(activeIndex,activeType);
 		//根据activeIndex和activeType展示同比和环比来重组option
-		switch(activeIndex){
-			case 0:return newOption=getAirOption(LineObj0,activeType+1)
-					break;
-			case 1:return newOption=getAirOption(LineObj1,activeType+1)
-				   break;
-			case 2:return newOption=getAirOption(LineObj2,activeType+1)
-				   break;
-			case 3:return newOption=getAirOption(LineObj3,activeType+1)
-				   break;
-			case 4:return newOption=getAirOption(LineObj4,activeType+1)
-				   break;
-			case 5:return newOption=getAirOption(LineObj5,activeType+1)
-				   break;
-			case 6:return newOption=getAirOption(LineObj6,activeType+1)
-			       break;
-			       
+		switch (activeIndex) {
+			case 0:
+				newOption = getAirOption(LineObj0, activeType )
+				break;
+			case 1:
+				newOption = getAirOption(LineObj1, activeType)
+				break;
+			case 2:
+				newOption = getAirOption(LineObj2, activeType )
+				break;
+			case 3:
+				newOption = getAirOption(LineObj3, activeType)
+				break;
+			case 4:
+				newOption = getAirOption(LineObj4, activeType)
+				break;
+			case 5:
+				newOption = getAirOption(LineObj5, activeType)
+				break;
+			default:
+				newOption = getAirOption(LineObj6, activeType)
+				break;
+		}
+		
+		echarts1.setOption(newOption);
+		console.log('setOption成功');
+	})
+	$('.air-info-type li').click(function () {
+		//重置'去年同比'和'上月环比'下标
+		activeType = parseInt($(this).index()) + 1;
+	
+		$(this).addClass('active').siblings('li').removeClass('active');
+		console.log(typeof(activeIndex), activeType);
+		var newOption = null;
+		//根据activeIndex和activeType展示同比和环比来重组option
+		switch (activeIndex) {
+			case 0:
+				newOption = getAirOption(LineObj0, activeType )
+				break;
+			case 1:
+				newOption = getAirOption(LineObj1, activeType)
+				break;
+			case 2:
+				newOption = getAirOption(LineObj2, activeType )
+				break;
+			case 3:
+				newOption = getAirOption(LineObj3, activeType)
+				break;
+			case 4:
+				newOption = getAirOption(LineObj4, activeType)
+				break;
+			case 5:
+				newOption = getAirOption(LineObj5, activeType)
+				break;
+			default:
+				newOption = getAirOption(LineObj6, activeType)
+				break;
+
 		}
 		console.log(newOption);
 		echarts1.setOption(newOption);
-	})
-	$('.air-info-type li').click(function() {
-		var index = $(this).index();
-		//重置'去年同比'和'上月环比'下标
-		activeType= $(this).index();
-		$(this).addClass('active').siblings('li').removeClass('active');
-		console.log(activeIndex,activeType);
-		var newOption=null;
-		//根据activeIndex和activeType展示同比和环比来重组option
-		switch(activeIndex){
-			case 0:return newOption=getAirOption(LineObj0,activeType+1)
-					break;
-			case 1:return newOption=getAirOption(LineObj1,activeType+1)
-				   break;
-			case 2:return newOption=getAirOption(LineObj2,activeType+1)
-				   break;
-			case 3:return newOption=getAirOption(LineObj3,activeType+1)
-				   break;
-			case 4:return newOption=getAirOption(LineObj4,activeType+1)
-				   break;
-			case 5:return newOption=getAirOption(LineObj5,activeType+1)
-				   break;
-			case 6:return newOption=getAirOption(LineObj6,activeType+1)
-			       break;
-			       
-		}
-		echarts1.setOption(newOption);
+		console.log('setOption成功');
 	})
 	/*echarts*/
 	//AQI
-	var LineObj0={               //！！！！！！！！！！！！！！需要后台传入的数据
-		name:'',
-		xData:['04-10', '04-11', '04-12', '04-13', '04-14', '04-15', '04-16', '04-17', '04-18'],
-		unit:"",
-		targetValue:'',//目标值，如果为无目标值就不写此属性
-        seriesData:[
-			{name:"2018年",arr:[5, 15, 4, 13, 12, 13, 14, 15, 16, 17, 18, 9, 10, 15]},
-			{name:"2017年",arr:[ 7, 8, 19, 10, 8, 10, 4, 3, 2, 3, 4, 5, 6, 5]},
-			{name:"同期上月",arr:[ 5, 6, 7, 8, 19,8, 10, 4, 3, 2, 3, 4, 10, 5]}
+	var LineObj0 = { //！！！！！！！！！！！！！！需要后台传入的数据
+		name: '',
+		xData: ['04-10', '04-11', '04-12', '04-13', '04-14', '04-15', '04-16', '04-17', '04-18'],
+		unit: "",
+		targetValue: '', //目标值，如果为无目标值就不写此属性
+		seriesData: [{
+				name: "2018年",
+				arr: [5, 15, 4, 13, 12, 13, 14, 15, 16, 17, 18, 9, 10, 15]
+			},
+			{
+				name: "2017年",
+				arr: [7, 8, 19, 13, 8, 10, 4, 3, 2, 3, 4, 5, 6, 5]
+			},
+			{
+				name: "同期上月",
+				arr: [5, 6, 7, 13, 19, 8, 10, 4, 3, 2, 3, 4, 10, 5]
+			}
 		]
 	}
 	//参数1：数据来源；参数2：设置同比和环比切换显示的类型下标：分别为属性 1 和 2
-	var option=getAirOption(LineObj0,1);
+	var option = getAirOption(LineObj0, 1);
 	var echarts1 = echarts.init(document.getElementById('air-echarts1'));
 	echarts1.setOption(option);
 	//PM2.5
-	var LineObj1={               //！！！！！！！！！！！！！！需要后台传入的数据
-		name:'',
-		xData:['04-10', '04-11', '04-12', '04-13', '04-14', '04-15', '04-16', '04-17', '04-18'],
-		unit:"单位：ug/m3",
-		targetValue:10,//目标值，如果为无目标值就不写此属性
-        seriesData:[
-			{name:"2018年",arr:[ 15, 16, 17, 18, 9,5, 15, 4, 13, 12, 13, 14, 10, 15]},
-			{name:"2017年",arr:[ 7, 8, 19, 10, 8, 10, 4, 3, 2, 3, 4, 5, 6, 5]},
-			{name:"同期上月",arr:[ 5, 6, 7, 8, 19,8, 10, 4, 3, 2, 3, 4, 10, 5]}
+	var LineObj1 = { //！！！！！！！！！！！！！！需要后台传入的数据
+		name: '',
+		xData: ['04-10', '04-11', '04-12', '04-13', '04-14', '04-15', '04-16', '04-17', '04-18'],
+		unit: "单位：ug/m3",
+		targetValue: 10, //目标值，如果为无目标值就不写此属性
+		seriesData: [{
+				name: "2018年",
+				arr: [15, 16, 17, 18, 9, 5, 15, 4, 13, 12, 13, 14, 10, 15]
+			},
+			{
+				name: "2017年",
+				arr: [7, 8, 19, 10, 8, 10, 4, 3, 2, 3, 4, 5, 6, 5]
+			},
+			{
+				name: "同期上月",
+				arr: [5, 6, 7, 8, 19, 8, 10, 4, 3, 2, 3, 4, 10, 5]
+			}
 		]
 	}
 	//PM10
-	var LineObj2={               //！！！！！！！！！！！！！！需要后台传入的数据
-		name:'',
-		xData:['04-10', '04-11', '04-12', '04-13', '04-14', '04-15', '04-16', '04-17', '04-18'],
-		unit:"单位：ug/m3",
-		targetValue:10,//目标值，如果为无目标值就不写此属性
-        seriesData:[
-			{name:"2018年",arr:[5, 15, 4, 13, 12, 13, 14, 15, 16, 17, 18, 9, 10, 15]},
-			{name:"2017年",arr:[ 7, 8, 19, 10, 8, 10, 4, 3, 2, 3, 4, 5, 6, 5]},
-			{name:"同期上月",arr:[ 5, 6, 7, 8, 19,8, 10, 4, 3, 2, 3, 4, 10, 5]}
+	var LineObj2 = { //！！！！！！！！！！！！！！需要后台传入的数据
+		name: '',
+		xData: ['04-10', '04-11', '04-12', '04-13', '04-14', '04-15', '04-16', '04-17', '04-18'],
+		unit: "单位：ug/m3",
+		targetValue: 10, //目标值，如果为无目标值就不写此属性
+		seriesData: [{
+				name: "2018年",
+				arr: [5, 15, 4, 13, 12, 13, 14, 15, 16, 17, 18, 9, 10, 15]
+			},
+			{
+				name: "2017年",
+				arr: [7, 8, 19, 10, 8, 10, 4, 3, 2, 3, 4, 5, 6, 5]
+			},
+			{
+				name: "同期上月",
+				arr: [5, 6, 7, 8, 19, 8, 10, 4, 3, 2, 3, 4, 10, 5]
+			}
 		]
 	}
 	//CO
-	var LineObj3={               //！！！！！！！！！！！！！！需要后台传入的数据
-		name:'',
-		xData:['04-10', '04-11', '04-12', '04-13', '04-14', '04-15', '04-16', '04-17', '04-18'],
-		unit:"单位：mg/m3",
-		targetValue:10,//目标值，如果为无目标值就不写此属性
-        seriesData:[
-			{name:"2018年",arr:[5, 15, 4, 13, 12, 13, 14, 15, 16, 17, 18, 9, 10, 15]},
-			{name:"2017年",arr:[10, 4, 3, 2, 3, 7, 8, 19, 10, 8,  4, 5, 6, 5]},
-			{name:"同期上月",arr:[ 5, 6, 7, 8, 19,8, 10, 4, 3, 2, 3, 4, 10, 5]}
+	var LineObj3 = { //！！！！！！！！！！！！！！需要后台传入的数据
+		name: '',
+		xData: ['04-10', '04-11', '04-12', '04-13', '04-14', '04-15', '04-16', '04-17', '04-18'],
+		unit: "单位：mg/m3",
+		targetValue: 10, //目标值，如果为无目标值就不写此属性
+		seriesData: [{
+				name: "2018年",
+				arr: [5, 15, 4, 13, 12, 13, 14, 15, 16, 17, 18, 9, 10, 15]
+			},
+			{
+				name: "2017年",
+				arr: [10, 4, 3, 2, 3, 7, 8, 19, 10, 8, 4, 5, 6, 5]
+			},
+			{
+				name: "同期上月",
+				arr: [5, 6, 7, 8, 19, 8, 10, 4, 3, 2, 3, 4, 10, 5]
+			}
 		]
 	}
 	//NO2
-	var LineObj4={               //！！！！！！！！！！！！！！需要后台传入的数据
-		name:'',
-		xData:['04-10', '04-11', '04-12', '04-13', '04-14', '04-15', '04-16', '04-17', '04-18'],
-		unit:"单位：ug/m3",
-		targetValue:10,//目标值，如果为无目标值就不写此属性
-        seriesData:[
-			{name:"2018年",arr:[5, 15, 4, 13, 12, 13, 14, 15, 16, 17, 18, 9, 10, 15]},
-			{name:"2017年",arr:[ 7, 8, 19, 10, 8, 10, 4, 3, 2, 3, 4, 5, 6, 5]},
-			{name:"同期上月",arr:[  19,8, 10, 4, 3, 2,5, 6, 7, 8, 3, 4, 10, 5]}
+	var LineObj4 = { //！！！！！！！！！！！！！！需要后台传入的数据
+		name: '',
+		xData: ['04-10', '04-11', '04-12', '04-13', '04-14', '04-15', '04-16', '04-17', '04-18'],
+		unit: "单位：ug/m3",
+		targetValue: 10, //目标值，如果为无目标值就不写此属性
+		seriesData: [{
+				name: "2018年",
+				arr: [5, 15, 4, 13, 12, 13, 14, 15, 16, 17, 18, 9, 10, 15]
+			},
+			{
+				name: "2017年",
+				arr: [7, 8, 19, 10, 8, 10, 4, 3, 2, 3, 4, 5, 6, 5]
+			},
+			{
+				name: "同期上月",
+				arr: [19, 8, 10, 4, 3, 2, 5, 6, 7, 8, 3, 4, 10, 5]
+			}
 		]
 	}
 	//SO2
-	var LineObj5={               //！！！！！！！！！！！！！！需要后台传入的数据
-		name:'',
-		xData:['04-10', '04-11', '04-12', '04-13', '04-14', '04-15', '04-16', '04-17', '04-18'],
-		unit:"单位：ug/m3",
-		targetValue:10,//目标值，如果为无目标值就不写此属性
-        seriesData:[
-			{name:"2018年",arr:[5, 15, 4, 13, 12, 13, 14, 15, 16, 17, 18, 9, 10, 15]},
-			{name:"2017年",arr:[ 7, 8, 19, 10, 8, 10, 4, 3, 2, 3, 4, 5, 6, 5]},
-			{name:"同期上月",arr:[  4, 3, 2, 3, 4,5, 6, 7, 8, 19,8, 10, 10, 5]}
+	var LineObj5 = { //！！！！！！！！！！！！！！需要后台传入的数据
+		name: '',
+		xData: ['04-10', '04-11', '04-12', '04-13', '04-14', '04-15', '04-16', '04-17', '04-18'],
+		unit: "单位：ug/m3",
+		targetValue: 10, //目标值，如果为无目标值就不写此属性
+		seriesData: [{
+				name: "2018年",
+				arr: [5, 15, 4, 13, 12, 13, 14, 15, 16, 17, 18, 9, 10, 15]
+			},
+			{
+				name: "2017年",
+				arr: [7, 8, 19, 10, 8, 10, 4, 3, 2, 3, 4, 5, 6, 5]
+			},
+			{
+				name: "同期上月",
+				arr: [4, 3, 2, 3, 4, 5, 6, 7, 8, 19, 8, 10, 10, 5]
+			}
 		]
 	}
 	//O3
-	var LineObj6={               //！！！！！！！！！！！！！！需要后台传入的数据
-		name:'',
-		xData:['04-10', '04-11', '04-12', '04-13', '04-14', '04-15', '04-16', '04-17', '04-18'],
-		unit:"单位：ug/m3",
-		targetValue:10,//目标值，如果为无目标值就不写此属性
-        seriesData:[
-			{name:"2018年",arr:[ 15, 16, 17, 18, 9,5, 15, 4, 13, 12, 13, 14, 10, 15]},
-			{name:"2017年",arr:[ 7, 8, 19, 10, 8, 10, 4, 3, 2, 3, 4, 5, 6, 5]},
-			{name:"同期上月",arr:[ 5, 6, 7, 8, 19,8, 10, 4, 3, 2, 3, 4, 10, 5]}
+	var LineObj6 = { //！！！！！！！！！！！！！！需要后台传入的数据
+		name: '',
+		xData: ['04-10', '04-11', '04-12', '04-13', '04-14', '04-15', '04-16', '04-17', '04-18'],
+		unit: "单位：ug/m3",
+		targetValue: 10, //目标值，如果为无目标值就不写此属性
+		seriesData: [{
+				name: "2018年",
+				arr: [15, 16, 17, 18, 9, 5, 15, 4, 13, 12, 13, 14, 10, 15]
+			},
+			{
+				name: "2017年",
+				arr: [7, 8, 19, 10, 8, 10, 4, 3, 2, 3, 4, 5, 6, 5]
+			},
+			{
+				name: "同期上月",
+				arr: [5, 6, 7, 8, 19, 8, 10, 4, 3, 2, 3, 4, 10, 5]
+			}
 		]
 	}
 }
 /**  绘制显示进度的饼图
-   * @param {obj} Obj 设置图形展示的所有相关数据的对象
-   * @param {Number} val 设置同比和环比切换显示的类型：为属性seriesData的 1 和 2
-*/
-function getAirOption(obj,i){
-	console.log(!!obj.targetValue);
-	   if(!!obj.targetValue){//当对象存在时且数据不为‘’/0/null时
-			legendData= ['目标值',obj.seriesData[0].name, obj.seriesData[i].name]
-	    }else{
-			legendData= [obj.seriesData[0].name, obj.seriesData[i].name]
-		}
-		
-    var option = {
+ * @param {obj} Obj 设置图形展示的所有相关数据的对象
+ * @param {Number} val 设置同比和环比切换显示的类型：为属性seriesData的 1 和 2
+ */
+function getAirOption(obj, i) {
+	var index=parseInt(i);
+
+	var seriesData=obj['seriesData'];
+	console.log( seriesData[1]);
+	var legendArr=[];
+	if (!!obj.targetValue) { //当对象存在时且数据不为‘’/0/null时
+		legendArr = ['目标值', seriesData[0].name,seriesData[index].name]
+	} else {
+		legendArr = [seriesData[0].name, seriesData[index].name]
+	}
+	console.log(legendArr);
+	var option = {
 		tooltip: {
 			trigger: 'axis',
 			axisPointer: {
@@ -182,19 +258,24 @@ function getAirOption(obj,i){
 			textStyle: {
 				color: '#333333'
 			},
-			formatter: function(params) {
-				
-				var increase=(params[0].value-params[1].value)/params[1].value;
-				increase=parseFloat(increase*100).toFixed(1);
-				var main=null;
-				if(increase>0){
-                    main = params[0].name + '同比去年<img src="images/index/jt_icon.png" style="vertical-align: -1px;margin: 0 2px;"/>'+increase+'%';
-				}else if(increase<0){
-					main = params[0].name + '同比去年<img src="images/index/jt_icon2.png" style="vertical-align: -1px;margin: 0 2px;"/>'+increase+'%';
-				}else{
-                    main = params[0].name + '同比去年持平';
+			formatter: function (params) {
+				var labelType = null;
+				if (index === 1) {
+					labelType = '同比去年';
+				} else {
+					labelType = '环比上月';
 				}
-				for(var i = 0; i < params.length; i++) {
+				var increase = (params[0].value - params[1].value) / params[1].value;
+				increase = parseFloat(increase * 100).toFixed(1);
+				var main = null;
+				if (increase > 0) {
+					main = params[0].name + labelType + '<img src="images/index/jt_icon.png" style="vertical-align: -1px;margin: 0 2px;"/>' + increase + '%';
+				} else if (increase < 0) {
+					main = params[0].name + labelType + '<img src="images/index/jt_icon2.png" style="vertical-align: -1px;margin: 0 2px;"/>' + increase + '%';
+				} else {
+					main = params[0].name + labelType + '持平';
+				}
+				for (var i = 0; i < params.length; i++) {
 					main += '<br>' + params[i].marker + params[i].seriesName + '：' + params[i].value
 				}
 				return main;
@@ -203,7 +284,7 @@ function getAirOption(obj,i){
 		color: ['#43b368', '#3bbffb', '#e6ce2c'],
 		legend: {
 			selectedMode: false,
-			data:legendData,
+			data: legendArr,
 			right: 18,
 			top: 8,
 			itemGap: 20,
@@ -239,7 +320,7 @@ function getAirOption(obj,i){
 			}
 		},
 		yAxis: {
-			name: '单位：mg/m3',
+			name: obj.unit,
 			type: 'value',
 			axisLine: {
 				lineStyle: {
@@ -263,22 +344,22 @@ function getAirOption(obj,i){
 			}
 		},
 		series: [{
-			name:obj.seriesData[0].name,
+			name: seriesData[0].name,
 			type: 'line',
-			data: obj.seriesData[0].arr,
+			data:seriesData[0].arr,
 			smooth: true,
 			symbolSize: 0
 		}, {
-			name: obj.seriesData[i].name,
+			name:seriesData[index].name,
 			type: 'line',
-			data: obj.seriesData[i].arr,
+			data:seriesData[index].arr,
 			smooth: true,
 			symbolSize: 0
-		}] 
-		
+		}]
+
 	};
-	if(!!obj.targetValue){
-	 	var obj={
+	if (!!obj.targetValue) {
+		var obj ={
 			name: '目标值',
 			type: 'line',
 			data: [],
@@ -292,7 +373,7 @@ function getAirOption(obj,i){
 					position: 'start'
 				},
 				data: [{
-					yAxis: obj.targetValue,
+					yAxis:obj.targetValue,
 					label: {
 						show: false,
 						position: 'start'
@@ -312,6 +393,6 @@ function getAirOption(obj,i){
 }
 
 //将分数改为百分比的格式
-function transToRadio(num){
-    return parseFloat(num*100).toFixed(1);
+function transToRadio(num) {
+	return parseFloat(num * 100).toFixed(1);
 }

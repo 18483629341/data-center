@@ -56,6 +56,15 @@ function indexWater() {
 	echarts1.setOption(option1);
 	//监测河流水质现状
 	var option2 = {
+		title:{
+			text:'水质达标情况最差的十条河流',
+			left:20,
+			top:10,
+			textStyle:{
+				fontWeight:'normal',
+				fontSize:14,
+			}
+		},
 		tooltip: {
 			trigger: 'axis',
 			axisPointer: {
@@ -72,7 +81,19 @@ function indexWater() {
 			textStyle: {
 				color: '#333333'
 			},
-			formatter: '{b0}达标断面数: {c0}个<br/>{b1}超标断面数: {c1}个'
+			formatter: function(param){
+				var standRadio=null;
+				var notStantdHtml='';
+				//如果不达标的数据为'-'
+				if(param[1].value==='-'){
+					standRadio=100;
+				}else{
+					standRadio=parseFloat(param[0].value/(param[0].value+param[1].value)*100).toFixed(1);
+					notStantdHtml='<br/><span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:#df3f37;margin:0 6px;"></span>'+param[1].axisValue+'超标断面数:<span style="color:#df3f37">'+param[1].value+'</span>个';
+				} 
+				return '达标率：<span style="color:#52b052">'+standRadio+'</span>%<br/><span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:#52b052;margin:0 6px;"></span>'+param[0].axisValue+'达标断面数:<span style="color:#52b052">'+param[0].value+'</span>个'+notStantdHtml;
+              
+			}
 		},
 		color: ['#52b052', '#df3f37'],
 		legend: {
@@ -87,15 +108,15 @@ function indexWater() {
 			}
 		},
 		grid: {
-			left: '0%',
-			right: '1%',
+			left: '1%',
+			right: '6%',
 			bottom: '15px',
 			top: '40px',
 			containLabel: true
 		},
 		xAxis: {
 			type: 'category',
-			data: ['长江干流', '清江', '沮漳河', '香溪河', '运河', '善溪冲', '桥边河', '柏临河', '下牢溪', '茅坪河', '沙河', '叱溪河', '九畹溪', '青干河', '太平溪', '童庄河', '沮漳河', '香溪河', '运河', '善溪冲', '下牢溪', '茅坪河'],
+			data: ['废黄河', '大沙河', '废黄河', '复新河', '大沿沭马河', '废黄河', '新河', '柏临河', '下牢溪', '茅坪河'],
 			axisLine: {
 				lineStyle: {
 					color: '#c5c5c5'
@@ -118,7 +139,7 @@ function indexWater() {
 		series: [{
 			name: '达标',
 			type: 'bar',
-			data: [5, 15, 4, 3, 2, 3, 4, 5, 6, 7, 8, 9, 10, 5, 5, 15, 4, 3, 2, 3, 4, 5],
+			data: [2, 4, 5, 15, 4, 3, 2,5, 6, 7],
 			stack: 'sum',
 			barWidth: '22',
 			itemStyle: {
@@ -133,7 +154,7 @@ function indexWater() {
 		}, {
 			name: '超标',
 			type: 'bar',
-			data: [5, 10, 4, 3, 2, 3, 4, 5, 6, 7, 8, 9, 10, 5, '-', '-', '-', '-', '-', '-', '-', '-'],
+			data: [2, 3, 4, 5, 6,5, 10, 4, 3,  7],
 			stack: 'sum',
 			barWidth: '22',
 			itemStyle: {
@@ -149,6 +170,124 @@ function indexWater() {
 	};
 	var echarts2 = echarts.init(document.getElementById('water-echarts2'));
 	echarts2.setOption(option2);
+	var option3 = {
+		title:{
+			text:'水质达标情况最好的十条河流',
+			left:20,
+			top:10,
+			textStyle:{
+				fontWeight:'normal',
+				fontSize:14,
+			}
+		},
+		tooltip: {
+			trigger: 'axis',
+			axisPointer: {
+				lineStyle: {
+					color: '#ddd'
+				}
+			},
+			confine: true,
+			padding: [5, 10, 5, 10],
+			backgroundColor: '#fff',
+			borderColor: '#d1d1d1',
+			borderWidth: 1,
+			extraCssText: 'box-shadow: 1px 1px 3px rgba(45, 58, 50, 0.3);',
+			textStyle: {
+				color: '#333333'
+			},
+			formatter: function(param){
+				var standRadio=null;
+				var notStantdHtml='';
+				//如果不达标的数据为'-'
+				if(param[1].value==='-'){
+					standRadio=100;
+				}else{
+					standRadio=parseFloat(param[0].value/(param[0].value+param[1].value)*100).toFixed(1);
+					notStantdHtml='<br/><span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:#df3f37;margin:0 6px;"></span>'+param[1].axisValue+'超标断面数:<span style="color:#df3f37">'+param[1].value+'</span>个';
+				} 
+				
+				return '达标率：<span style="color:#52b052">'+standRadio+'</span>%<br/><span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:#52b052;margin:0 6px;"></span>'+param[0].axisValue+'达标断面数:<span style="color:#52b052">'+param[0].value+'</span>个'+notStantdHtml;
+              
+			}
+		},
+		color: ['#52b052', '#df3f37'],
+		legend: {
+			selectedMode: false,
+			data: ['达标', '超标'],
+			right: 15,
+			top: 6,
+			itemGap: 20,
+			textStyle: {
+				fontSize: 14,
+				color: '#999',
+			}
+		},
+		grid: {
+			left: '1%',
+			right: '6%',
+			bottom: '15px',
+			top: '40px',
+			containLabel: true
+		},
+		xAxis: {
+			type: 'category',
+			data: ['废黄河', '大沙河', '废黄河', '复新河', '大沿沭马河', '废黄河', '新河', '柏临河', '下牢溪', '茅坪河'],
+			axisLine: {
+				lineStyle: {
+					color: '#c5c5c5'
+				}
+			},
+			axisTick: {
+				show: false
+			},
+			axisLabel: {
+				textStyle: {
+					fontSize: 14,
+					color: '#666666',
+				}
+			}
+		},
+		yAxis: {
+			show: false,
+			type: 'value',
+		},
+		series: [{
+			name: '达标',
+			type: 'bar',
+			data: [15,14, 12, 11,11,10, 9, 9, 7,6],
+			stack: 'sum',
+			barWidth: '22',
+			itemStyle: {
+				normal: {
+					barBorderRadius: 22,
+					label: {
+						show: true,
+						position: 'inside',
+					}
+				}
+			}
+		},
+		{
+			name: '不达标',
+			type: 'bar',
+			data: ['-','-', '-','-','-','-', '-', 1, 1, 1],
+			stack: 'sum',
+			barWidth: '22',
+			itemStyle: {
+				normal: {
+					barBorderRadius: 22,
+					label: {
+						show: true,
+						position: 'inside',
+					}
+				}
+			}
+		}
+		]
+	};
+	var echarts3 = echarts.init(document.getElementById('water-echarts3'));
+	echarts3.setOption(option3);
 	//地表水达标率
 	var waterData1=[ //!!!!!需要后台传入的数据
 		{value:85, name:'地表水达标数量'},

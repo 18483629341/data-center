@@ -8,7 +8,7 @@ function indexNoise() {
 			name: '平均等效声级'
 		},
 		{
-			value: 15,
+			value: 0,
 			name: ''
 		}
 	]
@@ -104,7 +104,8 @@ function indexNoise() {
 			trigger: 'axis',
 			axisPointer: {
 				type: 'shadow'
-			}
+			},
+			formatter:'{b}<br/><span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:#48e0e4;margin:0 6px;"></span>{a0}等效声级:{c0}<br/><span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:#e40475;margin:0 6px;"></span>{a1}等效声级:{c1}'
 		},
 		legend: {
 			selectedMode: false,
