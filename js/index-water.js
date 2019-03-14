@@ -1,6 +1,7 @@
 //水环境
 function indexWater() {
 	/*echarts*/
+
 	//水环境月度总体概况
 	var option1 = {
 		legend: {
@@ -52,9 +53,11 @@ function indexWater() {
 			]
 		}]
 	};
+	    //水环境月度总体概况‘各水质类别占比’饼图
 	var echarts1 = echarts.init(document.getElementById('water-echarts1'));
 	echarts1.setOption(option1);
-	//监测河流水质现状
+
+	//‘水质达标情况最差的十条河流’
 	var option2 = {
 		title:{
 			text:'水质达标情况最差的十条河流',
@@ -169,7 +172,10 @@ function indexWater() {
 		}]
 	};
 	var echarts2 = echarts.init(document.getElementById('water-echarts2'));
+	//渲染‘水质达标情况最差的十条河流’ 柱状图
 	echarts2.setOption(option2);
+
+	//‘水质达标情况最好的十条河流’
 	var option3 = {
 		title:{
 			text:'水质达标情况最好的十条河流',
@@ -206,9 +212,7 @@ function indexWater() {
 					standRadio=parseFloat(param[0].value/(param[0].value+param[1].value)*100).toFixed(1);
 					notStantdHtml='<br/><span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:#df3f37;margin:0 6px;"></span>'+param[1].axisValue+'超标断面数:<span style="color:#df3f37">'+param[1].value+'</span>个';
 				} 
-				
 				return '达标率：<span style="color:#52b052">'+standRadio+'</span>%<br/><span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:#52b052;margin:0 6px;"></span>'+param[0].axisValue+'达标断面数:<span style="color:#52b052">'+param[0].value+'</span>个'+notStantdHtml;
-              
 			}
 		},
 		color: ['#52b052', '#df3f37'],
@@ -271,7 +275,7 @@ function indexWater() {
 		{
 			name: '不达标',
 			type: 'bar',
-			data: ['-','-', '-','-','-','-', '-', 1, 1, 1],
+			data: ['-','-', '-','-','-','-', '-', 1, 1, 1],//不达标数据为0时，需要用'-'来表示
 			stack: 'sum',
 			barWidth: '22',
 			itemStyle: {
@@ -287,16 +291,21 @@ function indexWater() {
 		]
 	};
 	var echarts3 = echarts.init(document.getElementById('water-echarts3'));
+	//渲染‘水质达标情况最好的十条河流’ 柱状图
 	echarts3.setOption(option3);
+
 	//地表水达标率
 	var waterData1=[ //!!!!!需要后台传入的数据
 		{value:85, name:'地表水达标数量'},
 		{value:15, name:'地表水非达标数量'}
-	]
+	]  
+	    //根据上面数据得到 option
 	var option21=getOptionfun(['#158eff','#e3e3e3'],'{value|{d}}{text|%}',waterData1);
 	var myChart21 = echarts.init(document.getElementById('CompRateCanvas21'));
+	//渲染‘地表水达标率’ 饼图
 	myChart21.setOption(option21);
 	PieAutoHighLight(myChart21,waterData1);
+
 	//饮用水达标率
 	var waterData2=[ //!!!!!需要后台传入的数据
 		{value:90, name:'饮用水达标数量'},
@@ -304,9 +313,12 @@ function indexWater() {
 	]
 	var option2=getOptionfun(['#158eff','#e3e3e3'],'{value|{d}}{text|%}',waterData2);
 	var myChart2 = echarts.init(document.getElementById('CompRateCanvas22'));
+	//渲染‘饮用水达标率’ 饼图
 	myChart2.setOption(option2);
 	PieAutoHighLight(myChart2,waterData2);
+	
 }
+
 // 指定饼状图的配置项和数据
 function getOptionfun(colors, format, data){
    //达标的数据和不达标的数据组成的数组     //!!!!!!!需要后台引入的数据
@@ -363,6 +375,7 @@ function getOptionfun(colors, format, data){
 	};
 return option;
 }
+
 //至少高亮显示一个饼图中的一个item
 function PieAutoHighLight(chartNum,data){
     setTimeout(function() {

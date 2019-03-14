@@ -349,79 +349,86 @@ function drawpollutionEcharts(text, val, bg){
     const num2 = value2 / 2;
     const series = [];
     for (let i = 0; i < num1; i++) {
-      series.push(setValue(1, bg), setValue(1, 'transparent'));
+		//设置进度圆环75%部分的底部每一个单元
+      	series.push(setValue(1, bg), setValue(1, 'transparent'));
     }
     for (let i = 0; i < num2; i++) {
+		//设置进度圆环75%部分的高亮部分每一个单元
       series.push(setValue(1, '#85cff6'), setValue(1, 'transparent'));
     }
-    series.push(setValue(25, 'transparent'));
+	series.push(setValue(25, 'transparent'));//有25%为透明部分
     const option = {
-      title: {
-        x: '44%',
-        y: '28S%',
-        subtext: text,
-        textAlign: 'center',
-        subtextStyle: {
-          fontSize:30,
-		  color: '#333',
-		  fontWeight:'bolder',
-        }
-      },
-      series: [
-		{
-			name: '',
-			type: 'pie',
-			radius: ['74%', '75%'],
-			center: ['50%', '50%'],
-			startAngle: 225,
-			hoverAnimation: false,
-			legendHoverLink: false,
-			labelLine: {
-			  normal: {
+		// 中间突出主题部分
+		title: {
+			x: '44%',
+			y: '28S%',
+			subtext: text,
+			textAlign: 'center',
+			subtextStyle: {
+			fontSize:30,
+			color: '#333',
+			fontWeight:'bolder',
+			}
+		},
+      	series: [
+			//内部的圆环
+			{
+				name: '',
+				type: 'pie',
+				radius: ['74%', '75%'],
+				center: ['50%', '50%'],
+				startAngle: 225,
+				hoverAnimation: false,
+				legendHoverLink: false,
+				labelLine: {
+				normal: {
+					show: false
+				}
+				},
+				emphasis: {
 				show: false
-			  }
+				},
+				data: [setValue(75, '#eee'), setValue(25, 'transparent')]
 			},
-			emphasis: {
-			  show: false
+			//进度条的圆环
+			{
+				name: '',
+				type: 'pie',
+				radius: ['82%', '93%'],
+				center: ['50%', '50%'],
+				startAngle: 225,
+				hoverAnimation: true,
+				legendHoverLink: false,
+				labelLine: {
+				normal: {
+					show: false
+				}
+				},
+				emphasis: {
+				show: false
+				},
+				data: series
 			},
-			data: [setValue(75, '#eee'), setValue(25, 'transparent')]
-		  },
-		{
-        name: '',
-        type: 'pie',
-        radius: ['82%', '93%'],
-        center: ['50%', '50%'],
-        startAngle: 225,
-        hoverAnimation: true,
-        legendHoverLink: false,
-        labelLine: {
-          normal: {
-            show: false
-          }
-        },
-        emphasis: {
-          show: false
-        },
-        data: series
-	  },
-	   {
-        name: '',
-        type: 'pie',
-        radius: ['98%', '99%'],
-        center: ['50%', '50%'],
-        startAngle: 225,
-        hoverAnimation: false,
-        legendHoverLink: false,
-        labelLine: {
-          normal: {
-            show: false
-          }
-        },
-        emphasis: {
-          show: false
-        },
-        data: [setValue(75, '#eee'), setValue(25, 'transparent')]
-      }]
+			//外部的圆环
+			{
+				name: '',
+				type: 'pie',
+				radius: ['98%', '99%'],
+				center: ['50%', '50%'],
+				startAngle: 225,
+				hoverAnimation: false,
+				legendHoverLink: false,
+				labelLine: {
+				normal: {
+					show: false
+				}
+				},
+				emphasis: {
+				show: false
+				},
+				data: [setValue(75, '#eee'), setValue(25, 'transparent')]
+			}
+		]
     };
 
     const pollutionEcharts = echarts.init(document.getElementById('poll-radio-canvas'));

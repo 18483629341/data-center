@@ -81,15 +81,15 @@ function indexAir() {
 		unit: "",
 		targetValue: '', //目标值，如果为无目标值就不写此属性
 		seriesData: [{
-				name: "2018年",
+				name: "AQI当前值",
 				arr: [5, 15, 4, 13, 12, 13, 14, 15, 16, 17, 18, 9, 10, 15]
 			},
 			{
-				name: "2017年",
+				name: "AQI去年同期",
 				arr: [7, 8, 19, 13, 8, 10, 4, 3, 2, 3, 4, 5, 6, 5]
 			},
 			{
-				name: "同期上月",
+				name: "AQI上月同期",
 				arr: [5, 6, 7, 13, 19, 8, 10, 4, 3, 2, 3, 4, 10, 5]
 			}
 		]
@@ -105,15 +105,15 @@ function indexAir() {
 		unit: "单位：ug/m3",
 		targetValue: 10, //目标值，如果为无目标值就不写此属性
 		seriesData: [{
-				name: "2018年",
+				name: "PM2.5当前值",
 				arr: [15, 16, 17, 18, 9, 5, 15, 4, 13, 12, 13, 14, 10, 15]
 			},
 			{
-				name: "2017年",
+				name: "PM2.5去年同期",
 				arr: [7, 8, 19, 10, 8, 10, 4, 3, 2, 3, 4, 5, 6, 5]
 			},
 			{
-				name: "同期上月",
+				name: "PM2.5上月同期",
 				arr: [5, 6, 7, 8, 19, 8, 10, 4, 3, 2, 3, 4, 10, 5]
 			}
 		]
@@ -125,15 +125,15 @@ function indexAir() {
 		unit: "单位：ug/m3",
 		targetValue: 10, //目标值，如果为无目标值就不写此属性
 		seriesData: [{
-				name: "2018年",
+				name: "PM10当前值",
 				arr: [5, 15, 4, 13, 12, 13, 14, 15, 16, 17, 18, 9, 10, 15]
 			},
 			{
-				name: "2017年",
+				name: "PM10去年同期",
 				arr: [7, 8, 19, 10, 8, 10, 4, 3, 2, 3, 4, 5, 6, 5]
 			},
 			{
-				name: "同期上月",
+				name: "PM10上月同期",
 				arr: [5, 6, 7, 8, 19, 8, 10, 4, 3, 2, 3, 4, 10, 5]
 			}
 		]
@@ -145,15 +145,15 @@ function indexAir() {
 		unit: "单位：mg/m3",
 		targetValue: 10, //目标值，如果为无目标值就不写此属性
 		seriesData: [{
-				name: "2018年",
+				name: "CO当前值",
 				arr: [5, 15, 4, 13, 12, 13, 14, 15, 16, 17, 18, 9, 10, 15]
 			},
 			{
-				name: "2017年",
+				name: "CO去年同期",
 				arr: [10, 4, 3, 2, 3, 7, 8, 19, 10, 8, 4, 5, 6, 5]
 			},
 			{
-				name: "同期上月",
+				name: "CO上月同期",
 				arr: [5, 6, 7, 8, 19, 8, 10, 4, 3, 2, 3, 4, 10, 5]
 			}
 		]
@@ -165,15 +165,15 @@ function indexAir() {
 		unit: "单位：ug/m3",
 		targetValue: 10, //目标值，如果为无目标值就不写此属性
 		seriesData: [{
-				name: "2018年",
+				name: "NO2当前值",
 				arr: [5, 15, 4, 13, 12, 13, 14, 15, 16, 17, 18, 9, 10, 15]
 			},
 			{
-				name: "2017年",
+				name: "NO2去年同期",
 				arr: [7, 8, 19, 10, 8, 10, 4, 3, 2, 3, 4, 5, 6, 5]
 			},
 			{
-				name: "同期上月",
+				name: "NO2上月同期",
 				arr: [19, 8, 10, 4, 3, 2, 5, 6, 7, 8, 3, 4, 10, 5]
 			}
 		]
@@ -185,15 +185,15 @@ function indexAir() {
 		unit: "单位：ug/m3",
 		targetValue: 10, //目标值，如果为无目标值就不写此属性
 		seriesData: [{
-				name: "2018年",
+				name: "SO2当前值",
 				arr: [5, 15, 4, 13, 12, 13, 14, 15, 16, 17, 18, 9, 10, 15]
 			},
 			{
-				name: "2017年",
+				name: "SO2去年同期",
 				arr: [7, 8, 19, 10, 8, 10, 4, 3, 2, 3, 4, 5, 6, 5]
 			},
 			{
-				name: "同期上月",
+				name: "SO2上月同期",
 				arr: [4, 3, 2, 3, 4, 5, 6, 7, 8, 19, 8, 10, 10, 5]
 			}
 		]
@@ -205,21 +205,22 @@ function indexAir() {
 		unit: "单位：ug/m3",
 		targetValue: 10, //目标值，如果为无目标值就不写此属性
 		seriesData: [{
-				name: "2018年",
+				name: "O3当前值",
 				arr: [15, 16, 17, 18, 9, 5, 15, 4, 13, 12, 13, 14, 10, 15]
 			},
 			{
-				name: "2017年",
+				name: "O3去年同期",
 				arr: [7, 8, 19, 10, 8, 10, 4, 3, 2, 3, 4, 5, 6, 5]
 			},
 			{
-				name: "同期上月",
+				name: "O3上月同期",
 				arr: [5, 6, 7, 8, 19, 8, 10, 4, 3, 2, 3, 4, 10, 5]
 			}
 		]
 	}
 }
-/**  绘制显示进度的饼图
+
+/**  根据数据 初始化线图的option
  * @param {obj} Obj 设置图形展示的所有相关数据的对象
  * @param {Number} val 设置同比和环比切换显示的类型：为属性seriesData的 1 和 2
  */
@@ -228,7 +229,8 @@ function getAirOption(obj, i) {
 
 	var seriesData=obj['seriesData'];
 	var legendArr=[];
-	if (!!obj.targetValue) { //当对象存在时且数据不为‘’/0/null时
+	//若有目标值时，线图的图例上显示'目标值'项；若没有目标值时，线图的图例上不显示'目标值'项；
+	if (!!obj.targetValue) { //当此属性不为‘’/0/null或不存在时
 		legendArr = ['目标值', seriesData[0].name,seriesData[index].name]
 	} else {
 		legendArr = [seriesData[0].name, seriesData[index].name]
@@ -260,16 +262,18 @@ function getAirOption(obj, i) {
 				var increase = (params[0].value - params[1].value) / params[1].value;
 				increase = parseFloat(increase * 100).toFixed(1);
 				var main = null;
+				//提示框第一行显示内容样式设置
 				if (increase > 0) {
 					main = params[0].name + labelType + '<img src="images/index/jt_icon.png" style="vertical-align: -1px;margin: 0 2px;"/>' + increase + '%';
 				} else if (increase < 0) {
-					main = params[0].name + labelType + '<img src="images/index/jt_icon2.png" style="vertical-align: -1px;margin: 0 2px;"/>' + increase + '%';
+					main =  params[0].name +labelType + '<img src="images/index/jt_icon2.png" style="vertical-align: -1px;margin: 0 2px;"/>' + increase + '%';
 				} else {
-					main = params[0].name + labelType + '持平';
+					main =  params[0].name +labelType + '持平';
 				}
-				for (var i = 0; i < params.length; i++) {
-					main += '<br>' + params[i].marker + params[i].seriesName + '：' + params[i].value
-				}
+				//提示框第二行显示内容样式设置
+				main += '<br><span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:#3bbffb;margin-right:6px;"></span>' + params[0].seriesName + '：' + params[0].value;
+				//提示框第三行显示内容样式设置
+				main += '<br><span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:#e6ce2c;margin-right:6px;"></span>' + params[1].seriesName + '：' + params[1].value
 				return main;
 			}
 		},
@@ -278,7 +282,7 @@ function getAirOption(obj, i) {
 			selectedMode: false,
 			data: legendArr,
 			right: 18,
-			top: 8,
+			top: 18,
 			itemGap: 20,
 			itemHeight: 9,
 			textStyle: {
@@ -350,6 +354,7 @@ function getAirOption(obj, i) {
 		}]
 
 	};
+	//若有目标值时，线图增加显示目标值的黄色虚线增加到series中，若没有目标值时，线图不添加此虚线的设置；
 	if (!!obj.targetValue) {
 		var obj ={
 			name: '目标值',

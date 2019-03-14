@@ -3,6 +3,7 @@ function indexSituation() {
 	//默认设置echarts的宽度
 	$('.situation-echarts1').width($('.situation-info4').width());
 	$('.situation-echarts2').width($('.situation-info5').width());
+	$('.situation-echarts5').width($('.situation-info5').width());
 	//按系统、按部门tab切换
 	$('.main-info-module .mim-title .tab li').click(function() {
 		var index = $(this).index();
@@ -18,6 +19,7 @@ function indexSituation() {
 		$(this).parents('.situation-info4').find('.situation-echarts-tab-main').eq(index).show();
 	})
 	/*echarts*/
+
 	//数据集成情况
 	var option1 = {
 		tooltip: {
@@ -166,6 +168,7 @@ function indexSituation() {
 	};
 	var echarts1 = echarts.init(document.getElementById('situation-echarts1'));
 	echarts1.setOption(option1);
+
 	//近五年数据总量统计
 	var option5 = {
 		tooltip: {
